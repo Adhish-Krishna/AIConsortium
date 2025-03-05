@@ -1,11 +1,13 @@
 import React from 'react';
 import { ChevronRight, ArrowRight } from 'lucide-react';
 import './Hero.css';
+import NeuralNetworkAnimation from './NeuralNetworkAnimation';
 
 const Hero: React.FC = () => {
   return (
     <section className="hero">
       <div className="hero-background">
+        <NeuralNetworkAnimation />
         <div className="gradient-overlay"></div>
         <div className="pattern-overlay"></div>
         <div className="circuit-overlay"></div>
@@ -14,7 +16,7 @@ const Hero: React.FC = () => {
 
       <div className="container hero-content">
         <h1 className="hero-title text-gradient">
-          Shaping the Future of AI
+          AI Consortium
         </h1>
         <p className="hero-subtitle">
           Join the premier community where AI innovators, researchers, and enthusiasts converge to define tomorrow's intelligent systems.
