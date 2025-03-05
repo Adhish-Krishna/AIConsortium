@@ -1,0 +1,90 @@
+:root {
+  --color-background: #FFFFFF;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-gray-100: #F3F4F6;
+  --color-gray-300: #64748B;
+  --color-gray-400: #475569;
+  --color-gray-500: #334155;
+  --color-gray-800: #1E293B;
+  --color-primary: #2563EB;
+  --color-primary-light: #60A5FA;
+  --color-primary-dark: #1E40AF;
+  --color-secondary: #0EA5E9;
+  --color-secondary-light: #38BDF8;
+  --color-secondary-dark: #0369A1;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-gray-800);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--color-primary-dark), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-gradient {
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+}
+
+.border-gradient {
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
