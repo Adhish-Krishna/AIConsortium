@@ -22,7 +22,7 @@ const Navigation: React.FC = () => {
         </div>
 
         <div className="desktop-menu">
-          <a href="#events" className="nav-link">Events</a>
+          <a href="events" className="nav-link">Events</a>
           <a href="#community" className="nav-link">Community</a>
           <a href="#resources" className="nav-link">Resources</a>
           <a href="#contact" className="nav-link">Contact</a>
