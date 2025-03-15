@@ -23,7 +23,7 @@ const Navigation: React.FC = () => {
 
         <div className="desktop-menu">
           <a href="events" className="nav-link">Events</a>
-          <a href="#community" className="nav-link">Teams</a>
+          <a href="teams" className="nav-link">Teams</a>
           <a href="#resources" className="nav-link">Collaborators</a>
           {/* <a href="#contact" className="nav-link">Contact</a> */}
           <button className="join-button">
