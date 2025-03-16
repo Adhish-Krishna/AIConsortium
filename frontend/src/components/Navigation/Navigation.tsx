@@ -43,19 +43,16 @@ const Navigation: React.FC = () => {
         </button>
       </div>
 
-      {mobileMenuOpen && (
-        <div className="mobile-menu">
-          <div className="mobile-menu-links">
-            <a href="#events" className="nav-link">Events</a>
-            <a href="#community" className="nav-link">Community</a>
-            <a href="#resources" className="nav-link">Resources</a>
-            <a href="#contact" className="nav-link">Contact</a>
-            <button className="join-button mobile-join">
-              Join Now
-            </button>
-          </div>
+      <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+        <div className="mobile-menu-links">
+          <a href="/events" className="nav-link">Events</a>
+          <a href="/teams" className="nav-link">Teams</a>
+          <a href="/" className="nav-link">Collaborators</a>
+          <button className="join-button mobile-join">
+            Join Now
+          </button>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
