@@ -20,7 +20,7 @@ const Navigation: React.FC = () => {
   return (
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
-        <div className="logo" onClick={()=>{navigate('/')}}>
+        <div className="logo" onClick={()=>{navigate('/')}} style={{"cursor":"pointer"}} >
           <img src={Logo} style={{"height":"60px"}}/>
           <span className="logo-text">AI CONSORTIUM</span>
         </div>
@@ -28,7 +28,7 @@ const Navigation: React.FC = () => {
         <div className="desktop-menu">
           <a href="events" className="nav-link">Events</a>
           <a href="teams" className="nav-link">Teams</a>
-          <a href="#resources" className="nav-link">Collaborators</a>
+          <a href="collaborators" className="nav-link">Collaborators</a>
           {/* <a href="#contact" className="nav-link">Contact</a> */}
           <button className="join-button">
             Register
@@ -47,7 +47,7 @@ const Navigation: React.FC = () => {
         <div className="mobile-menu-links">
           <a href="/events" className="nav-link">Events</a>
           <a href="/teams" className="nav-link">Teams</a>
-          <a href="/" className="nav-link">Collaborators</a>
+          <a href="/collaborators" className="nav-link">Collaborators</a>
           <button className="join-button mobile-join">
             Join Now
           </button>
