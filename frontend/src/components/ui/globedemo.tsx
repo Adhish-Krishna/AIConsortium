@@ -7,8 +7,8 @@ const World = lazy(() => import("../ui/globe").then((m) => ({ default: m.World }
 
 
 export function GlobeDemo() {
-  const globeConfig = {
-    pointSize: 4,
+const globeConfig = {
+    pointSize: 400,
     globeColor: "#062056",
     showAtmosphere: true,
     atmosphereColor: "#FFFFFF",
@@ -25,11 +25,12 @@ export function GlobeDemo() {
     arcLength: 0.9,
     rings: 1,
     maxRings: 3,
-    initialPosition: { lat: 22.3193, lng: 114.1694 },
+    initialPosition: { lat: 11.0168, lng: 76.9558 }, // Coimbatore, India
     autoRotate: true,
     autoRotateSpeed: 0.5,
-  };
-  const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
+};
+const colors = ["#38bdf8", "#0ea5e9", "#062056"];
+
   const sampleArcs = [
     {
       order: 1,
@@ -410,18 +411,17 @@ export function GlobeDemo() {
           }}
           className="div"
         >
-          <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
-            We sell soap worldwide
+    <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
+            Our Global AI Consortium Network
           </h2>
           <p className="text-center text-base md:text-lg font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
-            This globe is interactive and customizable. Have fun with it, and
-            don&apos;t forget to share it. :)
+            Connecting AI researchers and institutions worldwide to foster innovation and collaboration across continents.
           </p>
         </motion.div>
         <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
-        <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
-          <World data={sampleArcs} globeConfig={globeConfig} />
-        </div>
+        <div className="relative w-full h-[800px]"> {/* Adjust height as needed */}
+  <World data={sampleArcs} globeConfig={globeConfig} />
+</div>
       </div>
     </div>
   );
