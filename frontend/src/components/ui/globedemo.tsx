@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
 import { motion } from "motion/react";
-import { lazy, Suspense } from "react";
+import { lazy} from "react";
 
 const World = lazy(() => import("../ui/globe").then((m) => ({ default: m.World })));
 

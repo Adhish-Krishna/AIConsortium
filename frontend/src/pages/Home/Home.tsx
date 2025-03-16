@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import Hero from '../../components/Hero/Hero';
 import VisionMission from '../../components/VisionMission/VisionMission';
 import ContentTabs from '../../components/ContentTabs/ContentTabs';
-import DataVisualization from '../../components/DataVisualization/DataVisualization';
 import CallToAction from '../../components/CallToAction/CallToAction';
 import Footer from '../../components/Footer/Footer';
-import {GlobeDemo} from '../../components/ui/globedemo';
+// import {GlobeDemo} from '../../components/ui/globedemo';
+import LatestAINews from '../../components/LatestAINews/LatestAINews';
 
 function Home() {
   const [isMobileView, setIsMobileView] = useState(false);
@@ -37,11 +37,12 @@ function Home() {
       <Hero />
       <VisionMission />
       <ContentTabs />
-      <DataVisualization />
+      <LatestAINews/>
       <CallToAction />
       <Footer />
       {/* Only render GlobeDemo when not in mobile view */}
-      {!isMobileView && <GlobeDemo />}
+      {/* {!isMobileView && <GlobeDemo />} */}
+      {/*Add this globe under the call to action section*/}
     </div>
   );
 }
