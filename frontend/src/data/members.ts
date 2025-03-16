@@ -1,5 +1,5 @@
 export interface Member {
-  id: number;
+  id: string;
   name: string;
   position: string;
   avatar: string;
@@ -14,7 +14,7 @@ export interface Member {
 
 export const members: Member[] = [
   {
-    id: 1,
+    id: '1',
     name: "Dr. Sarah Chen",
     position: "Director",
     avatar: "https://randomuser.me/api/portraits/women/22.jpg",
@@ -26,7 +26,7 @@ export const members: Member[] = [
     }
   },
   {
-    id: 2,
+    id: '2',
     name: "Prof. Michael Wong",
     position: "Head of Research",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
@@ -38,7 +38,7 @@ export const members: Member[] = [
     }
   },
   {
-    id: 3,
+    id: '3',
     name: "Dr. Amara Johnson",
     position: "Secretary",
     avatar: "https://randomuser.me/api/portraits/women/45.jpg",
@@ -50,7 +50,7 @@ export const members: Member[] = [
     }
   },
   {
-    id: 4,
+    id: '4',
     name: "Thomas Reeves",
     position: "Treasurer",
     avatar: "https://randomuser.me/api/portraits/men/55.jpg",
@@ -61,7 +61,7 @@ export const members: Member[] = [
     }
   },
   {
-    id: 5,
+    id: '5',
     name: "Dr. Leila Patel",
     position: "Head of Ethics Committee",
     avatar: "https://randomuser.me/api/portraits/women/67.jpg",
@@ -74,7 +74,7 @@ export const members: Member[] = [
     }
   },
   {
-    id: 6,
+    id: '6',
     name: "James Wilson",
     position: "Industry Liaison",
     avatar: "https://randomuser.me/api/portraits/men/76.jpg",

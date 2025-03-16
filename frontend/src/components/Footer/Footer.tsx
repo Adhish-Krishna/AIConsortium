@@ -1,6 +1,7 @@
 import React from 'react';
-import { Brain, Twitter, Linkedin, Github, Mail } from 'lucide-react';
+import {Twitter, Linkedin, Github, Mail } from 'lucide-react';
 import './Footer.css';
+import Logo from '../../assets/logo.png';
 import { LinkPreview } from "../ui/LinkPreview"; // Adjust the import path as needed
 
 const Footer: React.FC = () => {
@@ -10,7 +11,7 @@ const Footer: React.FC = () => {
         <div className="footer-grid">
           <div className="footer-brand">
             <div className="footer-logo">
-              <Brain className="footer-logo-icon" />
+              <img src={Logo} alt=""  style={{"height":"50px"}}/>
               <span className="footer-logo-text">AI CONSORTIUM</span>
             </div>
             <p className="footer-description">
@@ -28,7 +29,7 @@ const Footer: React.FC = () => {
               </LinkPreview>
             </div>
           </div>
-          
+
           <div className="footer-links">
             <h3 className="footer-heading">Quick Links</h3>
             <ul className="footer-list">
@@ -39,7 +40,7 @@ const Footer: React.FC = () => {
               <li><LinkPreview url="/contact" className="footer-link">Contact</LinkPreview></li>
             </ul>
           </div>
-          
+
           <div className="footer-links">
             <h3 className="footer-heading">Resources</h3>
             <ul className="footer-list">
@@ -50,16 +51,16 @@ const Footer: React.FC = () => {
               <li><LinkPreview url="/webinars" className="footer-link">Webinars</LinkPreview></li>
             </ul>
           </div>
-          
+
           <div className="footer-newsletter">
             <h3 className="footer-heading">Subscribe</h3>
             <p className="newsletter-description">
               Stay updated with the latest in AI research and community events.
             </p>
             <div className="newsletter-form">
-              <input 
-                type="email" 
-                placeholder="Your email" 
+              <input
+                type="email"
+                placeholder="Your email"
                 className="newsletter-input"
               />
               <button className="newsletter-button">
@@ -68,7 +69,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="footer-bottom">
           <div className="copyright">
             © 2025 AI CONSORTIUM. All rights reserved.

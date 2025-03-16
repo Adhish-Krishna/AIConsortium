@@ -1,6 +1,6 @@
-export const events = [
+const events = [
   {
-    id: 1,
+    id: '1',
     title: "AI Ethics Summit",
     date: "June 15, 2025",
     location: "Virtual Event",
@@ -8,7 +8,7 @@ export const events = [
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   },
   {
-    id: 2,
+    id: '2',
     title: "Machine Learning Workshop",
     date: "July 8, 2025",
     location: "San Francisco, CA",
@@ -16,7 +16,7 @@ export const events = [
     image: "https://images.unsplash.com/photo-1591453089816-0fbb971b454c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   },
   {
-    id: 3,
+    id: '3',
     title: "Neural Networks Conference",
     date: "August 22, 2025",
     location: "Tokyo, Japan",
@@ -25,9 +25,9 @@ export const events = [
   }
 ];
 
-export const discussions = [
+const discussions = [
   {
-    id: 1,
+    id: '1',
     title: "The Future of Generative AI",
     author: "Dr. Elena Voss",
     replies: 42,
@@ -35,7 +35,7 @@ export const discussions = [
     excerpt: "Discussing the implications of next-generation generative models and their potential impact on creative industries."
   },
   {
-    id: 2,
+    id: '2',
     title: "Quantum Computing & AI Integration",
     author: "Marcus Chen",
     replies: 37,
@@ -43,7 +43,7 @@ export const discussions = [
     excerpt: "Exploring the intersection of quantum computing and artificial intelligence - challenges and opportunities."
   },
   {
-    id: 3,
+    id: '3',
     title: "Ethical Frameworks for Autonomous Systems",
     author: "Sophia Williams",
     replies: 64,
@@ -52,26 +52,28 @@ export const discussions = [
   }
 ];
 
-export const projects = [
+const projects = [
   {
-    id: 1,
+    id: '1',
     title: "Open Neural Network Library",
     contributors: 128,
     stars: 4.7,
     description: "An open-source library for building and training neural networks with optimized performance."
   },
   {
-    id: 2,
+    id: '2',
     title: "AI Ethics Certification Program",
     contributors: 56,
     stars: 4.9,
     description: "A community-driven certification program for AI systems that meet ethical and safety standards."
   },
   {
-    id: 3,
+    id: '3',
     title: "Distributed Machine Learning Framework",
     contributors: 93,
     stars: 4.5,
     description: "A framework for training machine learning models across distributed computing environments."
   }
 ];
+
+export {events, projects, discussions};

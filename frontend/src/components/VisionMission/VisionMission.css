@@ -108,3 +108,81 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* Tablet styles */
+@media (max-width: 767px) {
+  .vision-mission-section {
+    padding: 3rem 0;
+  }
+
+  .vision-card,
+  .mission-card {
+    padding: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-content {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 576px) {
+  .vision-mission-section {
+    padding: 2.5rem 0;
+  }
+
+  .vision-card,
+  .mission-card {
+    padding: 1.75rem;
+  }
+
+  .card-icon {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+
+  .card-title {
+    font-size: 1.35rem;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 400px) {
+  .vision-mission-section {
+    padding: 2rem 0;
+  }
+
+  .vision-mission-grid {
+    gap: 1.5rem;
+  }
+
+  .vision-card,
+  .mission-card {
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+  }
+
+  .card-header {
+    margin-bottom: 1rem;
+  }
+
+  .card-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.75rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-content {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}

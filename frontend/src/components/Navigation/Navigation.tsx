@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import {Menu, X } from 'lucide-react';
+import Logo from '../../assets/logo.png';
 import './Navigation.css';
+import {useNavigate} from 'react-router-dom';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,7 +20,8 @@ const Navigation: React.FC = () => {
   return (
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
-        <div className="logo">
+        <div className="logo" onClick={()=>{navigate('/')}}>
+          <img src={Logo} style={{"height":"60px"}}/>
           <span className="logo-text">AI CONSORTIUM</span>
         </div>
 

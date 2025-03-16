@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Event, sampleEvents } from './data/eventsData';
-import './index.css';
+import { Event, sampleEvents } from '../../data/eventsData';
+import './event.css';
 
 const Events = () => {
   const [events, setEvents] = useState<Event[]>(sampleEvents);
