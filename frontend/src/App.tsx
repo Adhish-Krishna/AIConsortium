@@ -5,6 +5,7 @@ import ContentTabs from './components/ContentTabs/ContentTabs';
 import DataVisualization from './components/DataVisualization/DataVisualization';
 import CallToAction from './components/CallToAction/CallToAction';
 import Footer from './components/Footer/Footer';
+import {GlobeDemo} from './components/ui/globedemo';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <DataVisualization />
       <CallToAction />
       <Footer />
+      <GlobeDemo />
     </div>
   );
 }
