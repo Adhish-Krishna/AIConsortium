@@ -802,3 +802,397 @@ button {
   transform: translate(-50%, -50%);
   animation: ripple 2s infinite;
 }
+/*--------------Collab----------------------------*/
+.collab-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.collab-section {
+  margin-bottom: 40px;
+}
+
+.collab-item {
+  margin-bottom: 20px;
+}
+
+.collab-item h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #2563eb; /* Blue color */
+}
+
+.collab-item p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+  color: #4a5568; /* Gray color */
+}
+
+
+/* ----------------- Holographic Collab Styling ------------------- */
+
+/* Holographic Background */
+.holographic-bg {
+  background-color: rgba(10, 20, 30, 0.9);
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #38bdf8;
+  padding: 120px 20px 60px;
+  font-family: var(--font-mono);
+}
+
+/* Scan Line Effect */
+.scan-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(56, 189, 248, 0.3);
+  z-index: 10;
+  pointer-events: none;
+  animation: scanline 6s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    top: 0%;
+    opacity: 0.1;
+  }
+  50% {
+    top: 100%;
+    opacity: 0.3;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.1;
+  }
+}
+
+/* Hologram Overlay */
+.hologram-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 30, 60, 0.1) 0px,
+      rgba(0, 30, 60, 0.1) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Main Panel */
+.hologram-panel {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 
+    0 0 20px rgba(56, 189, 248, 0.2),
+    0 0 40px rgba(56, 189, 248, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.hologram-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(56, 189, 248, 0), 
+    rgba(56, 189, 248, 0.8), 
+    rgba(56, 189, 248, 0));
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* Title */
+.hologram-title {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.hologram-title .hologram-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  text-shadow: 
+    0 0 5px rgba(56, 189, 248, 0.7),
+    0 0 10px rgba(56, 189, 248, 0.5);
+  animation: glitch 5s infinite;
+}
+
+.hologram-subtitle {
+  font-size: 0.9rem;
+  color: rgba(56, 189, 248, 0.8);
+  margin-top: 8px;
+}
+
+/* Section Headings */
+.hologram-section {
+  margin-bottom: 50px;
+}
+
+.hologram-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.hologram-heading .hologram-text {
+  font-size: 1.6rem;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.hologram-badge {
+  background-color: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+/* Grid Layout */
+.hologram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* Hologram Items */
+.hologram-item {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.2, 0.6, 0.3, 1);
+  overflow: hidden;
+}
+
+.hologram-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(56, 189, 248, 0.03) 0px,
+      rgba(56, 189, 248, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  pointer-events: none;
+}
+
+.hologram-item:hover {
+  box-shadow: 
+    0 0 15px rgba(56, 189, 248, 0.3),
+    0 0 30px rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.6);
+}
+
+.hologram-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.hologram-name {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #38bdf8;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.hologram-status {
+  background-color: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hologram-content {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hologram-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: rgba(56, 189, 248, 0.7);
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+/* Animation Classes */
+.hologram-reveal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Glitchy Text Effect */
+@keyframes glitch {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px rgba(56, 189, 248, 0.7),
+      0 0 10px rgba(56, 189, 248, 0.5);
+    transform: translateX(0);
+  }
+  92% {
+    text-shadow: 
+      0 0 5px rgba(56, 189, 248, 0.7),
+      0 0 10px rgba(56, 189, 248, 0.5);
+    transform: translateX(0);
+  }
+  93% {
+    text-shadow: 
+      -2px 0 #0ea5e9,
+      2px 2px #38bdf8;
+    transform: translateX(2px);
+  }
+  94% {
+    text-shadow: 
+      2px -1px #0ea5e9,
+      -2px -2px #38bdf8;
+    transform: translateX(-2px);
+  }
+  95% {
+    text-shadow: 
+      0 0 5px rgba(56, 189, 248, 0.7),
+      0 0 10px rgba(56, 189, 248, 0.5);
+    transform: translateX(0);
+  }
+  96% {
+    text-shadow: 
+      -2px 0 #0ea5e9,
+      2px 2px #38bdf8;
+    transform: translateX(3px);
+  }
+  97% {
+    text-shadow: 
+      2px -1px #0ea5e9,
+      -2px -2px #38bdf8;
+    transform: translateX(-3px);
+  }
+  98% {
+    text-shadow: 
+      0 0 5px rgba(56, 189, 248, 0.7),
+      0 0 10px rgba(56, 189, 248, 0.5);
+    transform: translateX(0);
+  }
+}
+
+/* Hologram divider */
+.hologram-divider {
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
+}
+
+.hologram-divider::before, 
+.hologram-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  background-color: rgba(56, 189, 248, 0.3);
+  width: 40%;
+}
+
+.hologram-divider::before {
+  left: 0;
+}
+
+.hologram-divider::after {
+  right: 0;
+}
+
+.hologram-divider .hologram-text {
+  background-color: rgba(15, 23, 42, 0.8);
+  padding: 0 15px;
+  position: relative;
+  color: rgba(56, 189, 248, 0.7);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Terminal effects */
+.hologram-terminal {
+  margin-top: 40px;
+  color: rgba(56, 189, 248, 0.8);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.terminal-line {
+  line-height: 1.5;
+}
+
+.blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hologram-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hologram-panel {
+    padding: 20px;
+  }
+  
+  .hologram-title .hologram-text {
+    font-size: 1.8rem;
+  }
+  
+  .hologram-heading .hologram-text {
+    font-size: 1.3rem;
+  }
+}

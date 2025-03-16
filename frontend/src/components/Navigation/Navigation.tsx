@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import './Navigation.css';
+import { Link } from 'react-router-dom';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,14 +19,13 @@ const Navigation: React.FC = () => {
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <div className="logo">
-          <span className="logo-text">AI CONSORTIUM</span>
+          <Link to="/" className="logo-text">AI CONSORTIUM</Link>
         </div>
 
         <div className="desktop-menu">
-          <a href="events" className="nav-link">Events</a>
-          <a href="teams" className="nav-link">Teams</a>
-          <a href="#resources" className="nav-link">Collaborators</a>
-          {/* <a href="#contact" className="nav-link">Contact</a> */}
+          <Link to="/events" className="nav-link">Events</Link>
+          <Link to="/teams" className="nav-link">Teams</Link>
+          <Link to="/collaborators" className="nav-link">Collaborators</Link>
           <button className="join-button">
             Register
           </button>
@@ -42,10 +42,9 @@ const Navigation: React.FC = () => {
       {mobileMenuOpen && (
         <div className="mobile-menu">
           <div className="mobile-menu-links">
-            <a href="#events" className="nav-link">Events</a>
-            <a href="#community" className="nav-link">Community</a>
-            <a href="#resources" className="nav-link">Resources</a>
-            <a href="#contact" className="nav-link">Contact</a>
+            <Link to="/events" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Events</Link>
+            <Link to="/teams" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Teams</Link>
+            <Link to="/collaborators" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Collaborators</Link>
             <button className="join-button mobile-join">
               Join Now
             </button>

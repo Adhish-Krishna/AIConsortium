@@ -5,15 +5,18 @@ import App from './App.tsx';
 import Events from './Events.tsx';
 import './index.css';
 import Team from './Team.tsx';
+import Collab from './Collab.tsx';
 import Navigation from './components/Navigation/Navigation';
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Navigation />
     <Router>
+      <Navigation />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/events" element={<Events />} />
         <Route path="/teams" element={<Team />} />
+        <Route path="/collaborators" element={<Collab/>} />
       </Routes>
     </Router>
   </StrictMode>
