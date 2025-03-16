@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   /* Original color variables */
   --color-background: #FFFFFF;
@@ -14,12 +13,12 @@
   --color-gray-400: #475569;
   --color-gray-500: #334155;
   --color-gray-800: #1E293B;
-  --color-primary: #2563EB;
-  --color-primary-light: #60A5FA;
-  --color-primary-dark: #1E40AF;
-  --color-secondary: #0EA5E9;
-  --color-secondary-light: #38BDF8;
-  --color-secondary-dark: #0369A1;
+    --color-primary: #2563EB;
+    --color-primary-light: #60A5FA;
+    --color-primary-dark: #1E40AF;
+    --color-secondary: #0EA5E9;
+    --color-secondary-light: #38BDF8;
+    --color-secondary-dark: #0369A1;
   
   /* New color additions */
   --color-tertiary: #A855F7;
@@ -36,6 +35,10 @@
   --color-connection: #38BDF8;
   --color-pulse: #A855F7;
   
+  /* Globe demo colors */
+  --globe-color-1: #2563EB; /* Primary blue */
+  --globe-color-2: #0EA5E9; /* Secondary cyan */
+  --globe-color-3: #A855F7; /* Tertiary purple */
   /* Gradient variables */
   --gradient-primary: linear-gradient(to right, var(--color-primary), var(--color-secondary));
   --gradient-blue-purple: linear-gradient(to right, var(--color-primary), var(--color-tertiary));
@@ -77,6 +80,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 
 body {
   font-family: var(--font-sans);
@@ -128,6 +132,13 @@ button {
 .animate-bounce {
   animation: bounce 1s infinite;
 }
+.hero-subtitle {
+  font-size: 1.25rem;
+  max-width: 48rem;
+  margin: 0 auto 2.5rem;
+  color: var(--color-gray-600); /* Slightly darker for better contrast */
+}
+
 
 @keyframes bounce {
   0%, 100% {

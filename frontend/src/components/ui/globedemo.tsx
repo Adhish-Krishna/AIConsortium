@@ -5,31 +5,34 @@ import { lazy, Suspense } from "react";
 
 const World = lazy(() => import("../ui/globe").then((m) => ({ default: m.World })));
 
-
+// --globe-color-1: #2563EB; /* Primary blue */
+// --globe-color-2: #0EA5E9; /* Secondary cyan */
+// --globe-color-3: #A855F7; /* Tertiary purple */
 export function GlobeDemo() {
 const globeConfig = {
-    pointSize: 400,
-    globeColor: "#062056",
+    pointSize: 4000,
+    globeColor: "#FFFFFF",
+    globeAltitude: 0.3,
     showAtmosphere: true,
     atmosphereColor: "#FFFFFF",
-    atmosphereAltitude: 0.1,
-    emissive: "#062056",
-    emissiveIntensity: 0.1,
-    shininess: 0.9,
-    polygonColor: "rgba(255,255,255,0.7)",
-    ambientLight: "#38bdf8",
+    atmosphereAltitude: 0.32,
+    emissive: "#FFFFFF",
+    emissiveIntensity: 0.2,
+    shininess: 1.0,
+    polygonColor: "#2563EB",
+    ambientLight: "#FFFFFF",
     directionalLeftLight: "#ffffff",
     directionalTopLight: "#ffffff",
     pointLight: "#ffffff",
     arcTime: 1000,
     arcLength: 0.9,
-    rings: 1,
-    maxRings: 3,
+    rings: 3,
+    maxRings: 6,
     initialPosition: { lat: 11.0168, lng: 76.9558 }, // Coimbatore, India
     autoRotate: true,
-    autoRotateSpeed: 0.5,
+    autoRotateSpeed: 0.65,
 };
-const colors = ["#38bdf8", "#0ea5e9", "#062056"];
+const colors = ["#2563EB", "#0EA5E9", "#A855F7"];
 
   const sampleArcs = [
     {
