@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   /* Original color variables */
   --color-background: #FFFFFF;
@@ -36,6 +35,10 @@
   --color-connection: #38BDF8;
   --color-pulse: #A855F7;
   
+  /* Globe demo colors */
+  --globe-color-1: #2563EB; /* Primary blue */
+  --globe-color-2: #0EA5E9; /* Secondary cyan */
+  --globe-color-3: #A855F7; /* Tertiary purple */
   /* Gradient variables */
   --gradient-primary: linear-gradient(to right, var(--color-primary), var(--color-secondary));
   --gradient-blue-purple: linear-gradient(to right, var(--color-primary), var(--color-tertiary));
