@@ -1,6 +1,7 @@
 import React from 'react';
 import { Brain, Twitter, Linkedin, Github, Mail } from 'lucide-react';
 import './Footer.css';
+import { LinkPreview } from "../ui/LinkPreview"; // Adjust the import path as needed
 
 const Footer: React.FC = () => {
   return (
@@ -16,37 +17,37 @@ const Footer: React.FC = () => {
               The premier community for AI professionals, researchers, and enthusiasts.
             </p>
             <div className="social-links">
-              <a href="#" className="social-link">
+              <LinkPreview url="https://github.com/suryanarayanaa/" className="social-link">
                 <Twitter />
-              </a>
-              <a href="#" className="social-link">
+              </LinkPreview>
+              <LinkPreview url="https://linkedin.com" className="social-link">
                 <Linkedin />
-              </a>
-              <a href="#" className="social-link">
+              </LinkPreview>
+              <LinkPreview url="https://github.com" className="social-link">
                 <Github />
-              </a>
+              </LinkPreview>
             </div>
           </div>
           
           <div className="footer-links">
             <h3 className="footer-heading">Quick Links</h3>
             <ul className="footer-list">
-              <li><a href="#" className="footer-link">About Us</a></li>
-              <li><a href="#" className="footer-link">Events</a></li>
-              <li><a href="#" className="footer-link">Resources</a></li>
-              <li><a href="#" className="footer-link">Community</a></li>
-              <li><a href="#" className="footer-link">Contact</a></li>
+              <li><LinkPreview url="/about" className="footer-link">About Us</LinkPreview></li>
+              <li><LinkPreview url="/events" className="footer-link">Events</LinkPreview></li>
+              <li><LinkPreview url="/resources" className="footer-link">Resources</LinkPreview></li>
+              <li><LinkPreview url="/community" className="footer-link">Community</LinkPreview></li>
+              <li><LinkPreview url="/contact" className="footer-link">Contact</LinkPreview></li>
             </ul>
           </div>
           
           <div className="footer-links">
             <h3 className="footer-heading">Resources</h3>
             <ul className="footer-list">
-              <li><a href="#" className="footer-link">Blog</a></li>
-              <li><a href="#" className="footer-link">Whitepapers</a></li>
-              <li><a href="#" className="footer-link">Research Papers</a></li>
-              <li><a href="#" className="footer-link">Tutorials</a></li>
-              <li><a href="#" className="footer-link">Webinars</a></li>
+              <li><LinkPreview url="/blog" className="footer-link">Blog</LinkPreview></li>
+              <li><LinkPreview url="/whitepapers" className="footer-link">Whitepapers</LinkPreview></li>
+              <li><LinkPreview url="/research" className="footer-link">Research Papers</LinkPreview></li>
+              <li><LinkPreview url="/tutorials" className="footer-link">Tutorials</LinkPreview></li>
+              <li><LinkPreview url="/webinars" className="footer-link">Webinars</LinkPreview></li>
             </ul>
           </div>
           
@@ -73,9 +74,9 @@ const Footer: React.FC = () => {
             © 2025 AI CONSORTIUM. All rights reserved.
           </div>
           <div className="legal-links">
-            <a href="#" className="legal-link">Privacy Policy</a>
-            <a href="#" className="legal-link">Terms of Service</a>
-            <a href="#" className="legal-link">Cookie Policy</a>
+            <LinkPreview url="/privacy" className="legal-link">Privacy Policy</LinkPreview>
+            <LinkPreview url="/terms" className="legal-link">Terms of Service</LinkPreview>
+            <LinkPreview url="/cookies" className="legal-link">Cookie Policy</LinkPreview>
           </div>
         </div>
       </div>
