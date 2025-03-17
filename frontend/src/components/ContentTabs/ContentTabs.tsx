@@ -1,43 +1,25 @@
 import React, { useState } from 'react';
-import { Calendar, TrendingUp, Globe } from 'lucide-react';
+import {TrendingUp, Calendar } from 'lucide-react';
 import './ContentTabs.css';
-import { events, projects } from '../../data/content';
-import { members } from '../../data/members';
+import {projects } from '../../data/content';
+// Import or define events data
+import { events } from '../../data/events'; // You may need to create this file if it doesn't exist
 
-// Import our new components
-import EventsList from './components/EventsList';
+// Import our components
 import ProjectsList from './components/ProjectsList';
-import MembersList from './components/MembersList';
-import CommunityHighlights from './components/CommunityHighlights';
-import LatestResources from './components/LatestResources';
-import Users from './components/icons/Users'; // Use our extracted icon component
+import EventsList from './components/EventsList'; // We'll create this component
 
 const ContentTabs: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('events');
-
-  const handleEventClick = (eventId: string) => {
-    console.log(`Event clicked: ${eventId}`);
-    // Add navigation or modal logic here
-  };
+  const [activeTab, setActiveTab] = useState('projects');
 
   const handleProjectClick = (projectId: string) => {
     console.log(`Project clicked: ${projectId}`);
     // Add navigation or modal logic here
   };
 
-  const handleMemberClick = (memberId: string) => {
-    console.log(`Member clicked: ${memberId}`);
+  const handleEventClick = (eventId: string) => {
+    console.log(`Event clicked: ${eventId}`);
     // Add navigation or modal logic here
-  };
-
-  const handleResourceClick = (resourceId: string) => {
-    console.log(`Resource clicked: ${resourceId}`);
-    // Add navigation or modal logic here
-  };
-
-  const handleViewAllResourcesClick = () => {
-    console.log('View all resources clicked');
-    // Add navigation logic here
   };
 
   return (
@@ -46,63 +28,50 @@ const ContentTabs: React.FC = () => {
         <div className="tabs-container">
           <div className="tabs">
             <button
-              className={`tab ${activeTab === 'events' ? 'active' : ''}`}
-              onClick={() => setActiveTab('events')}
-            >
-              <Calendar className="tab-icon" /> Events
-            </button>
-            <button
               className={`tab ${activeTab === 'projects' ? 'active' : ''}`}
               onClick={() => setActiveTab('projects')}
             >
               <TrendingUp className="tab-icon" /> Projects
             </button>
             <button
-              className={`tab ${activeTab === 'members' ? 'active' : ''}`}
-              onClick={() => setActiveTab('members')}
+              className={`tab ${activeTab === 'events' ? 'active' : ''}`}
+              onClick={() => setActiveTab('events')}
             >
-              <Users className="tab-icon" /> Members
+              <Calendar className="tab-icon" /> Events
             </button>
           </div>
         </div>
 
-        <div className="content-grid">
-          {/* Left Section */}
+        <div className="content-grid full-width">
+          {/* Main Content */}
           <div className="content-card">
             <h2 className="section-title">
-              <Globe className="section-icon" />
-              Featured Content
+              {activeTab === 'projects' ? (
+                <>
+                  <TrendingUp className="section-icon" />
+                  Featured Projects
+                </>
+              ) : (
+                <>
+                  <Calendar className="section-icon" />
+                  Upcoming Events
+                </>
+              )}
             </h2>
 
-            {activeTab === 'events' && (
-              <EventsList 
-                events={events} 
-                onEventClick={handleEventClick} 
-              />
-            )}
-
             {activeTab === 'projects' && (
-              <ProjectsList 
-                projects={projects} 
-                onProjectClick={handleProjectClick} 
+              <ProjectsList
+                projects={projects}
+                onProjectClick={handleProjectClick}
               />
             )}
 
-            {activeTab === 'members' && (
-              <MembersList 
-                members={members}
-                onMemberClick={handleMemberClick} 
+            {activeTab === 'events' && (
+              <EventsList
+                events={events}
+                onEventClick={handleEventClick}
               />
             )}
-          </div>
-
-          {/* Right Section */}
-          <div className="sidebar">
-            <CommunityHighlights />
-            <LatestResources 
-              onResourceClick={handleResourceClick}
-              onViewAllClick={handleViewAllResourcesClick}
-            />
           </div>
         </div>
       </div>

@@ -1,10 +1,14 @@
 import React from 'react';
-import { ChevronRight, ArrowRight } from 'lucide-react';
+import {ArrowRight } from 'lucide-react';
 import './Hero.css';
 import NeuralNetworkAnimation from './NeuralNetworkAnimation';
-import FlipWordsDemo from '../ui/flip-words-demo';
+// import FlipWordsDemo from '../ui/flip-words-demo';
+import { TextGenerateEffect } from '../ui/text-generate-effect';
+import Logo from '../../assets/logo.png';
 
 const Hero: React.FC = () => {
+  const subTitle = 'Empowering Progress Innovation and Quality in AI';
+
   return (
     <section className="hero">
       <div className="hero-background">
@@ -15,40 +19,30 @@ const Hero: React.FC = () => {
         <div className="dots-overlay"></div>
       </div>
 
-      <div className="container hero-content flex flex-col items-center text-center">
-        {/* TODO : SOMEONE FIX THIS  */}
-      <div className="relative bg-white dark:bg-black p-10 text-center">
-  <h1 className="hero-title text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-700 inline-block">
-    AI Consortium
-  </h1>
-</div>
-
-
-  <FlipWordsDemo 
-  staticTextBefore="Join the premier community where" 
-  words={["AI innovators", "researchers", "enthusiasts"]} 
-  staticTextAfter="converge to define tomorrow's intelligent systems."
-  className="text-2xl max-w-4xl mx-auto mb-12 font-extrabold tracking-wide text-[var(--color-primary-dark)] dark:text-[var(--color-secondary-dark)] drop-shadow-lg"
-  flipWordsClassName="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)]"
-/>
-
-
-        <button className="hero-cta">
-          Join the Forum <ChevronRight className="inline-icon" />
-        </button>
-
+      <div className="hero-content">
+        <div className="hero-title-container">
+          <img src={Logo} alt="AI Consortium Logo" className='title-logo' />
+          <div className="line"></div>
+          <h1 className="hero-title text-gradient">AI CONSORTIUM</h1>
+        </div>
+        <TextGenerateEffect
+        duration={1}
+        filter={true}
+        words={subTitle}
+        className='hero-subtitle'
+        />
         <div className="hero-stats">
           <div className="stat-item">
-            <div className="stat-value">10K+</div>
-            <div className="stat-label">Members</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-value">500+</div>
-            <div className="stat-label">Events</div>
+            <div className="stat-value">10+</div>
+            <div className="stat-label">AI Labs</div>
           </div>
           <div className="stat-item">
             <div className="stat-value">50+</div>
-            <div className="stat-label">Countries</div>
+            <div className="stat-label">Faculties</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-value">100+</div>
+            <div className="stat-label">Students</div>
           </div>
         </div>
       </div>

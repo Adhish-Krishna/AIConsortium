@@ -234,7 +234,7 @@ const NeuralNetworkAnimation: React.FC = () => {
       }
 
       // Then draw nodes (so they appear on top of connections)
-      nodes.forEach((node, i) => {
+      nodes.forEach((node) => {
         // Update node activity based on time and position
         node.activity = 0.3 + 0.7 * Math.sin(node.layer * 0.5 + node.index * 0.3 + animTime * 0.2) * 0.5 + 0.5;
 

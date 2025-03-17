@@ -1,16 +1,15 @@
-import React from "react";
-import "./index.css";
-import OrgChartAnimation from "./components/Animations/teamAnimation";
+import "./team.css";
+import OrgChartAnimation from "../../components/Animations/teamAnimation";
 
 const AIConsortium = () => {
   return (
     <div className="team-container">
       <h1 className="team-title">AI Consortium Leadership Structure</h1>
-      
+
       <div className="org-chart">
         {/* Animation overlay */}
         <OrgChartAnimation levels={6} />
-        
+
         {/* Top Level - Principal */}
         <div className="level principal-level">
           <div className="box principal-box">
@@ -18,7 +17,7 @@ const AIConsortium = () => {
             <p>Executive Leadership</p>
           </div>
         </div>
-        
+
         {/* Director Level */}
         <div className="level director-level">
           <div className="box director-box">
@@ -26,7 +25,7 @@ const AIConsortium = () => {
             <p>AI Consortium</p>
           </div>
         </div>
-        
+
         {/* Program Manager */}
         <div className="level program-level">
           <div className="box program-box">
@@ -34,7 +33,7 @@ const AIConsortium = () => {
             <p>AI Awareness and Outreach</p>
           </div>
         </div>
-        
+
         {/* Two Key Divisions */}
         <div className="level managers-level">
           <div className="box manager-box">
@@ -46,7 +45,7 @@ const AIConsortium = () => {
             <p>AI Product Development</p>
           </div>
         </div>
-        
+
         {/* Faculty and Liaison Officers */}
         <div className="level advisors-level">
           <div className="box advisor-box">
@@ -62,7 +61,7 @@ const AIConsortium = () => {
             <h2>AI Wing Coordinators</h2>
           </div>
         </div>
-        
+
         {/* Student Engagement & Innovation */}
         <div className="level student-level">
           <div className="box student-box">

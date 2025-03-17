@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import {Menu, X } from 'lucide-react';
+import Logo from '../../assets/logo.png';
 import './Navigation.css';
-import { Link } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,14 +20,16 @@ const Navigation: React.FC = () => {
   return (
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
-        <div className="logo">
-          <Link to="/" className="logo-text">AI CONSORTIUM</Link>
+        <div className="logo" onClick={()=>{navigate('/')}} style={{"cursor":"pointer"}} >
+          <img src={Logo} style={{"height":"60px"}}/>
+          <span className="logo-text">AI CONSORTIUM</span>
         </div>
 
         <div className="desktop-menu">
-          <Link to="/events" className="nav-link">Events</Link>
-          <Link to="/teams" className="nav-link">Teams</Link>
-          <Link to="/collaborators" className="nav-link">Collaborators</Link>
+          <a href="events" className="nav-link">Events</a>
+          <a href="teams" className="nav-link">Teams</a>
+          <a href="collaborators" className="nav-link">Collaborators</a>
+          {/* <a href="#contact" className="nav-link">Contact</a> */}
           <button className="join-button">
             Register
           </button>
@@ -39,18 +43,16 @@ const Navigation: React.FC = () => {
         </button>
       </div>
 
-      {mobileMenuOpen && (
-        <div className="mobile-menu">
-          <div className="mobile-menu-links">
-            <Link to="/events" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Events</Link>
-            <Link to="/teams" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Teams</Link>
-            <Link to="/collaborators" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Collaborators</Link>
-            <button className="join-button mobile-join">
-              Join Now
-            </button>
-          </div>
+      <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+        <div className="mobile-menu-links">
+          <a href="/events" className="nav-link">Events</a>
+          <a href="/teams" className="nav-link">Teams</a>
+          <a href="/collaborators" className="nav-link">Collaborators</a>
+          <button className="join-button mobile-join">
+            Join Now
+          </button>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
