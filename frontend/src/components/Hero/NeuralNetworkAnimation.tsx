@@ -338,7 +338,7 @@ const NeuralNetworkAnimation: React.FC = () => {
         position: 'absolute',
         inset: 0,
         zIndex: 0,
-        opacity: 0.8, // Reduce overall opacity
+        opacity: 0.6, // Reduced from 0.8 to 0.6
       }}
     />
   );
