@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
-import {TrendingUp, Calendar } from 'lucide-react';
+import {TrendingUp, Calendar, FileText } from 'lucide-react';
 import './ContentTabs.css';
-import {projects } from '../../data/content';
+import {projects } from '../../data/projects';
 // Import or define events data
-import { events } from '../../data/events'; // You may need to create this file if it doesn't exist
+import { events } from '../../data/events';
+// Import publications data
+import { publications } from '../../data/publications';
 
 // Import our components
 import ProjectsList from './components/ProjectsList';
-import EventsList from './components/EventsList'; // We'll create this component
+import EventsList from './components/EventsList';
+import PublicationsList from './components/PublicationsList';
+
+import {useNavigate} from 'react-router-dom';
 
 const ContentTabs: React.FC = () => {
+
+  const navigate = useNavigate();
+
   const [activeTab, setActiveTab] = useState('projects');
 
   const handleProjectClick = (projectId: string) => {
@@ -21,6 +29,23 @@ const ContentTabs: React.FC = () => {
     console.log(`Event clicked: ${eventId}`);
     // Add navigation or modal logic here
   };
+
+  const handlePublicationClick = (publicationId: string) => {
+    console.log(`Publication clicked: ${publicationId}`);
+    // Add navigation or modal logic here
+  };
+
+  const handleViewAllClick = ()=>{
+    if(activeTab == 'projects'){
+      navigate('/projects');
+    }
+    else if(activeTab == 'events'){
+      navigate('/events');
+    }
+    else if(activeTab == 'publications'){
+      navigate('/publications');
+    }
+  }
 
   return (
     <section id="content" className="content-section">
@@ -39,6 +64,12 @@ const ContentTabs: React.FC = () => {
             >
               <Calendar className="tab-icon" /> Events
             </button>
+            <button
+              className={`tab ${activeTab === 'publications' ? 'active' : ''}`}
+              onClick={() => setActiveTab('publications')}
+            >
+              <FileText className="tab-icon" /> Publications
+            </button>
           </div>
         </div>
 
@@ -51,10 +82,15 @@ const ContentTabs: React.FC = () => {
                   <TrendingUp className="section-icon" />
                   Featured Projects
                 </>
-              ) : (
+              ) : activeTab === 'events' ? (
                 <>
                   <Calendar className="section-icon" />
                   Upcoming Events
+                </>
+              ) : (
+                <>
+                  <FileText className="section-icon" />
+                  Recent Publications
                 </>
               )}
             </h2>
@@ -72,6 +108,18 @@ const ContentTabs: React.FC = () => {
                 onEventClick={handleEventClick}
               />
             )}
+
+            {activeTab === 'publications' && (
+              <PublicationsList
+                publications={publications}
+                onPublicationClick={handlePublicationClick}
+              />
+            )}
+            <div className="view-all-container">
+              <button className="view-all-button" onClick={handleViewAllClick}>
+                View All
+              </button>
+            </div>
           </div>
         </div>
       </div>

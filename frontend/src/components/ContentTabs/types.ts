@@ -9,10 +9,10 @@ export interface Event {
 
 export interface Project {
   id: string;
+  image: string;
   title: string;
   description: string;
   contributors: number;
-  stars: number;
 }
 
 export interface Member {
