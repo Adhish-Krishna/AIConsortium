@@ -3,6 +3,7 @@ import {Menu, X } from 'lucide-react';
 import Logo from '../../assets/logo.png';
 import './Navigation.css';
 import {useNavigate} from 'react-router-dom';
+import PSGLogo from '../../assets/PSGlogo.png';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,7 +21,10 @@ const Navigation: React.FC = () => {
   return (
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
+
         <div className="logo" onClick={()=>{navigate('/')}} style={{"cursor":"pointer"}} >
+          <img src={PSGLogo} style={{"height":"40px", "marginTop":"5px", "marginRight":"5px"}} />
+          <div className="sep-line"></div>
           <img src={Logo} style={{"height":"60px"}}/>
           <span className="logo-text">AI CONSORTIUM</span>
         </div>
