@@ -149,7 +149,7 @@
 
 .hero-subtitle {
   font-size: 2rem;
-  color: var(--color-primary); /* Slightly darker for better contrast */
+  color: var(--color-primary-dark); /* Slightly darker for better contrast */
 }
 
 .hero-subtitle-text-color {

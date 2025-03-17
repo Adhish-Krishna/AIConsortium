@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
         </div>
         <TextGenerateEffect
         duration={1}
-        filter={true}
+        filter={false}
         words={subTitle}
         className='hero-subtitle'
         />
