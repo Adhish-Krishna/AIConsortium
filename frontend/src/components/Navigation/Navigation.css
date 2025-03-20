@@ -131,6 +131,12 @@
   font-size: 1rem;
 }
 
+.sep-line{
+  background-color: black;
+  height: 35px;
+  width: 2px;
+}
+
 /* Tablet Styles */
 @media (min-width: 640px) {
   .navigation {
