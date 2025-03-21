@@ -25,10 +25,7 @@ const CallToAction: React.FC = () => {
             </p>
             <div className="cta-buttons">
               <button className="cta-primary-button">
-                Become a Member
-              </button>
-              <button className="cta-secondary-button">
-                Learn More
+                Register
               </button>
             </div>
           </div>
