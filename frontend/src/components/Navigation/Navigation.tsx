@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {Menu, X } from 'lucide-react';
 import Logo from '../../assets/logo.png';
 import './Navigation.css';
 import {useNavigate} from 'react-router-dom';
 import PSGLogo from '../../assets/PSGlogo.png';
 import AICTELogo from '../../assets/aictelogo.png';
+import Menu from '../../assets/svg/list.svg'
+import X from '../../assets/svg/x.svg';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +27,9 @@ const Navigation: React.FC = () => {
           className="mobile-menu-toggle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? <X/> : <Menu/>}
+          {mobileMenuOpen ? (
+            <img src={X} className='menu-button' />
+          ):(<img src={Menu} className="menu-button"/>)}
         </button>
         <div className="logo-container">
           <div className="logo" onClick={()=>{navigate('/')}} style={{"cursor":"pointer"}} >

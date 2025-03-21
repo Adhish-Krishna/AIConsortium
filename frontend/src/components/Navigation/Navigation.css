@@ -122,6 +122,10 @@
   transition: left 0.3s ease;
 }
 
+.menu-button{
+  height: 40px;
+}
+
 .sidebar-menu.open {
   left: 0;
 }
@@ -180,6 +184,10 @@
     padding: 1.75rem 0; /* Increased from 1.25rem */
   }
 
+  .menu-button{
+    height: 30px;
+  }
+
   .navigation.scrolled {
     padding: 1.25rem 0; /* Increased from 0.875rem */
   }
@@ -207,6 +215,10 @@
 @media (min-width: 768px) {
   .desktop-menu {
     display: none; /* Keep desktop menu hidden */
+  }
+
+  .menu-button{
+    height: 20px;
   }
 
   .mobile-menu-toggle {
@@ -268,6 +280,10 @@
     width: 2.75rem;
   }
 
+  .menu-button{
+    height: 30px;
+  }
+
   .logo-text {
     font-size: 1.75rem;
   }
@@ -290,6 +306,10 @@
 @media (max-width: 399px) {
   .navigation {
     padding: 1.25rem 0; /* Increased from 0.75rem */
+  }
+
+  .menu-button{
+    height: 20px;
   }
 
   .navigation.scrolled {
