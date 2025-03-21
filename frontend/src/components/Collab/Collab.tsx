@@ -1,97 +1,203 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./collab.css";
 
+// Define proper types for the nodes and connections
+interface Node {
+  x: number;
+  y: number;
+  radius: number;
+  speed: number;
+  angle: number;
+  pulse: number;
+}
+
+interface Connection {
+  from: number;
+  to: number;
+}
+
 const Collab = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    console.log("Component mounted");
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Initialize canvas size
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    // Neural network variables with proper typing
+    const nodes: Node[] = [];
+    const connections: Connection[] = [];
+    const nodeCount = Math.min(40, Math.floor((window.innerWidth * window.innerHeight) / 25000));
+    
+    // Initialize the network
+    function initNetwork() {
+      console.log("Initializing network");
+      // Clear existing arrays
+      while(nodes.length > 0) nodes.pop();
+      while(connections.length > 0) connections.pop();
+      
+      // Create random nodes
+      for (let i = 0; i < nodeCount; i++) {
+        nodes.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 2 + 1,
+          speed: Math.random() * 0.3 + 0.05,
+          angle: Math.random() * Math.PI * 2,
+          pulse: Math.random() * Math.PI * 2,
+        });
+      }
+      
+      // Create connections between nodes
+      for (let i = 0; i < nodeCount; i++) {
+        const connectionsCount = Math.floor(Math.random() * 3) + 1;
+        for (let c = 0; c < connectionsCount; c++) {
+          const j = Math.floor(Math.random() * nodeCount);
+          if (i !== j) {
+            connections.push({
+              from: i,
+              to: j,
+            });
+          }
+        }
+      }
+      
+      setIsLoaded(true);
+    }
+    
+    // Handle resizing
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initNetwork(); // Reinitialize network when window resizes
+    };
+
+    window.addEventListener('resize', handleResize);
+    
+    // Initialize the network
+    initNetwork();
+    
+    // Animation loop
+    let animationId: number;
+    
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Update node positions
+      for (let i = 0; i < nodes.length; i++) {
+        const node = nodes[i];
+        node.x += Math.cos(node.angle) * node.speed;
+        node.y += Math.sin(node.angle) * node.speed;
+        
+        // Bounce off edges
+        if (node.x < 0 || node.x > canvas.width) {
+          node.angle = Math.PI - node.angle;
+        }
+        if (node.y < 0 || node.y > canvas.height) {
+          node.angle = -node.angle;
+        }
+      }
+      
+      // Draw connections
+      for (let i = 0; i < connections.length; i++) {
+        const connection = connections[i];
+        const fromNode = nodes[connection.from];
+        const toNode = nodes[connection.to];
+        
+        if (!fromNode || !toNode) continue;
+        
+        const dx = toNode.x - fromNode.x;
+        const dy = toNode.y - fromNode.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        // Only draw connections within range
+        if (distance < 200) {
+          ctx.beginPath();
+          ctx.moveTo(fromNode.x, fromNode.y);
+          ctx.lineTo(toNode.x, toNode.y);
+          ctx.strokeStyle = 'rgba(0, 123, 255, 0.4)';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+      
+      // Draw nodes
+      for (let i = 0; i < nodes.length; i++) {
+        const node = nodes[i];
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0, 123, 255, 0.7)';
+        ctx.fill();
+      }
+      
+      animationId = requestAnimationFrame(animate);
+    }
+    
+    // Start animation
+    animationId = requestAnimationFrame(animate);
+    
+    // Cleanup
+    return () => {
+      console.log("Component unmounting");
+      window.removeEventListener('resize', handleResize);
+      cancelAnimationFrame(animationId);
+    };
+  }, []);
 
   const alumni = [
     { name: "Dr. Sarah Chen", description: "AI Ethics Researcher and former lead of our Ethics Committee. Now working at Google's Responsible AI division." },
     { name: "Prof. Michael Rodriguez", description: "Machine Learning pioneer who helped establish our first neural network research lab. Currently teaching at MIT." },
-    { name: "Aria Patel", description: "Former student ambassador who developed our community outreach program. Now an AI Policy Advisor at UNESCO." },
+    { name: "Aria Patel", description: "Former student ambassador who developed our community outreach program. Now an AI Policy Advisor at UNESCO." }
   ];
 
   const industryPartners = [
     { name: "TechVision AI", description: "Collaborating on research for explainable AI systems and providing internship opportunities for our students." },
     { name: "Neural Dynamics", description: "Funding our research on neural networks and supporting the annual AI Ethics Symposium." },
-    { name: "Global AI Initiative", description: "Working with us on AI education programs for underrepresented communities and sharing resources." },
+    { name: "Global AI Initiative", description: "Working with us on AI education programs for underrepresented communities and sharing resources." }
   ];
 
-  useEffect(() => {
-    // Staggered animation for items when they enter the viewport
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('hologram-reveal');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    // Observe all hologram items
-    const hologramItems = document.querySelectorAll('.hologram-item');
-    hologramItems.forEach(item => observer.observe(item));
-
-    return () => {
-      hologramItems.forEach(item => observer.unobserve(item));
-    };
-  }, []);
-
   return (
-    <div className="collab-container holographic-bg" style={{ paddingTop: "100px" }}>
-      <div className="scan-line"></div>
-      <div className="hologram-overlay"></div>
-
-      <div className="collab-section hologram-panel" ref={sectionRef}>
-        <h1 className="hologram-title">
-          <span className="hologram-text">AI Consortium Collaborators</span>
-        </h1>
-
-        <div className="hologram-section">
-          <h2 className="hologram-heading">
-            <span className="hologram-text">Alumni Partners</span>
-          </h2>
-
-          <div className="hologram-grid">
-            {alumni.map((alum, index) => (
-              <div key={index} className="hologram-item" style={{ animationDelay: `${index * 0.2}s` }}>
-                <div className="hologram-header">
-                  <h3 className="hologram-name">{alum.name}</h3>
-                  <div className="hologram-status">Alumni</div>
+    <div className="consortium-page">
+      <canvas ref={canvasRef} className="neural-network-bg"></canvas>
+      
+      <div className="consortium-container">
+        <section className="collaborators">
+          <h2 className="section-title">Consortium Collaborators</h2>
+          
+          <div className="section-container">
+            <h3 className="section-subtitle">Alumni Network</h3>
+            <div className="card-container">
+              {alumni.map((person, index) => (
+                <div key={index} className="card">
+                  <div className="avatar">{person.name.charAt(0)}</div>
+                  <h4 className="name blue">{person.name}</h4>
+                  <p>{person.description}</p>
                 </div>
-                <div className="hologram-content">
-                  <p>{alum.description}</p>
-                </div>
-                <div className="hologram-footer">
-                  <div className="hologram-id">ID: A{(100 + index).toString().padStart(3, '0')}</div>
-                  <div className="hologram-date">Last Updated: {new Date().toLocaleDateString()}</div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="hologram-section">
-          <h2 className="hologram-heading">
-            <span className="hologram-text">Industry Partners</span>
-          </h2>
-
-          <div className="hologram-grid">
-            {industryPartners.map((partner, index) => (
-              <div key={index} className="hologram-item" style={{ animationDelay: `${(index + alumni.length) * 0.2}s` }}>
-                <div className="hologram-header">
-                  <h3 className="hologram-name">{partner.name}</h3>
-                  <div className="hologram-status">Active</div>
-                </div>
-                <div className="hologram-content">
+          
+          <div className="section-container">
+            <h3 className="section-subtitle">Industry Partners</h3>
+            <div className="card-container">
+              {industryPartners.map((partner, index) => (
+                <div key={index} className="card partner-card">
+                  <div className="avatar partner-avatar">{partner.name.charAt(0)}</div>
+                  <h4 className="name blue">{partner.name}</h4>
                   <p>{partner.description}</p>
                 </div>
-                <div className="hologram-footer">
-                  <div className="hologram-id">ID: P{(200 + index).toString().padStart(3, '0')}</div>
-                  <div className="hologram-date">Partnership Since: 2023</div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

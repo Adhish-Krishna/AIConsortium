@@ -6,17 +6,17 @@ import Events from './pages/Events/Events.tsx';
 import './index.css';
 import Team from './pages/Team/Team.tsx';
 import Navigation from './components/Navigation/Navigation';
-import Collaborators from './pages/Collaborators/Collaborators.tsx';
+import Collab from './components/Collab/Collab.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Router>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />
         <Route path="/teams" element={<Team />} />
-        <Route path="/collaborators" element={<Collaborators/>} />
+        <Route path="/collaborators" element={<Collab />} />
       </Routes>
     </Router>
   </StrictMode>
