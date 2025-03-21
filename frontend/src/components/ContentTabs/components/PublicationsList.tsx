@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 // Define Publication type
 interface Publication {
@@ -23,11 +24,15 @@ const PublicationsList: React.FC<PublicationsListProps> = ({
 }) => {
   return (
     <div className="publications-list">
-      {publications.map((publication) => (
-        <div
+      {publications.map((publication, index) => (
+        <motion.div
           key={publication.id}
           className="publication-card"
           onClick={() => onPublicationClick(publication.id)}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
         >
           <div className="publication-image-container">
             <img
@@ -53,7 +58,7 @@ const PublicationsList: React.FC<PublicationsListProps> = ({
               Read more <ArrowRight className="small-icon" />
             </button>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

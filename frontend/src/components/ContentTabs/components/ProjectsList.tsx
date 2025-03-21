@@ -1,5 +1,6 @@
 import React from 'react';
 import { Zap, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { Project } from '../types';
 
 interface ProjectsListProps {
@@ -10,11 +11,15 @@ interface ProjectsListProps {
 const ProjectsList: React.FC<ProjectsListProps> = ({ projects, onProjectClick }) => {
   return (
     <div className="projects-list">
-      {projects.map(project => (
-        <div
+      {projects.map((project, index) => (
+        <motion.div
           key={project.id}
           className="project-card"
           onClick={() => onProjectClick && onProjectClick(project.id)}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
         >
           {project.image && (
             <div className="project-image-container">
@@ -38,7 +43,7 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ projects, onProjectClick })
               Learn more <ChevronRight className="small-icon" />
             </button>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

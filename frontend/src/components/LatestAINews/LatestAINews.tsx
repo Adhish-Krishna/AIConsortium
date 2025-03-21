@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import './latestainews.css';
 import {mockNewsData} from '../../data/latestainewsdata';
 import { NewsItem } from '../../data/latestainewsdata';
@@ -32,8 +33,15 @@ const LatestAINews: React.FC = () => {
           <div className="loading">Loading latest news...</div>
         ) : (
           <div className="news-grid">
-            {news.map((item: NewsItem) => (
-              <div className="news-card" key={item.id}>
+            {news.map((item: NewsItem, index: number) => (
+              <motion.div
+                className="news-card"
+                key={item.id}
+                initial={{ opacity: 0, translateY: 50 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
                 <div className="news-image">
                   <img src={item.imageUrl} alt={item.title} />
                 </div>
@@ -46,7 +54,7 @@ const LatestAINews: React.FC = () => {
                   <p className="news-description">{item.description}</p>
                   <a href={item.url} className="read-more">Read More</a>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         )}
