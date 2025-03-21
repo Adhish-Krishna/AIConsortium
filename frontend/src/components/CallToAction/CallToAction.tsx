@@ -17,7 +17,7 @@ const CallToAction: React.FC = () => {
           </div>
 
           <div className="cta-content">
-            <h2 className="cta-title text-gradient">
+            <h2 className="cta-title">
               Join the AI Revolution
             </h2>
             <p className="cta-subtitle">

@@ -116,10 +116,10 @@ const NeuralNetworkAnimation: React.FC = () => {
     });
 
     // Colors - using slightly more subtle colors
-    const primaryColor = '#2563eb';
-    const secondaryColor = '#0ea5e9';
-    const tertiaryColor = '#7dd3fc';
-    const highlightColor = '#ffffff';
+    const primaryColor = '#DC9E57';
+    const secondaryColor = '#C48A41';
+    const tertiaryColor = '#EAC088';
+    const highlightColor = '#E4B57A';
 
     // Animation variables
     let animTime = 0;

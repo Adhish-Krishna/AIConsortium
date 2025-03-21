@@ -45,7 +45,7 @@
   font-size: 1.25rem;
   font-weight: bold;
   letter-spacing: 0.05em;
-  color: var(--color-gray-800);
+  color: var(--color-primary);
 }
 
 .desktop-menu {
@@ -55,14 +55,14 @@
 }
 
 .nav-link {
-  color: var(--color-gray-500);
+  color: var(--color-primary);
   transition: color 0.3s ease;
   font-size: 1rem;
   font-weight: 500;
 }
 
 .nav-link:hover {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .join-button {

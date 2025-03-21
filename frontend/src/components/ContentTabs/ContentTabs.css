@@ -154,7 +154,7 @@
 }
 
 .event-description {
-  color: var(--color-gray-500);
+  color: var(--color-black);
   margin-bottom: 0.75rem;
   font-size: 0.875rem;
 }
@@ -216,7 +216,7 @@
 }
 
 .discussion-excerpt, .project-description {
-  color: var(--color-gray-500);
+  color: var(--color-black);
   margin-bottom: 0.75rem;
   font-size: 0.875rem;
 }
@@ -528,12 +528,12 @@
 
 .publication-authors {
   font-size: 0.875rem;
-  color: var(--color-gray-600);
+  color: var(--color-secondary);
   margin-bottom: 0.5rem;
 }
 
 .publication-abstract {
-  color: var(--color-gray-500);
+  color: var(--color-black);
   margin-bottom: 0.75rem;
   font-size: 0.875rem;
   display: -webkit-box;
