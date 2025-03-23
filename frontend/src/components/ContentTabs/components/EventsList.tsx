@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface Event {
   id: string;
@@ -22,11 +23,15 @@ const EventsList: React.FC<EventsListProps> = ({ events, onEventClick }) => {
 
   return (
     <div className="events-list">
-      {events.map((event) => (
-        <div
+      {events.map((event, index) => (
+        <motion.div
           key={event.id}
           className="event-card"
           onClick={() => onEventClick(event.id)}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
         >
           {event.image && (
             <div className="event-image-container">
@@ -44,7 +49,7 @@ const EventsList: React.FC<EventsListProps> = ({ events, onEventClick }) => {
               Learn More <ChevronRight className="small-icon" />
             </button>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

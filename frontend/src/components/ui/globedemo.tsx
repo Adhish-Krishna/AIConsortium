@@ -15,7 +15,7 @@ const globeConfig = {
     emissive: "#FFFFFF",
     emissiveIntensity: 0.2,
     shininess: 1.0,
-    polygonColor: "#2563EB",
+    polygonColor: "#DC9E57",
     ambientLight: "#FFFFFF",
     directionalLeftLight: "#ffffff",
     directionalTopLight: "#ffffff",
@@ -28,7 +28,7 @@ const globeConfig = {
     autoRotate: true,
     autoRotateSpeed: 0.65,
 };
-const colors = ["#2563EB", "#0EA5E9", "#A855F7"];
+const colors = ["#EAC088", "#DC9E57", "#C48A41"];
 
   const sampleArcs = [
     {

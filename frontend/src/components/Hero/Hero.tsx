@@ -22,8 +22,7 @@ const Hero: React.FC = () => {
       <div className="hero-content">
         <div className="hero-title-container">
           <img src={Logo} alt="AI Consortium Logo" className='title-logo' />
-          <div className="line"></div>
-          <h1 className="hero-title text-gradient">AI CONSORTIUM</h1>
+          <h1 className="hero-title text-gradient">PSG - AI CONSORTIUM</h1>
         </div>
         <TextGenerateEffect
         duration={1}

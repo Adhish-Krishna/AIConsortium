@@ -116,10 +116,10 @@ const NeuralNetworkAnimation: React.FC = () => {
     });
 
     // Colors - using slightly more subtle colors
-    const primaryColor = '#2563eb';
-    const secondaryColor = '#0ea5e9';
-    const tertiaryColor = '#7dd3fc';
-    const highlightColor = '#ffffff';
+    const primaryColor = '#DC9E57';
+    const secondaryColor = '#C48A41';
+    const tertiaryColor = '#EAC088';
+    const highlightColor = '#E4B57A';
 
     // Animation variables
     let animTime = 0;
@@ -161,7 +161,7 @@ const NeuralNetworkAnimation: React.FC = () => {
       animTime = timestamp / 1000; // convert to seconds
 
       // Set global opacity for everything to make it less distracting
-      ctx.globalAlpha = 0.7;
+      ctx.globalAlpha = 1;
 
       // First draw connections between layers
       for (let layerIdx = 0; layerIdx < layers.length - 1; layerIdx++) {
@@ -187,8 +187,8 @@ const NeuralNetworkAnimation: React.FC = () => {
               ctx.moveTo(sourceNode.x, sourceNode.y);
               ctx.lineTo(targetNode.x, targetNode.y);
               ctx.strokeStyle = gradient;
-              ctx.globalAlpha = connectionStrength * 0.35; // Slightly increased opacity
-              ctx.lineWidth = connectionStrength * (isMobile ? 1.3 : 1.5); // Thicker lines
+              ctx.globalAlpha = connectionStrength * 0.5; // Increased from 0.35 to 0.5
+              ctx.lineWidth = connectionStrength * (isMobile ? 1.5 : 2.0); // Increased line thickness
               ctx.stroke();
               ctx.closePath();
 
@@ -222,9 +222,9 @@ const NeuralNetworkAnimation: React.FC = () => {
 
                 // Draw packet
                 ctx.beginPath();
-                ctx.arc(packetX, packetY, isMobile ? 1.7 : 2, 0, Math.PI * 2);
+                ctx.arc(packetX, packetY, isMobile ? 2.2 : 2.8, 0, Math.PI * 2); // Increased packet size
                 ctx.fillStyle = offset < 0.5 ? secondaryColor : tertiaryColor;
-                ctx.globalAlpha = 0.6;
+                ctx.globalAlpha = 0.8; // Increased from 0.6 to 0.8
                 ctx.fill();
                 ctx.closePath();
               }
@@ -252,7 +252,7 @@ const NeuralNetworkAnimation: React.FC = () => {
         ctx.beginPath();
         ctx.arc(node.x, node.y, nodeSize + 2, 0, Math.PI * 2);
         ctx.fillStyle = secondaryColor;
-        ctx.globalAlpha = node.activity * 0.2;
+        ctx.globalAlpha = node.activity * 0.35; // Increased from 0.2 to 0.35
         ctx.fill();
         ctx.closePath();
 
@@ -260,7 +260,7 @@ const NeuralNetworkAnimation: React.FC = () => {
         ctx.beginPath();
         ctx.arc(node.x, node.y, nodeSize, 0, Math.PI * 2);
         ctx.fillStyle = animTime - node.lastActivated < 0.5 ? tertiaryColor : primaryColor;
-        ctx.globalAlpha = 0.7;
+        ctx.globalAlpha = 0.85; // Increased from 0.7 to 0.85
         ctx.fill();
         ctx.closePath();
 
@@ -268,7 +268,7 @@ const NeuralNetworkAnimation: React.FC = () => {
         ctx.beginPath();
         ctx.arc(node.x - nodeSize * 0.3, node.y - nodeSize * 0.3, nodeSize * 0.5, 0, Math.PI * 2);
         ctx.fillStyle = highlightColor;
-        ctx.globalAlpha = 0.4;
+        ctx.globalAlpha = 0.6; // Increased from 0.4 to 0.6
         ctx.fill();
         ctx.closePath();
       });
@@ -338,7 +338,7 @@ const NeuralNetworkAnimation: React.FC = () => {
         position: 'absolute',
         inset: 0,
         zIndex: 0,
-        opacity: 0.6, // Reduced from 0.8 to 0.6
+        opacity: 0.85, // Increased from 0.6 to 0.85
       }}
     />
   );
