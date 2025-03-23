@@ -1,0 +1,9 @@
+fastapi[all]
+psycopg2-binary
+sqlalchemy
+asyncpg
+databases[postgresql]
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+# pip install "python-jose[cryptography]"
