@@ -47,6 +47,7 @@ const Navigation: React.FC = () => {
 
       <div className={`sidebar-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <div className="sidebar-menu-links">
+          <a href="/about" className="nav-link">About Us</a>
           <a href="/events" className="nav-link">Events</a>
           <a href="/teams" className="nav-link">Teams</a>
           <a href="/collaborators" className="nav-link">Collaborators</a>

@@ -1,0 +1,171 @@
+.abt-about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 144px;
+}
+
+.abt-hero-section {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  border-radius: 1rem;
+  margin-bottom: 4rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(29, 36, 64, 0.15);
+}
+
+.abt-hero-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.abt-hero-text {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.abt-content-text{
+  color: var(--color-primary);
+}
+
+.abt-hero-pattern {
+  background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="3" height="3" fill="rgba(255,255,255,0.1)"/></svg>');
+  opacity: 0.3;
+}
+
+.abt-epiq-title {
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--color-gray-500);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.abt-epiq-subtitle {
+  font-size: 1.5rem;
+  color: var(--color-gray-300);
+  margin-top: 1rem;
+}
+
+.abt-cards-container {
+  display: grid;
+  gap: 2rem;
+}
+
+.abt-card {
+  background: var(--color-white);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.abt-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--color-gray-300);
+}
+
+.abt-card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.abt-stats-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.abt-stat-item {
+  background: var(--color-primary-light);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.abt-stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-gray-300);
+}
+
+.abt-content-image {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: 100%;
+}
+
+.abt-content-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.abt-content-image:hover img {
+  transform: scale(1.05);
+}
+
+.abt-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.abt-feature-card {
+  background: var(--color-gray-100);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.abt-feature-card:hover {
+  transform: translateY(-5px);
+  background: var(--color-gray-200);
+}
+
+.abt-feature-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.abt-feature-card p {
+  color: var(--color-gray-500);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .abt-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .abt-hero-pattern {
+    display: none;
+  }
+
+  .abt-card-content {
+    grid-template-columns: 1fr;
+  }
+
+  .abt-stats-container {
+    grid-template-columns: 1fr;
+  }
+
+  .abt-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .abt-epiq-title {
+    font-size: 3rem;
+  }
+}

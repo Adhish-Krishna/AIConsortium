@@ -7,6 +7,7 @@ import './index.css';
 import Team from './pages/Team/Team.tsx';
 import Navigation from './components/Navigation/Navigation';
 import Collaborators from './pages/Collaborators/Collaborators.tsx';
+import About from './pages/About/About.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/events" element={<Events />} />
         <Route path="/teams" element={<Team />} />
         <Route path="/collaborators" element={<Collaborators/>} />
+        <Route path="/about" element={<About/>}/>
       </Routes>
     </Router>
   </StrictMode>
