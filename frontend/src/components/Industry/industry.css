@@ -58,7 +58,7 @@
   margin: 10px 0;
   font-size: 18px;
   font-weight: bold;
-  color: var(--color-primary);
+  color: var(--color-gray-500);
 }
 
 .industry-description {
