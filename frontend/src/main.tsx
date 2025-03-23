@@ -9,16 +9,19 @@ import Navigation from './components/Navigation/Navigation';
 import Collaborators from './pages/Collaborators/Collaborators.tsx';
 import About from './pages/About/About.tsx';
 
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Router>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />
         <Route path="/teams" element={<Team />} />
+
         <Route path="/collaborators" element={<Collaborators/>} />
         <Route path="/about" element={<About/>}/>
+
       </Routes>
     </Router>
   </StrictMode>
