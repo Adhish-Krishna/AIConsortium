@@ -76,7 +76,7 @@ const ContentTabs: React.FC = () => {
         <div className="content-grid full-width">
           {/* Main Content */}
           <div className="content-card">
-            <h2 className="section-title">
+            <h2 className="content-tabs-section-title">
               {activeTab === 'projects' ? (
                 <>
                   <TrendingUp className="section-icon" />

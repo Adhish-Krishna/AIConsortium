@@ -27,7 +27,7 @@ const LatestAINews: React.FC = () => {
   return (
     <section className="latest-ai-news">
       <div className="news-container">
-        <h2 className="section-title">Latest AI News</h2>
+        <h2 className="news-section-title">Latest AI News</h2>
 
         {loading ? (
           <div className="loading">Loading latest news...</div>
