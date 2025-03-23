@@ -30,7 +30,10 @@ function About() {
               </div>
               <div className="content-text">
                 <p className="mb-4 abt-content-text">
-                  PSG College of Technology, established in 1951, is a prestigious autonomous institution located in Coimbatore, Tamil Nadu. The college has consistently maintained its position among the top engineering institutions in India.
+                PSG College of Technology, is a Govt. Aided, Autonomous, Affiliated to Anna University and ISO 9001:2015 certified Institution. This is one of the foremost institutions founded by the PSG & Sons' Charities Trust (1926). The College was established in the year 1951 and the Founders wisely decided to locate it in the same campus as the PSG Industrial Institute for effective industry-institute interaction.
+                </p>
+                <p className="mb-4 abt-content-text" style={{"marginTop":"10px"}}>
+                PSG College of Technology is situated at about 8 km from Coimbatore Railway Station and 5 km from Airport. The campus is spread over 45 acres of land, economically utilized for the College, Hostels, Staff Quarters, Play Fields and Gardens.
                 </p>
                 <div className="abt-stats-container">
                   <div className="abt-stat-item">
