@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
               <span className="footer-logo-text">AI CONSORTIUM</span>
             </div>
             <p className="footer-description">
-              The premier community for AI professionals, researchers, and enthusiasts.
+            Empowering Progress Innovation and Quality in AI.
             </p>
             <div className="social-links">
               <LinkPreview url="https://github.com/suryanarayanaa/" className="social-link">
@@ -35,9 +35,10 @@ const Footer: React.FC = () => {
             <ul className="footer-list">
               <li><LinkPreview url="/about" className="footer-link">About Us</LinkPreview></li>
               <li><LinkPreview url="/events" className="footer-link">Events</LinkPreview></li>
-              <li><LinkPreview url="/resources" className="footer-link">Resources</LinkPreview></li>
-              <li><LinkPreview url="/community" className="footer-link">Community</LinkPreview></li>
+              <li><LinkPreview url="/collaborators" className="footer-link">Collaborators</LinkPreview></li>
               <li><LinkPreview url="/contact" className="footer-link">Contact</LinkPreview></li>
+              <li><LinkPreview url="/projects" className="footer-link">Projects</LinkPreview></li>
+              <li><LinkPreview url="/publications" className="footer-link">Publications</LinkPreview></li>
             </ul>
           </div>
 
@@ -45,10 +46,7 @@ const Footer: React.FC = () => {
             <h3 className="footer-heading">Resources</h3>
             <ul className="footer-list">
               <li><LinkPreview url="/blog" className="footer-link">Blog</LinkPreview></li>
-              <li><LinkPreview url="/whitepapers" className="footer-link">Whitepapers</LinkPreview></li>
-              <li><LinkPreview url="/research" className="footer-link">Research Papers</LinkPreview></li>
-              <li><LinkPreview url="/tutorials" className="footer-link">Tutorials</LinkPreview></li>
-              <li><LinkPreview url="/webinars" className="footer-link">Webinars</LinkPreview></li>
+              <li><LinkPreview url="/teams" className="footer-link">Teams</LinkPreview></li>
             </ul>
           </div>
 

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {Menu, X } from 'lucide-react';
 import Logo from '../../assets/logo.png';
 import './Navigation.css';
 import {useNavigate} from 'react-router-dom';
 import PSGLogo from '../../assets/PSGlogo.png';
+import AICTELogo from '../../assets/aictelogo.png';
+import Menu from '../../assets/svg/list.svg'
+import X from '../../assets/svg/x.svg';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,40 +22,36 @@ const Navigation: React.FC = () => {
 
   return (
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container nav-container">
-
-        <div className="logo" onClick={()=>{navigate('/')}} style={{"cursor":"pointer"}} >
-          <img src={PSGLogo} style={{"height":"40px", "marginTop":"5px", "marginRight":"5px"}} />
-          <div className="sep-line"></div>
-          <img src={Logo} style={{"height":"60px"}}/>
-          <span className="logo-text">AI CONSORTIUM</span>
-        </div>
-
-        <div className="desktop-menu">
-          <a href="events" className="nav-link">Events</a>
-          <a href="teams" className="nav-link">Teams</a>
-          <a href="collaborators" className="nav-link">Collaborators</a>
-          {/* <a href="#contact" className="nav-link">Contact</a> */}
-          <button className="join-button">
-            Register
-          </button>
-        </div>
-
+      <div className="nav-container">
         <button
           className="mobile-menu-toggle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? <X /> : <Menu />}
+          {mobileMenuOpen ? (
+            <img src={X} className='menu-button' />
+          ):(<img src={Menu} className="menu-button"/>)}
         </button>
+        <div className="logo-container">
+          <div className="logo" onClick={()=>{navigate('/')}} style={{"cursor":"pointer"}} >
+            <img src={PSGLogo} style={{"height":"60px", "marginTop":"10px", "marginRight":"5px"}} />
+            <div className="sep-line"></div>
+            <img src={Logo} style={{"height":"80px"}}/>
+            <span className="logo-text">PSG - AI CONSORTIUM</span>
+          </div>
+
+          <div className="aicte-logo">
+            <img src={AICTELogo} style={{"height":"80px"}} />
+          </div>
+        </div>
       </div>
 
-      <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
-        <div className="mobile-menu-links">
+      <div className={`sidebar-menu ${mobileMenuOpen ? 'open' : ''}`}>
+        <div className="sidebar-menu-links">
           <a href="/events" className="nav-link">Events</a>
           <a href="/teams" className="nav-link">Teams</a>
           <a href="/collaborators" className="nav-link">Collaborators</a>
           <button className="join-button mobile-join">
-            Join Now
+            Register
           </button>
         </div>
       </div>

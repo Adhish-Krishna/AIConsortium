@@ -29,11 +29,11 @@
   font-size: 1.25rem;
   font-weight: bold;
   letter-spacing: 0.05em;
-  color: var(--color-gray-800);
+  color: var(--color-primary);
 }
 
 .footer-description {
-  color: var(--color-gray-500);
+  color: var(--color-black);
   margin-bottom: 1rem;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .social-link {
-  color: var(--color-gray-500);
+  color: var(--color-black);
   transition: color 0.3s ease;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .footer-link {
-  color: var(--color-gray-500);
+  color: var(--color-black);
   transition: color 0.3s ease;
 }
 
@@ -75,7 +75,7 @@
 }
 
 .newsletter-description {
-  color: var(--color-gray-500);
+  color: var(--color-black);
   margin-bottom: 1rem;
 }
 
@@ -89,7 +89,7 @@
   padding: 0.5rem 1rem;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
-  border: 1px solid var(--color-gray-300);
+  border: 1px solid var(--color-black);
   border-right: none;
   outline: none;
   flex: 1;
@@ -118,7 +118,7 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--color-gray-200);
+  border-top: 1px solid var(--color-black);
   margin-top: 3rem;
   padding-top: 2rem;
   display: flex;
@@ -128,7 +128,7 @@
 }
 
 .copyright {
-  color: var(--color-gray-500);
+  color: var(--color-black);
   font-size: 0.875rem;
 }
 
@@ -138,7 +138,7 @@
 }
 
 .legal-link {
-  color: var(--color-gray-500);
+  color: var(--color-black);
   font-size: 0.875rem;
   transition: color 0.3s ease;
 }
