@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from typing import List
 import uuid
 
+from api.routes.user.auth import get_current_user
 from database.connect import get_db
 from api.routes.alumni import alumni_router
 from api.models.alumniModel import AlumniCreate, AlumniResponse, AlumniUpdate
@@ -17,6 +18,40 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 @alumni_router.post("/", response_model=AlumniResponse, status_code=status.HTTP_201_CREATED)
 def create_alumni(alumni: AlumniCreate, db: Session = Depends(get_db)):
     """Create a new alumni"""
+    """  {
+    "user_name": "john_doe",
+    "email": "alumni@gmail.com",
+    "first_name": "John",
+    "last_name": "Doe",
+    "phone": "9876543210",
+    "bio": "Software Developer",
+    "user_type": "alumni",
+    "graduation_year": 2022,
+    "department": "Computer Science",
+    "degree": "B.Tech",
+    "current_company": "TechCorp",
+    "current_position": "Software Engineer",
+    "linkedin_profile": "https://linkedin.com/in/johndoe",
+    "achievements": [
+      {
+        "title": "Best Developer Award",
+        "year": 2021,
+        "description": "Awarded for outstanding software development skills."
+      },
+      {
+        "title": "Hackathon Winner",
+        "year": 2022,
+        "description": "Won 1st place in the national coding competition."
+      }
+    ],
+    "user_id": "589da151-e13e-4971-9044-8ead24ddcdd7",
+    "profile_image": "profile.jpg",
+    "is_active": 1,
+    "created_at": "2025-03-24T18:51:14.507523+05:30",
+    "updated_at": "2025-03-24T18:53:01.220454+05:30",
+    "last_login": "2025-03-24T13:23:02.210769+05:30",
+    "alumni_id": "589da151-e13e-4971-9044-8ead24ddcdd7"
+  }"""
     # Check if email already exists
     existing_email = db.query(Alumni).filter(Alumni.email == alumni.email).first()
     if existing_email:
@@ -25,13 +60,7 @@ def create_alumni(alumni: AlumniCreate, db: Session = Depends(get_db)):
             detail="Email already registered"
         )
     
-    # Check if username already exists
-    existing_username = db.query(Alumni).filter(Alumni.user_name == alumni.user_name).first()
-    if existing_username:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Username already taken"
-        )
+ 
     
     # Basic email validation
     email_pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
@@ -78,14 +107,14 @@ def get_current_alumni_profile(current_user: User = Depends(get_current_alumni))
     """Get current alumni profile"""
     return current_user
 
-@alumni_router.get("/{alumni_id}", response_model=AlumniResponse)
+@alumni_router.get("/{email}", response_model=AlumniResponse)
 def get_alumni(
-    alumni_id: uuid.UUID, 
+    email : str, 
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_alumni)
+    current_user: User = Depends(get_current_user)
 ):
     """Get alumni by ID"""
-    alumni = db.query(Alumni).filter(Alumni.alumni_id == alumni_id).first()
+    alumni = db.query(Alumni).filter(Alumni.email == current_user.email).first()
     if not alumni:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -98,21 +127,20 @@ def get_all_alumni(
     skip: int = 0, 
     limit: int = 100, 
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_alumni)
+    current_user: User = Depends(get_current_user)
 ):
     """Get all alumni with pagination"""
     alumni_list = db.query(Alumni).offset(skip).limit(limit).all()
     return alumni_list
 
-@alumni_router.put("/{alumni_id}", response_model=AlumniResponse)
+@alumni_router.put("/", response_model=AlumniResponse)
 def update_alumni(
-    alumni_id: uuid.UUID, 
     alumni_update: AlumniUpdate, 
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_alumni)
 ):
     """Update alumni information"""
-    db_alumni = db.query(Alumni).filter(Alumni.alumni_id == alumni_id).first()
+    db_alumni = db.query(Alumni).filter(Alumni.email == current_user.email).first()
     if not db_alumni:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -127,14 +155,13 @@ def update_alumni(
     db.refresh(db_alumni)
     return db_alumni
 
-@alumni_router.delete("/{alumni_id}", status_code=status.HTTP_204_NO_CONTENT)
+@alumni_router.delete("/", status_code=status.HTTP_204_NO_CONTENT)
 def delete_alumni(
-    alumni_id: uuid.UUID, 
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_alumni)
 ):
     """Delete an alumni"""
-    db_alumni = db.query(Alumni).filter(Alumni.alumni_id == alumni_id).first()
+    db_alumni = db.query(Alumni).filter(Alumni.email == current_user.email).first()
     if not db_alumni:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
