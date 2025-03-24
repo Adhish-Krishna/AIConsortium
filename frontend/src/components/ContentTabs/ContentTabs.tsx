@@ -12,11 +12,11 @@ import ProjectsList from './components/ProjectsList';
 import EventsList from './components/EventsList';
 import PublicationsList from './components/PublicationsList';
 
-import {useNavigate} from 'react-router-dom';
+// import {useNavigate} from 'react-router-dom';
 
 const ContentTabs: React.FC = () => {
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState('projects');
 
@@ -35,17 +35,17 @@ const ContentTabs: React.FC = () => {
     // Add navigation or modal logic here
   };
 
-  const handleViewAllClick = ()=>{
-    if(activeTab == 'projects'){
-      navigate('/projects');
-    }
-    else if(activeTab == 'events'){
-      navigate('/events');
-    }
-    else if(activeTab == 'publications'){
-      navigate('/publications');
-    }
-  }
+  // const handleViewAllClick = ()=>{
+  //   if(activeTab == 'projects'){
+  //     navigate('/projects');
+  //   }
+  //   else if(activeTab == 'events'){
+  //     navigate('/events');
+  //   }
+  //   else if(activeTab == 'publications'){
+  //     navigate('/publications');
+  //   }
+  // }
 
   return (
     <section id="content" className="content-section">
@@ -115,11 +115,11 @@ const ContentTabs: React.FC = () => {
                 onPublicationClick={handlePublicationClick}
               />
             )}
-            <div className="view-all-container">
+            {/* <div className="view-all-container">
               <button className="view-all-button" onClick={handleViewAllClick}>
                 View All
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
