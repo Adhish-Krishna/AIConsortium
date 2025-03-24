@@ -5,158 +5,98 @@
     padding: 140px 20px 50px; /* Increased top padding from 120px to 140px */
     max-width: 1200px;
     margin: 0 auto;
-    background-color: white;
-    color: #1a365d; /* Dark blue for text */
+    color: var(--color-primary); /* Dark blue for text */
     position: relative;
     z-index: 1; /* Ensure team content stays below navigation */
   }
 
-  .team-title {
+/* Team Tabs Navigation */
+.team-tabs-container {
+  overflow-x: auto;
+  margin-bottom: 30px;
+  padding-bottom: 5px; /* Space for scrollbar */
+  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.team-tabs-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+
+.team-tabs {
+  display: flex;
+  min-width: max-content;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+.team-tab {
+  padding: 10px 20px;
+  margin: 0 5px;
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  border-radius: 30px;
+  color: var(--color-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.team-tab.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+
+/* Team Members Section */
+.team-members-section {
+    padding: 40px 0;
+  }
+
+  .team-section-title {
     text-align: center;
-    margin-bottom: 70px;
-    color: #2b6cb0; /* Medium blue */
-    font-size: 2.5rem;
-    font-weight: bold;
+    color: var(--color-gray-800);
+    font-size: 2rem;
+    margin-bottom: 40px;
   }
 
-  .org-chart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px; /* Increased gap for better neural network visualization */
-    position: relative;
-    min-height: 600px;
-  }
-
-  .level {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  .team-members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
-    position: relative;
-    z-index: 2;
+    justify-items: center;
   }
 
-  .box {
-    background: linear-gradient(135deg, #3182ce, #2b6cb0);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    min-width: 200px;
-    transition: transform 0.3s, box-shadow 0.3s;
+  @media (max-width: 768px) {
+    .team-members-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .team-section-title {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
   }
 
-  .box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  }
+  @media (max-width: 480px) {
+    .team-members-section {
+      padding: 30px 0;
+    }
 
-  .box h2 {
-    margin: 0 0 5px;
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
+    .team-section-title {
+      font-size: 1.6rem;
+      margin-bottom: 25px;
+    }
 
-  .box p {
-    margin: 0;
-    font-size: 0.9rem;
-    opacity: 0.9;
-  }
-
-  /* Principal Level - highest importance */
-  .principal-level {
-    margin-bottom: 20px;
-  }
-
-  .principal-box {
-    background: linear-gradient(135deg, #1a365d, #2c5282);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    padding: 35px 40px;
-    min-width: 280px;
-    border: 3px solid #c3dafe; /* Light blue border */
-    position: relative;
-  }
-
-  .principal-box::before, .principal-box::after {
-    content: '';
-    position: absolute;
-    inset: -6px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #3182ce, #0ea5e9);
-    z-index: -1;
-    opacity: 0.3;
-  }
-
-  .principal-box h2 {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
-    letter-spacing: 0.5px;
-  }
-
-  /* Director Level */
-  .director-box {
-    background: linear-gradient(135deg, #2b6cb0, #3182ce);
-    border: 2px solid #c3dafe;
-    min-width: 240px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  }
-
-  .director-box h2 {
-    font-size: 1.4rem;
-  }
-
-  /* Program Manager Level */
-  .program-box {
-    background: linear-gradient(135deg, #3182ce, #4299e1);
-    min-width: 280px;
-  }
-
-  /* Manager Level */
-  .manager-box {
-    background: linear-gradient(135deg, #4299e1, #63b3ed);
-    flex: 1;
-    max-width: 300px;
-  }
-
-  /* Advisor Level */
-  .advisor-box {
-    background: linear-gradient(135deg, #63b3ed, #90cdf4);
-    flex: 1;
-    max-width: 200px;
-  }
-
-  /* Student Level */
-  .student-box {
-    background: linear-gradient(135deg, #90cdf4, #bee3f8);
-    flex: 1;
-    max-width: 280px;
-    color: #2c5282; /* Darker text for better contrast on lighter blue */
-  }
-
-  /* Canvas for the animation */
-  .org-chart-animation {
-    width: 100%;
-    height: 100%;
+    .team-members-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* Responsive adjustments */
   @media (max-width: 1100px) {
-    .advisors-level, .student-level {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .student-box, .advisor-box {
-      margin-bottom: 15px;
-    }
-
-    .org-chart {
-      gap: 50px;
-    }
-
     .team-container {
       padding: 120px 15px 40px; /* Adjusted for this breakpoint */
     }
@@ -171,29 +111,6 @@
       margin-bottom: 50px;
       font-size: 2.2rem;
     }
-
-    .level {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .manager-box, .director-box, .program-box {
-      margin-bottom: 15px;
-      width: 100%;
-      max-width: 280px;
-    }
-
-    .box {
-      min-width: 0;
-      width: 100%;
-      padding: 15px;
-    }
-
-    .org-chart {
-      gap: 40px;
-      min-height: auto;
-    }
   }
 
   @media (max-width: 480px) {
@@ -205,25 +122,6 @@
       font-size: 1.8rem;
       margin-bottom: 40px;
     }
-
-    .principal-box {
-      padding: 25px;
-      min-width: 0;
-      width: 90%;
-    }
-
-    .principal-box h2 {
-      font-size: 1.5rem;
-    }
-
-    .director-box h2,
-    .program-box h2 {
-      font-size: 1.2rem;
-    }
-
-    .box {
-      padding: 12px;
-    }
   }
 
   @media (max-width: 400px) {
@@ -234,36 +132,5 @@
     .team-title {
       font-size: 1.6rem;
       margin-bottom: 30px;
-    }
-
-    .org-chart {
-      gap: 30px;
-    }
-
-    .principal-box {
-      padding: 18px;
-      width: 95%;
-    }
-
-    .principal-box h2 {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-    }
-
-    .box h2 {
-      font-size: 1.1rem;
-    }
-
-    .box p {
-      font-size: 0.8rem;
-    }
-
-    .director-box, .program-box, .manager-box, .advisor-box, .student-box {
-      max-width: 95%;
-      padding: 10px;
-    }
-
-    .level {
-      gap: 15px;
     }
   }

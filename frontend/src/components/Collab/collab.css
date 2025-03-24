@@ -1,11 +1,11 @@
-.consortium-page {
+.collab-consortium-page {
   position: relative;
   min-height: 100vh;
   width: 100%;
   padding-top: 60px; /* Add padding for navbar */
 }
 
-.neural-network-bg {
+.collab-neural-network-bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +15,7 @@
   pointer-events: none;
 }
 
-.consortium-container {
+.collab-consortium-container {
   position: relative;
   z-index: 2;
   padding: 100px 20px 40px;
@@ -24,31 +24,31 @@
 }
 
 /* Section Titles */
-.section-title {
+.collab-section-title {
   font-size: 32px;
   text-align: center;
   color: #004a99;
   margin-bottom: 40px;
 }
 
-.section-subtitle {
+.collab-section-subtitle {
   font-size: 24px;
   color: #0062cc;
   margin-bottom: 25px;
 }
 
-.section-container {
+.collab-section-container {
   margin-bottom: 60px;
 }
 
 /* Card Layout */
-.card-container {
+.collab-card-container {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.card {
+.collab-card {
   flex: 1;
   min-width: 300px;
   background-color: white;
@@ -62,7 +62,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.avatar {
+.collab-avatar {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -76,27 +76,27 @@
   margin-bottom: 15px;
 }
 
-.partner-avatar {
+.collab-partner-avatar {
   background-color: #004a99;
 }
 
-.name {
+.collab-name {
   margin: 10px 0;
   font-size: 18px;
   font-weight: bold;
 }
 
-.blue {
+.collab-blue {
   color: #007bff;
 }
 
-.partner-card {
+.collab-partner-card {
   border-top: 4px solid #004a99;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .card-container {
+  .collab-card-container {
     flex-direction: column;
   }
 }
@@ -108,13 +108,13 @@ body {
   color: #000;
 }
 
-.consortium-page {
+.collab-consortium-page {
   position: relative;
   min-height: 100vh;
   width: 100%;
 }
 
-.neural-network-bg {
+.collab-neural-network-bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -126,7 +126,7 @@ body {
   will-change: transform; /* Performance optimization */
 }
 
-.consortium-container {
+.collab-consortium-container {
   position: relative;
   z-index: 2;
   padding: 100px 20px 40px;
@@ -137,47 +137,35 @@ body {
 }
 
 /* Section Titles */
-.section-title {
+.collab-section-title {
   font-size: 32px;
   text-align: center;
-  color: #004a99;
+  color: var(--color-gray-500);
   margin-bottom: 40px;
   position: relative;
 }
 
-.section-title:after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  background-color: #007bff;
-  border-radius: 2px;
-}
-
-.section-subtitle {
+.collab-section-subtitle {
   font-size: 24px;
-  color: #0062cc;
+  color: var(--color-gray-800);
   margin-bottom: 25px;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 123, 255, 0.3);
+  border-bottom: 1px solid var(--color-gray-500);
 }
 
-.section-container {
+.collab-section-container {
   margin-bottom: 60px;
 }
 
 /* Card Layout */
-.card-container {
+.collab-card-container {
   display: flex;
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.card {
+.collab-card {
   flex: 1;
   min-width: 300px;
   background-color: white;
@@ -193,12 +181,12 @@ body {
   will-change: transform; /* Performance optimization for animations */
 }
 
-.card:hover {
+.collab-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-.avatar {
+.collab-avatar {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -212,55 +200,55 @@ body {
   margin-bottom: 15px;
 }
 
-.partner-avatar {
+.collab-partner-avatar {
   background-color: #004a99;
 }
 
-.name {
+.collab-name {
   margin: 10px 0;
   font-size: 18px;
   font-weight: bold;
 }
 
-.card p {
+.collab-card p {
   color: #555;
   line-height: 1.5;
   margin: 0;
 }
 
-.blue {
+.collab-blue {
   color: #007bff;
 }
 
-.partner-card {
+.collab-partner-card {
   border-top: 4px solid #004a99;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .card-container {
+  .collab-card-container {
     flex-direction: column;
   }
-  
-  .card {
+
+  .collab-card {
     min-width: 100%;
   }
-  
-  .section-title {
+
+  .collab-section-title {
     font-size: 28px;
   }
-  
-  .section-subtitle {
+
+  .collab-section-subtitle {
     font-size: 20px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .card-container {
+  .collab-card-container {
     flex-wrap: wrap;
   }
-  
-  .card {
+
+  .collab-card {
     min-width: calc(50% - 20px);
   }
 }

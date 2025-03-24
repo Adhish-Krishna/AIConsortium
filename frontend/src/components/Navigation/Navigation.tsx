@@ -12,6 +12,10 @@ const Navigation: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
+  const handleRegister = ()=>{
+    navigate('/register');
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -51,7 +55,8 @@ const Navigation: React.FC = () => {
           <a href="/events" className="nav-link">Events</a>
           <a href="/teams" className="nav-link">Teams</a>
           <a href="/collaborators" className="nav-link">Collaborators</a>
-          <button className="join-button mobile-join">
+          <a href="/contact" className='nav-link'>Contact</a>
+          <button className="join-button mobile-join" onClick={handleRegister}>
             Register
           </button>
         </div>

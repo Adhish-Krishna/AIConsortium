@@ -1,4 +1,5 @@
 from typing import Optional, List, Dict, Any
+from uuid import UUID
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
 from .usersModel import UserBase, UserCreate, UserUpdate, UserResponse
@@ -26,7 +27,7 @@ class AlumniUpdate(UserUpdate):
     achievements: Optional[List[Dict[str, Any]]] = None
 
 class AlumniResponse(UserResponse, AlumniBase):
-    alumni_id: str  # Add this field to match the database model
+    alumni_id: UUID  # Add this field to match the database model
     
     class Config:
         from_attributes = True  # Updated from orm_mode = True

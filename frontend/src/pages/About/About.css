@@ -11,6 +11,13 @@
   margin-bottom: 4rem;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(29, 36, 64, 0.15);
+  animation: fadeIn 1.2s ease-in-out;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .abt-hero-grid {
@@ -25,6 +32,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: slideUp 1s ease-out 0.3s both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .abt-content-text{
@@ -39,14 +52,31 @@
 .abt-epiq-title {
   font-size: 5rem;
   font-weight: 900;
-  color: var(--color-gray-500);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, var(--color-gray-300), var(--color-gray-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 15px rgba(220, 158, 87, 0.7);
+  animation: glowPulse 3s infinite ease-in-out;
+  position: relative;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(220, 158, 87, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(220, 158, 87, 0.8), 0 0 40px rgba(220, 158, 87, 0.4);
+  }
 }
 
 .abt-epiq-subtitle {
   font-size: 1.5rem;
-  color: var(--color-gray-300);
+  color: var(--color-gray-200);
   margin-top: 1rem;
+  animation: fadeIn 1.5s ease-in-out 0.8s both;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
 }
 
 .abt-cards-container {
@@ -168,4 +198,27 @@
   .abt-epiq-title {
     font-size: 3rem;
   }
+}
+
+/* Add shimmer effect to hero section */
+.abt-hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  animation: shimmerEffect 6s infinite;
+}
+
+@keyframes shimmerEffect {
+  0% { left: -100%; }
+  100% { left: 200%; }
 }
