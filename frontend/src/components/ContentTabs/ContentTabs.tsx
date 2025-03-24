@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {TrendingUp, Calendar, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
 import './ContentTabs.css';
-import {projects } from '../../data/projects';
+import { projects as sourceProjects, Project as DataProject } from '../../data/projects';
 // Import or define events data
 import { events } from '../../data/events';
 // Import publications data
@@ -11,6 +11,7 @@ import { publications } from '../../data/publications';
 import ProjectsList from './components/ProjectsList';
 import EventsList from './components/EventsList';
 import PublicationsList from './components/PublicationsList';
+import { Project as UIProject } from './types';
 
 // import {useNavigate} from 'react-router-dom';
 
@@ -21,6 +22,24 @@ const ContentTabs: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true); // Default to true for better UX
+
+  // Convert the projects from data format to UI format
+  const convertProjects = (dataProjects: DataProject[]): UIProject[] => {
+    return dataProjects.map(project => {
+      return {
+        id: project.id,
+        image: project.image,
+        title: project.title,
+        // If contributors is an array, use its length, otherwise use the number
+        contributors: Array.isArray(project.contributors)
+          ? project.contributors.length
+          : project.contributors,
+        description: project.description
+      };
+    });
+  };
+
+  const uiProjects = convertProjects(sourceProjects);
 
   const checkScrollability = () => {
     const container = scrollContainerRef.current;
@@ -163,7 +182,7 @@ const ContentTabs: React.FC = () => {
               >
                 {activeTab === 'projects' && (
                   <ProjectsList
-                    projects={projects}
+                    projects={uiProjects}
                     onProjectClick={handleProjectClick}
                   />
                 )}

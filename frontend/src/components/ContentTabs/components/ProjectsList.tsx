@@ -2,20 +2,33 @@ import React from 'react';
 import { Zap, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Project } from '../types';
+import { useNavigate } from 'react-router-dom';
 
-interface ProjectsListProps {
+export interface ProjectsListProps {
   projects: Project[];
-  onProjectClick?: (projectId: string) => void;
+  onProjectClick: (projectId: string) => void;
 }
 
 const ProjectsList: React.FC<ProjectsListProps> = ({ projects, onProjectClick }) => {
+  const navigate = useNavigate();
+
+  const handleLearnMore = (projectId: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    navigate(`/projects/${projectId}`);
+  };
+
+  const handleProjectClick = (projectId: string) => {
+    navigate(`/projects/${projectId}`);
+    onProjectClick(projectId);
+  };
+
   return (
     <div className="projects-list">
       {projects.map((project, index) => (
         <motion.div
           key={project.id}
           className="project-card"
-          onClick={() => onProjectClick && onProjectClick(project.id)}
+          onClick={() => handleProjectClick(project.id)}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -39,7 +52,11 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ projects, onProjectClick })
               {project.title}
             </h3>
             <p className="project-description">{project.description}</p>
-            <button className="learn-more">
+            <button
+              className="learn-more"
+              onClick={(e) => handleLearnMore(project.id, e)}
+              aria-label={`Learn more about ${project.title}`}
+            >
               Learn more <ChevronRight className="small-icon" />
             </button>
           </div>
