@@ -4,6 +4,7 @@ from typing import List
 import uuid
 from passlib.context import CryptContext
 
+from api.routes.user.auth import get_current_user
 from database.connect import get_db
 from api.routes.collaborator import collaborator_router
 from api.models.collaboratorsModel import CollaboratorCreate, CollaboratorResponse, CollaboratorUpdate
@@ -56,14 +57,14 @@ def get_current_collaborator_profile(current_user: User = Depends(get_current_co
     """Get current collaborator profile"""
     return current_user
 
-@collaborator_router.get("/{collaborator_id}", response_model=CollaboratorResponse)
+@collaborator_router.get("/{email}", response_model=CollaboratorResponse)
 def get_collaborator(
-    collaborator_id: uuid.UUID, 
+    email: str, 
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_collaborator)
+    current_user: User = Depends(get_current_user)
 ):
     """Get collaborator by ID"""
-    collaborator = db.query(Collaborator).filter(Collaborator.colab_id == collaborator_id).first()
+    collaborator = db.query(Collaborator).filter(Collaborator.email == email).first()
     if not collaborator:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -76,21 +77,20 @@ def get_collaborators(
     skip: int = 0, 
     limit: int = 100, 
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_collaborator)
+    current_user: User = Depends(get_current_user)
 ):
     """Get all collaborators with pagination"""
     collaborators = db.query(Collaborator).offset(skip).limit(limit).all()
     return collaborators
 
-@collaborator_router.put("/{collaborator_id}", response_model=CollaboratorResponse)
+@collaborator_router.put("/", response_model=CollaboratorResponse)
 def update_collaborator(
-    collaborator_id: uuid.UUID, 
     collaborator_update: CollaboratorUpdate, 
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_collaborator)
 ):
     """Update collaborator information"""
-    db_collaborator = db.query(Collaborator).filter(Collaborator.colab_id == collaborator_id).first()
+    db_collaborator = db.query(Collaborator).filter(Collaborator.email == current_user.email).first()
     if not db_collaborator:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -105,14 +105,13 @@ def update_collaborator(
     db.refresh(db_collaborator)
     return db_collaborator
 
-@collaborator_router.delete("/{collaborator_id}", status_code=status.HTTP_204_NO_CONTENT)
+@collaborator_router.delete("/", status_code=status.HTTP_204_NO_CONTENT)
 def delete_collaborator(
-    collaborator_id: uuid.UUID, 
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_collaborator)
 ):
     """Delete a collaborator"""
-    db_collaborator = db.query(Collaborator).filter(Collaborator.colab_id == collaborator_id).first()
+    db_collaborator = db.query(Collaborator).filter(Collaborator.email == current_user.email).first()
     if not db_collaborator:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,

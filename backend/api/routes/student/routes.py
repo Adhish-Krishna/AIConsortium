@@ -10,6 +10,8 @@ from api.routes.student import student_router
 from api.models.studentsModel import StudentCreate, StudentResponse, StudentUpdate
 from database.schemas.UserSchema import Student, User
 from api.routes.student.auth import get_current_student
+from api.routes.user.auth import get_current_user
+
 
 # Password hashing context
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -87,7 +89,7 @@ def get_current_student_profile(current_user: User = Depends(get_current_student
 def get_student(
     email: str, 
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_student)
+    current_user: User = Depends(get_current_user)
 ):
     """Get student by ID"""
     student = db.query(Student).filter(Student.email == email).first()
@@ -103,7 +105,7 @@ def get_students(
     skip: int = 0, 
     limit: int = 100, 
     db: Session = Depends(get_db),
-    current_user: Student = Depends(get_current_student)
+    current_user: Student = Depends(get_current_user)
 ):
     """Get all students with pagination"""
     try:
