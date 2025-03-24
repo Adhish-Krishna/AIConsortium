@@ -53,11 +53,14 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  position: relative;
 }
 
 /* Add this class for full-width content */
 .content-grid.full-width {
   grid-template-columns: 1fr;
+  position: relative;
+  overflow: hidden; /* Hide overflow */
 }
 
 .content-card, .sidebar-card {
@@ -66,6 +69,8 @@
   border-radius: 1rem;
   border: 1px solid var(--color-gray-100);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden; /* Hide overflow */
 }
 
 .content-tabs-section-title {
@@ -90,20 +95,32 @@
 
 /* Ensure adequate space for events */
 .events-list {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0;
   gap: 1.25rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.events-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 @media (min-width: 768px) {
   .events-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: unset;
+    display: flex;
   }
 }
 
 @media (min-width: 1024px) {
   .events-list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: unset;
+    display: flex;
   }
 }
 
@@ -113,6 +130,9 @@
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  min-width: 320px; /* Increased from 280px */
+  width: 320px; /* Increased from 280px */
+  flex-shrink: 0;
 }
 
 .event-card:hover {
@@ -473,8 +493,18 @@
 /* Publication Styles */
 .publications-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0;
   gap: 1.25rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.publications-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .publication-card {
@@ -486,6 +516,9 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  min-width: 320px; /* Increased from 280px */
+  width: 320px; /* Increased from 280px */
+  flex-shrink: 0;
 }
 
 .publication-card:hover {
@@ -654,9 +687,13 @@
   }
 
   .publications-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: unset;
+    display: flex;
+  }
+
+  .event-card, .project-card, .publication-card {
+    min-width: 340px;
+    width: 340px;
   }
 }
 
@@ -678,7 +715,8 @@
   }
 
   .publications-list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: unset;
+    display: flex;
   }
 
   .publication-details {
@@ -899,20 +937,32 @@
 
 /* Updated Project Styles to match Events and Publications */
 .projects-list {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0;
   gap: 1.25rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.projects-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 @media (min-width: 768px) {
   .projects-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: unset;
+    display: flex;
   }
 }
 
 @media (min-width: 1024px) {
   .projects-list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: unset;
+    display: flex;
   }
 }
 
@@ -925,6 +975,9 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  min-width: 320px; /* Increased from 280px */
+  width: 320px; /* Increased from 280px */
+  flex-shrink: 0;
 }
 
 .project-card:hover {
@@ -988,4 +1041,104 @@
 .view-all-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* Container for lists with horizontal scroll */
+.scrollable-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 0 15px;
+}
+
+/* Navigation arrows for content containers */
+.content-scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+  color: var(--color-gray-600);
+}
+
+.content-scroll-arrow:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+.content-scroll-arrow.left {
+  left: 5px;
+}
+
+.content-scroll-arrow.right {
+  right: 5px;
+}
+
+.content-scroll-arrow.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Remove existing scrollable container styles that might conflict */
+.scrollable-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Hide overflow */
+}
+
+/* Horizontal scrolling for list components */
+.events-list, .projects-list, .publications-list {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem 0.5rem;
+  gap: 1.5rem; /* Slightly increased from 1.25rem */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-scroll-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .content-card {
+    padding: 1rem;
+  }
+
+  .scrollable-wrapper {
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-scroll-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .scrollable-wrapper {
+    padding: 0 20px;
+  }
+
+  .event-card, .project-card, .publication-card {
+    min-width: 260px; /* Slightly increased from 240px */
+    width: 260px; /* Slightly increased from 240px */
+  }
 }

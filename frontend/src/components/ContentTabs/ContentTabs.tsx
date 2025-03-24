@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import {TrendingUp, Calendar, FileText } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import {TrendingUp, Calendar, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
 import './ContentTabs.css';
 import {projects } from '../../data/projects';
 // Import or define events data
@@ -15,10 +15,62 @@ import PublicationsList from './components/PublicationsList';
 // import {useNavigate} from 'react-router-dom';
 
 const ContentTabs: React.FC = () => {
-
   // const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState('projects');
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true); // Default to true for better UX
+
+  const checkScrollability = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      // Get the actual scroll element (first child with overflow)
+      const scrollElement = container.querySelector('.projects-list, .events-list, .publications-list');
+
+      if (scrollElement) {
+        setCanScrollLeft(scrollElement.scrollLeft > 5);
+        setCanScrollRight(
+          scrollElement.scrollLeft < scrollElement.scrollWidth - scrollElement.clientWidth - 5
+        );
+      }
+    }
+  };
+
+  useEffect(() => {
+    // Reset scroll position when changing tabs
+    if (scrollContainerRef.current) {
+      const scrollElement = scrollContainerRef.current.querySelector('.projects-list, .events-list, .publications-list');
+      if (scrollElement) {
+        scrollElement.scrollLeft = 0;
+      }
+    }
+
+    // Check scrollability after tab change with a slight delay to allow rendering
+    setTimeout(checkScrollability, 300);
+
+    // Add listener for window resize
+    window.addEventListener('resize', checkScrollability);
+    return () => window.removeEventListener('resize', checkScrollability);
+  }, [activeTab]);
+
+  const scroll = (direction: 'left' | 'right') => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      const scrollElement = container.querySelector('.projects-list, .events-list, .publications-list');
+
+      if (scrollElement) {
+        const scrollAmount = scrollElement.clientWidth * 0.75;
+        scrollElement.scrollBy({
+          left: direction === 'left' ? -scrollAmount : scrollAmount,
+          behavior: 'smooth'
+        });
+
+        // Update scroll buttons after scrolling
+        setTimeout(checkScrollability, 300);
+      }
+    }
+  };
 
   const handleProjectClick = (projectId: string) => {
     console.log(`Project clicked: ${projectId}`);
@@ -95,26 +147,52 @@ const ContentTabs: React.FC = () => {
               )}
             </h2>
 
-            {activeTab === 'projects' && (
-              <ProjectsList
-                projects={projects}
-                onProjectClick={handleProjectClick}
-              />
-            )}
+            <div className="scrollable-wrapper">
+              <button
+                className={`content-scroll-arrow left ${!canScrollLeft ? 'disabled' : ''}`}
+                onClick={() => scroll('left')}
+                disabled={!canScrollLeft}
+                aria-label="Scroll left"
+              >
+                <ChevronLeft />
+              </button>
 
-            {activeTab === 'events' && (
-              <EventsList
-                events={events}
-                onEventClick={handleEventClick}
-              />
-            )}
+              <div
+                ref={scrollContainerRef}
+                className="scrollable-container"
+              >
+                {activeTab === 'projects' && (
+                  <ProjectsList
+                    projects={projects}
+                    onProjectClick={handleProjectClick}
+                  />
+                )}
 
-            {activeTab === 'publications' && (
-              <PublicationsList
-                publications={publications}
-                onPublicationClick={handlePublicationClick}
-              />
-            )}
+                {activeTab === 'events' && (
+                  <EventsList
+                    events={events}
+                    onEventClick={handleEventClick}
+                  />
+                )}
+
+                {activeTab === 'publications' && (
+                  <PublicationsList
+                    publications={publications}
+                    onPublicationClick={handlePublicationClick}
+                  />
+                )}
+              </div>
+
+              <button
+                className={`content-scroll-arrow right ${!canScrollRight ? 'disabled' : ''}`}
+                onClick={() => scroll('right')}
+                disabled={!canScrollRight}
+                aria-label="Scroll right"
+              >
+                <ChevronRight />
+              </button>
+            </div>
+
             {/* <div className="view-all-container">
               <button className="view-all-button" onClick={handleViewAllClick}>
                 View All
