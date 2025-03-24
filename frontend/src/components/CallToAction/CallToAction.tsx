@@ -1,8 +1,13 @@
 import React from 'react';
 import './CallToAction.css';
 import { GlobeDemo } from '../ui/globedemo';
+import {useNavigate} from 'react-router-dom';
 
 const CallToAction: React.FC = () => {
+  const navigate = useNavigate();
+  const handleRegister = ()=>{
+    navigate('/register');
+  }
   return (
     <section className="cta-section">
       <div className="cta-background">
@@ -24,7 +29,7 @@ const CallToAction: React.FC = () => {
               Connect with like-minded AI enthusiasts, access exclusive resources, and shape the future of artificial intelligence.
             </p>
             <div className="cta-buttons">
-              <button className="cta-primary-button">
+              <button className="cta-primary-button" onClick={handleRegister}>
                 Register
               </button>
             </div>

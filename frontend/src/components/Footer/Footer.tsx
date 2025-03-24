@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           <div className="footer-brand">
             <div className="footer-logo">
               <img src={Logo} alt=""  style={{"height":"50px"}}/>
-              <span className="footer-logo-text">AI CONSORTIUM</span>
+              <span className="footer-logo-text">PSG - AI CONSORTIUM</span>
             </div>
             <p className="footer-description">
             Empowering Progress Innovation and Quality in AI.
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
 
         <div className="footer-bottom">
           <div className="copyright">
-            © 2025 AI CONSORTIUM. All rights reserved.
+            © 2025 PSG - AI CONSORTIUM. All rights reserved.
           </div>
           <div className="legal-links">
             <LinkPreview url="/privacy" className="legal-link">Privacy Policy</LinkPreview>
