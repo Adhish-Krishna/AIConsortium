@@ -11,6 +11,7 @@ import About from './pages/About/About.tsx';
 import Register from './pages/Register/Register.tsx';
 
 
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Router>
