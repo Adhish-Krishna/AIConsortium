@@ -27,8 +27,14 @@ const PublicationDetails: React.FC<Publication> = ({
       >
         <img src={imageUrl || '/placeholder-publication.jpg'} alt={title} className="detail-banner-image" />
         <div className="detail-publication-header-content">
-          <h1 className="detail-publication-title">{title}</h1>
-          <p className="detail-publication-subtitle">{abstract}</p>
+          <h1 className="detail-publication-title">
+            {title}
+          </h1>
+          <p className="detail-publication-subtitle">
+            {abstract && abstract.length > 150
+              ? `${abstract.substring(0, 150)}...`
+              : abstract}
+          </p>
           <div className="detail-publication-meta-info">
             <span className="detail-publication-journal">
               <Book size={14} className="detail-icon" />
