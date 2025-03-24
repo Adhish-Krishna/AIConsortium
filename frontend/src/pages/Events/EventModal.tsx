@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './EventModal.css';
 
 const CustomEventModal = ({ calendarEvent }) => {
+  const navigate = useNavigate();
+
   // Format dates for better display - more compact
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -15,9 +18,9 @@ const CustomEventModal = ({ calendarEvent }) => {
     });
   };
 
-  // Generate background color dynamically or use event color
+  // Generate background color dynamically based on event type
   const headerStyle = {
-    backgroundColor: calendarEvent.color || '#001f3f'
+    backgroundColor: calendarEvent.color || 'var(--color-primary)'
   };
 
   // Determine if it's a single-day event
@@ -25,6 +28,12 @@ const CustomEventModal = ({ calendarEvent }) => {
     const startDate = new Date(calendarEvent.start);
     const endDate = new Date(calendarEvent.end);
     return startDate.toDateString() === endDate.toDateString();
+  };
+
+  // Handle view more click
+  const handleViewMore = () => {
+    // This will redirect to a common details page for all events
+    navigate('/events/details');
   };
 
   return (
@@ -74,6 +83,12 @@ const CustomEventModal = ({ calendarEvent }) => {
             </div>
           </div>
         )}
+      </div>
+      
+      <div className="event-modal-footer">
+        <button className="view-more-btn" onClick={handleViewMore}>
+          View More Details
+        </button>
       </div>
     </div>
   );
