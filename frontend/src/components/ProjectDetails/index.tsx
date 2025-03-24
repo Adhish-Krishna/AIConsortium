@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ProjectDetails, { ProjectDetailsProps } from './ProjectDetails';
+import ProjectDetails from './ProjectDetails';
 import { projects, Project } from '../../data/projects';
+import {Project as ProjectDetailsProps} from '../../data/projects';
 
 const ProjectDetailsContainer: React.FC = () => {
   const { projectId } = useParams<{ projectId: string }>();
@@ -30,6 +31,7 @@ const ProjectDetailsContainer: React.FC = () => {
           const projectDetails: ProjectDetailsProps = {
             id: project.id,
             title: project.title,
+            image: project.image,
             description: project.description,
             bannerImage: project.bannerImage,
             fullDescription: project.fullDescription,

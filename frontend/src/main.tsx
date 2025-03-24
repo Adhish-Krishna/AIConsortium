@@ -10,6 +10,7 @@ import Collaborators from './pages/Collaborators/Collaborators.tsx';
 import About from './pages/About/About.tsx';
 import Register from './pages/Register/Register.tsx';
 import ProjectDetailsContainer from './components/ProjectDetails/index';
+import PublicationDetailsPage from './components/PublicationDetails/index.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/collaborators" element={<Collaborators/>} />
         <Route path="/about" element={<About/>}/>
         <Route path="/projects/:projectId" element={<ProjectDetailsContainer />} />
+        <Route path = "/publications/:id" element={<PublicationDetailsPage/>}/>
       </Routes>
     </Router>
   </StrictMode>
