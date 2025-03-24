@@ -1,4 +1,15 @@
-export const publications = [
+// Define Publication type
+export interface Publication {
+  id: string;
+  title: string;
+  authors: string;
+  journal: string;
+  year: number;
+  abstract: string;
+  imageUrl?: string;
+}
+
+export const publications: Publication[] = [
   {
     id: "pub1",
     title: "Advances in Neural Network Architectures for Time Series Prediction",

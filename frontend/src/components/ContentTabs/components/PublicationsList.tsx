@@ -1,17 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-
-// Define Publication type
-interface Publication {
-  id: string;
-  title: string;
-  authors: string;
-  journal: string;
-  year: number;
-  abstract: string;
-  imageUrl?: string;
-}
+import { Publication } from '../../../data/publications';
 
 interface PublicationsListProps {
   publications: Publication[];
