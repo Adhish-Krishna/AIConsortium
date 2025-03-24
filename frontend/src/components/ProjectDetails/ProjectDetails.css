@@ -42,8 +42,15 @@
   left: 0;
   right: 0;
   padding: 2rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 60%, rgba(0, 0, 0, 0.4) 85%, transparent);
   color: white;
+  height: auto;
+  min-height: 30%;
+}
+
+/* Remove scrollbar styles */
+.detail-project-header-content::-webkit-scrollbar {
+  display: none;
 }
 
 .detail-project-title {
@@ -215,5 +222,36 @@
 
   .detail-banner-image {
     height: 300px;
+  }
+
+  .detail-project-header-content {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 60%, rgba(0, 0, 0, 0.4) 85%, transparent);
+    height: auto;
+    min-height: 25%;
+  }
+
+  .detail-project-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .detail-project-meta-info {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-project-header-content {
+    padding: 1rem;
+    height: auto;
+    min-height: 20%;
+  }
+
+  .detail-project-title {
+    font-size: 1.5rem;
   }
 }
