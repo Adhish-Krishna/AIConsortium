@@ -1,49 +1,53 @@
-import { useCalendarApp, ScheduleXCalendar } from '@schedule-x/react'
-import {  createViewMonthGrid} from '@schedule-x/calendar'
-import { createEventsServicePlugin } from '@schedule-x/events-service'
-import { useEffect, useState } from 'react'
+import { useCalendarApp, ScheduleXCalendar } from '@schedule-x/react';
+import { createViewMonthGrid } from '@schedule-x/calendar';
+import { createEventsServicePlugin } from '@schedule-x/events-service';
+import { createEventModalPlugin } from '@schedule-x/event-modal';
+import { useEffect, useState } from 'react';
 
-import '@schedule-x/theme-default/dist/index.css' 
-// import '@schedule-x/theme-shadcn/dist/index.css'
-import './event.css'
+import '@schedule-x/theme-default/dist/index.css';
+import './event.css';
+import CustomEventModal from './EventModal';
+
 function CalendarApp() {
-  const eventsService = useState(() => createEventsServicePlugin())[0]
- 
+  const eventsService = useState(() => createEventsServicePlugin())[0];
+  const eventModal = useState(() => createEventModalPlugin())[0];
+
   const calendar = useCalendarApp({
     views: [createViewMonthGrid()],
     events: [
       {
         id: '1',
-        title: 'Event 1',
+        title: 'AI Ethics Workshop',
+        description: 'Discussion on ethical considerations in AI development.',
         start: '2025-04-16',
         end: '2025-04-17',
-        background: true, // Marks this as a background event
-      style: { backgroundColor: 'rgba(255, 0, 0, 0.1)' }, // Light red background
-      },
-      {
-        id: '2',
-        title: 'Event 2',
-        start: '2025-04-16',
-        end: '2025-04-17',
-        background: true, // Marks this as a background event
-      style: { backgroundColor: 'rgba(255, 0, 0, 0.5)' }, // Light red background
+        location: 'Virtual Meeting Room A',
+        organizer: 'Ethics Committee',
+        type: 'Workshop'
       },
     ],
-    plugins: [eventsService],
+    plugins: [eventsService, eventModal],
     theme: 'event',
-  })
- 
+  });
+
   useEffect(() => {
-    // get all events
-    eventsService.getAll()
-  }, [])
- 
+    eventsService.getAll();
+  }, [eventsService]);
+
   return (
-    <div>
-       <div className="events-container" style={{ paddingTop: "120px" }}></div>
-      <ScheduleXCalendar calendarApp={calendar} />
+    <div className="calendar-page">
+      <div className="calendar-container">
+        <div className="calendar-wrapper">
+          <ScheduleXCalendar 
+            calendarApp={calendar} 
+            customComponents={{
+              eventModal: CustomEventModal
+            }}
+          />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
- 
-export default CalendarApp
+
+export default CalendarApp;
