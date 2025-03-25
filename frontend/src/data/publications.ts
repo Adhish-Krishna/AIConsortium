@@ -7,6 +7,7 @@ interface Author {
 
 interface Mentor{
   name: string,
+  designation: string,
   department: string,
 }
 
@@ -41,8 +42,8 @@ export const publications: Publication[] = [
       { name: "Rahul Verma", department: "Computer Science", rollno: "CS2021-62" }
     ],
     mentors: [
-      { name: "Dr. Anil Kumar", department: "Computer Science" },
-      { name: "Dr. Meera Patel", department: "Linguistics" }
+      { name: "Dr. Anil Kumar", department: "Computer Science", designation:"Assistant Professor" },
+      { name: "Dr. Meera Patel", department: "Linguistics",designation:"Assistant Professor" }
     ],
     abstract: "This paper explores novel deep learning architectures for improving natural language understanding in educational technology applications, with a focus on automated essay grading and personalized learning feedback systems.",
     journal: "Journal of Educational Technology & AI",
@@ -66,7 +67,7 @@ export const publications: Publication[] = [
       { name: "Sneha Gupta", department: "Computer Science", rollno: "CS2022-08", affiliation: "Rural Tech Initiative" }
     ],
     mentors: [
-      { name: "Dr. Rajesh Singh", department: "Agricultural Sciences" }
+      { name: "Dr. Rajesh Singh", department: "Agricultural Sciences", designation:"Assistant Professor" }
     ],
     abstract: "This research demonstrates the application of machine learning algorithms to optimize irrigation schedules and predict crop yields in resource-constrained farming environments across three districts in rural India.",
     journal: "Sustainable Computing and Agricultural Research",
@@ -88,8 +89,8 @@ export const publications: Publication[] = [
       { name: "Neha Reddy", department: "Mathematics", rollno: "MA2021-15" }
     ],
     mentors: [
-      { name: "Prof. Samuel Wilson", department: "Quantum Computing" },
-      { name: "Dr. Lisa Chen", department: "Cybersecurity" }
+      { name: "Prof. Samuel Wilson", department: "Quantum Computing", designation:"Assistant Professor" },
+      { name: "Dr. Lisa Chen", department: "Cybersecurity" , designation:"Assistant Professor"}
     ],
     abstract: "This comprehensive review examines the implications of quantum computing advances on current cryptographic standards and proposes quantum-resistant algorithms suitable for implementation in near-term security protocols.",
     journal: "International Journal of Quantum Information & Cryptography",
@@ -129,7 +130,7 @@ export const publications: Publication[] = [
       { name: "Li Wei", department: "Computer Science", rollno: "CS2022-54" }
     ],
     mentors: [
-      { name: "Dr. Sarah Johnson", department: "Sustainable Energy" }
+      { name: "Dr. Sarah Johnson", department: "Sustainable Energy", designation:"Assistant Professor" }
     ],
     abstract: "This research introduces a novel multi-agent reinforcement learning approach for optimizing energy distribution in mixed renewable energy grids, demonstrating a 28% improvement in efficiency over traditional methods.",
     journal: "Renewable Energy Systems & Machine Learning",

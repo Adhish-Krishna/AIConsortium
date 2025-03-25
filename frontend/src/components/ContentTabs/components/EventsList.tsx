@@ -1,15 +1,7 @@
 import React from 'react';
 import { Calendar, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-
-interface Event {
-  id: string;
-  title: string;
-  description: string;
-  date: string;
-  image?: string;
-  location?: string;
-}
+import { Event } from '../../../data/events';
 
 interface EventsListProps {
   events: Event[];
