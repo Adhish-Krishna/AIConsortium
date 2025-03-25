@@ -216,7 +216,8 @@ const NeuralNetworkAnimation: React.FC = () => {
 
               for (let p = 0; p < packetCount; p++) {
                 // Calculate packet position along the connection
-                const offset = (animTime * (0.1 + connectionStrength * 0.3) + p * 0.4) % 1;
+                // Reduced speed coefficient from 0.1 to 0.05 and from 0.3 to 0.15 to slow down animation
+                const offset = (animTime * (0.05 + connectionStrength * 0.15) + p * 0.4) % 1;
                 const packetX = sourceNode.x + (targetNode.x - sourceNode.x) * offset;
                 const packetY = sourceNode.y + (targetNode.y - sourceNode.y) * offset;
 
