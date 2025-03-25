@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Book, ExternalLink, Calendar } from 'lucide-react';
+import { Users, Book, ExternalLink, Calendar, Award,} from 'lucide-react';
 import { motion } from 'framer-motion';
 import './PublicationDetails.css';
 import { Publication } from '../../data/publications';
@@ -9,13 +9,14 @@ const PublicationDetails: React.FC<Publication> = ({
   abstract,
   imageUrl,
   authors,
+  mentors,
   journal,
   year,
   doi,
   keywords,
   citations,
   pdfLink,
-  collaborators
+  collaborators,
 }) => {
   return (
     <div className="detail-publication-container">
@@ -104,18 +105,34 @@ const PublicationDetails: React.FC<Publication> = ({
               Authors
             </h3>
             <div className="detail-authors-list">
-              {typeof authors === 'string' ? (
-                <p>{authors}</p>
-              ) : (
-                authors.map((author, index) => (
-                  <div key={index} className="detail-author-item">
-                    <span className="detail-author-name">{author.name}</span>
-                    {author.affiliation && <span className="detail-author-affiliation">{author.affiliation}</span>}
-                  </div>
-                ))
-              )}
+              {Array.isArray(authors) && authors.map((author, index) => (
+                <div key={index} className="detail-author-item">
+                  <span className="detail-author-name">{author.name}</span>
+                  {author.department && <span className="detail-author-department">{author.department}</span>}
+                  {author.rollno && <span className="detail-author-rollno">Roll No: {author.rollno}</span>}
+                  {author.affiliation && <span className="detail-author-affiliation">{author.affiliation}</span>}
+                </div>
+              ))}
             </div>
           </div>
+
+          {mentors && mentors.length > 0 && (
+            <div className="detail-mentors-section">
+              <h3>
+                <Award size={18} className="detail-section-icon" />
+                Mentors
+              </h3>
+              <div className="detail-mentors-list">
+                {mentors.map((mentor, index) => (
+                  <div key={index} className="detail-mentor-item">
+                    <span className="detail-mentor-name">{mentor.name}</span>
+                    <span className="detail-mentor-designation">{mentor.designation}</span>
+                    <span className="detail-mentor-department">{mentor.department}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {collaborators && collaborators.length > 0 && (
             <div className="detail-collaborators-section">
@@ -133,19 +150,17 @@ const PublicationDetails: React.FC<Publication> = ({
             </div>
           )}
 
-          {journal && (
-            <div className="detail-journal-section">
-              <h3>
-                <Book size={18} className="detail-section-icon" />
-                Journal Information
-              </h3>
-              <div className="detail-journal-info">
-                <p><strong>Journal:</strong> {journal}</p>
-                <p><strong>Year:</strong> {year}</p>
-                {doi && <p><strong>DOI:</strong> {doi}</p>}
-              </div>
+          <div className="detail-journal-section">
+            <h3>
+              <Book size={18} className="detail-section-icon" />
+              Journal Information
+            </h3>
+            <div className="detail-journal-info">
+              <p><strong>Journal:</strong> {journal}</p>
+              <p><strong>Year:</strong> {year}</p>
+              {doi && <p><strong>DOI:</strong> {doi}</p>}
             </div>
-          )}
+          </div>
         </motion.div>
       </div>
     </div>
