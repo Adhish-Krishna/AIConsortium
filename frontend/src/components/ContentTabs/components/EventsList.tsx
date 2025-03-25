@@ -13,12 +13,16 @@ interface Event {
 
 interface EventsListProps {
   events: Event[];
-  onEventClick: (eventId: string) => void;
 }
 
-const EventsList: React.FC<EventsListProps> = ({ events, onEventClick }) => {
+const EventsList: React.FC<EventsListProps> = ({ events}) => {
   if (!events || events.length === 0) {
     return <p className="events-intro">No upcoming events at the moment.</p>;
+  }
+
+  //Implement this function to navigate to detailed events page
+  const onEventClick = ()=>{
+    return null;
   }
 
   return (
@@ -27,7 +31,7 @@ const EventsList: React.FC<EventsListProps> = ({ events, onEventClick }) => {
         <motion.div
           key={event.id}
           className="event-card"
-          onClick={() => onEventClick(event.id)}
+          onClick={() => onEventClick()} //Modify the call to navigate to detailed events page
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}

@@ -6,10 +6,9 @@ import { useNavigate } from 'react-router-dom';
 
 export interface ProjectsListProps {
   projects: Project[];
-  onProjectClick: (projectId: string) => void;
 }
 
-const ProjectsList: React.FC<ProjectsListProps> = ({ projects, onProjectClick }) => {
+const ProjectsList: React.FC<ProjectsListProps> = ({ projects}) => {
   const navigate = useNavigate();
 
   const handleLearnMore = (projectId: string, e: React.MouseEvent) => {
@@ -19,7 +18,6 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ projects, onProjectClick })
 
   const handleProjectClick = (projectId: string) => {
     navigate(`/projects/${projectId}`);
-    onProjectClick(projectId);
   };
 
   return (

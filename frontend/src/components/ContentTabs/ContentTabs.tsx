@@ -91,21 +91,6 @@ const ContentTabs: React.FC = () => {
     }
   };
 
-  const handleProjectClick = (projectId: string) => {
-    console.log(`Project clicked: ${projectId}`);
-    // Add navigation or modal logic here
-  };
-
-  const handleEventClick = (eventId: string) => {
-    console.log(`Event clicked: ${eventId}`);
-    // Add navigation or modal logic here
-  };
-
-  const handlePublicationClick = (publicationId: string) => {
-    console.log(`Publication clicked: ${publicationId}`);
-    // Add navigation or modal logic here
-  };
-
   // const handleViewAllClick = ()=>{
   //   if(activeTab == 'projects'){
   //     navigate('/projects');
@@ -183,21 +168,18 @@ const ContentTabs: React.FC = () => {
                 {activeTab === 'projects' && (
                   <ProjectsList
                     projects={uiProjects}
-                    onProjectClick={handleProjectClick}
                   />
                 )}
 
                 {activeTab === 'events' && (
                   <EventsList
                     events={events}
-                    onEventClick={handleEventClick}
                   />
                 )}
 
                 {activeTab === 'publications' && (
                   <PublicationsList
                     publications={publications}
-                    onPublicationClick={handlePublicationClick}
                   />
                 )}
               </div>
