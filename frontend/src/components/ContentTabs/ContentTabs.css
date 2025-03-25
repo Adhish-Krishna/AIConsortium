@@ -565,16 +565,38 @@
   margin-bottom: 0.5rem;
 }
 
-.publication-abstract {
-  color: var(--color-black);
+/* Quality indicators styling */
+.publication-quality-indicators {
+  background-color: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
   margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quality-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 0.875rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+.indicator-label {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.indicator-value {
+  color: var(--color-secondary);
+  font-weight: 500;
+}
+
+/* Remove the abstract styles since we're not using it anymore in the card */
+.publication-abstract {
+  display: none;
 }
 
 .member-contact {
@@ -884,6 +906,15 @@
 
   .project-image-container {
     height: 8rem;
+  }
+
+  .publication-quality-indicators {
+    padding: 0.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .quality-indicator {
+    font-size: 0.75rem;
   }
 }
 

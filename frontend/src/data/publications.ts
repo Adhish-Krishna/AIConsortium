@@ -25,6 +25,10 @@ export interface Publication {
   citations?: number;
   pdfLink?: string;
   collaborators?: string[];
+  // Add new quality indicator fields
+  indexing?: string;
+  quartile?: string;
+  impactFactor?: number;
 }
 
 // Sample publications data
@@ -48,7 +52,11 @@ export const publications: Publication[] = [
     keywords: ["Deep Learning", "NLP", "Education Technology", "Automated Grading"],
     citations: 34,
     pdfLink: "/pdfs/deep-learning-nlp-education.pdf",
-    collaborators: ["National Institute of Education", "EdTech Solutions Inc."]
+    collaborators: ["National Institute of Education", "EdTech Solutions Inc."],
+    // Add quality indicators
+    indexing: "SCOPUS, Web of Science",
+    quartile: "Q1",
+    impactFactor: 4.8
   },
   {
     id: "pub-002",
@@ -67,7 +75,10 @@ export const publications: Publication[] = [
     doi: "10.5678/scar.2022.045",
     keywords: ["Machine Learning", "Agriculture", "Sustainability", "IoT", "Rural Development"],
     citations: 17,
-    pdfLink: "/pdfs/ml-sustainable-agriculture.pdf"
+    pdfLink: "/pdfs/ml-sustainable-agriculture.pdf",
+    indexing: "SCOPUS",
+    quartile: "Q2",
+    impactFactor: 3.2
   },
   {
     id: "pub-003",
@@ -88,7 +99,10 @@ export const publications: Publication[] = [
     keywords: ["Quantum Computing", "Cryptography", "Post-Quantum Security", "Shor's Algorithm"],
     citations: 56,
     pdfLink: "/pdfs/quantum-crypto-review.pdf",
-    collaborators: ["National Quantum Research Center", "Cybersecurity Institute"]
+    collaborators: ["National Quantum Research Center", "Cybersecurity Institute"],
+    indexing: "Web of Science, IEEE Xplore",
+    quartile: "Q1",
+    impactFactor: 5.6
   },
   {
     id: "pub-004",
@@ -102,7 +116,10 @@ export const publications: Publication[] = [
     keywords: ["AI Ethics", "Healthcare", "Autonomous Systems", "Medical Decision-Making"],
     citations: 42,
     pdfLink: "/pdfs/ethical-ai-healthcare.pdf",
-    collaborators: ["University Medical Center", "Center for AI Ethics"]
+    collaborators: ["University Medical Center", "Center for AI Ethics"],
+    indexing: "PubMed, SCOPUS",
+    quartile: "Q1",
+    impactFactor: 7.2
   },
   {
     id: "pub-005",
@@ -122,6 +139,9 @@ export const publications: Publication[] = [
     citations: 23,
     imageUrl: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     pdfLink: "/pdfs/renewable-energy-marl.pdf",
-    collaborators: ["National Renewable Energy Laboratory", "CleanTech Solutions"]
+    collaborators: ["National Renewable Energy Laboratory", "CleanTech Solutions"],
+    indexing: "IEEE Xplore, SCOPUS",
+    quartile: "Q2",
+    impactFactor: 3.9
   }
 ];

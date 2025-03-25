@@ -46,7 +46,23 @@ const PublicationsList: React.FC<PublicationsListProps> = ({
                 ? publication.authors
                 : publication.authors.map(author => author.name).join(', ')}
             </p>
-            <p className="publication-abstract">{publication.abstract}</p>
+
+            {/* Quality indicators box - replacing abstract */}
+            <div className="publication-quality-indicators">
+              <div className="quality-indicator">
+                <span className="indicator-label">Indexing:</span>
+                <span className="indicator-value">{publication.indexing || 'N/A'}</span>
+              </div>
+              <div className="quality-indicator">
+                <span className="indicator-label">Quartile:</span>
+                <span className="indicator-value">{publication.quartile || 'N/A'}</span>
+              </div>
+              <div className="quality-indicator">
+                <span className="indicator-label">Impact Factor:</span>
+                <span className="indicator-value">{publication.impactFactor?.toFixed(1) || 'N/A'}</span>
+              </div>
+            </div>
+
             <button
               className="learn-more"
               onClick={(e) => {
