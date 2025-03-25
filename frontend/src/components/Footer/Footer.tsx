@@ -33,24 +33,21 @@ const Footer: React.FC = () => {
           <div className="footer-links">
             <h3 className="footer-heading">Quick Links</h3>
             <ul className="footer-list">
-              <li><LinkPreview url="/about" className="footer-link">About Us</LinkPreview></li>
-              <li><LinkPreview url="/events" className="footer-link">Events</LinkPreview></li>
-              <li><LinkPreview url="/collaborators" className="footer-link">Collaborators</LinkPreview></li>
-              <li><LinkPreview url="/contact" className="footer-link">Contact</LinkPreview></li>
-              <li><LinkPreview url="/projects" className="footer-link">Projects</LinkPreview></li>
-              <li><LinkPreview url="/publications" className="footer-link">Publications</LinkPreview></li>
+              <li><a href="/about" className="footer-link">About Us</a></li>
+              <li><a href="/events" className="footer-link">Events</a></li>
+              <li><a href="/collaborators" className="footer-link">Collaborators</a></li>
+              <li><a href="/contact" className="footer-link">Contact</a></li>
             </ul>
           </div>
 
           <div className="footer-links">
             <h3 className="footer-heading">Resources</h3>
             <ul className="footer-list">
-              <li><LinkPreview url="/blog" className="footer-link">Blog</LinkPreview></li>
-              <li><LinkPreview url="/teams" className="footer-link">Teams</LinkPreview></li>
+              <li><a href="/teams" className="footer-link">Teams</a></li>
             </ul>
           </div>
 
-          <div className="footer-newsletter">
+          {/* <div className="footer-newsletter">
             <h3 className="footer-heading">Subscribe</h3>
             <p className="newsletter-description">
               Stay updated with the latest in AI research and community events.
@@ -65,10 +62,10 @@ const Footer: React.FC = () => {
                 <Mail />
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
 
-        <div className="footer-bottom">
+        {/* <div className="footer-bottom">
           <div className="copyright">
             © 2025 PSG - AI CONSORTIUM. All rights reserved.
           </div>
@@ -77,7 +74,7 @@ const Footer: React.FC = () => {
             <LinkPreview url="/terms" className="legal-link">Terms of Service</LinkPreview>
             <LinkPreview url="/cookies" className="legal-link">Cookie Policy</LinkPreview>
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
