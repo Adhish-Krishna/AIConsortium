@@ -1,14 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EventModal.css';
+import { EventData } from '../../types/events';
 
-const CustomEventModal = ({ calendarEvent }) => {
+const CustomEventModal = ({ calendarEvent }: { calendarEvent: EventData }) => {
   const navigate = useNavigate();
 
   // Format dates for better display - more compact
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    // More compact date format
     return date.toLocaleString('en-US', {
       month: 'short',
       day: 'numeric',
@@ -29,11 +29,21 @@ const CustomEventModal = ({ calendarEvent }) => {
     const endDate = new Date(calendarEvent.end);
     return startDate.toDateString() === endDate.toDateString();
   };
+  
+  // Format time only (for same-day events)
+  const formatTimeOnly = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleString('en-US', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    });
+  };
 
-  // Handle view more click
+  // Handle view more click - navigate to specific event
   const handleViewMore = () => {
-    // This will redirect to a common details page for all events
-    navigate('/events/details');
+    // Navigate to the specific event using its ID
+    navigate(`/events/${calendarEvent.id}`);
   };
 
   return (
@@ -55,8 +65,10 @@ const CustomEventModal = ({ calendarEvent }) => {
           <div className="event-modal-info">
             {isSameDay() ? (
               <>
-                <strong>{new Date(calendarEvent.start).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</strong><br/>
-                {formatDate(calendarEvent.start)} - {formatDate(calendarEvent.end).split(' ')[1]}
+                <strong>{new Date(calendarEvent.start).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</strong><br/>
+                <span>
+                  {formatTimeOnly(calendarEvent.start)} - {formatTimeOnly(calendarEvent.end)}
+                </span>
               </>
             ) : (
               <>
