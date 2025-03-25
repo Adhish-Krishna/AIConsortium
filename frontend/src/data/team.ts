@@ -9,7 +9,8 @@ export interface Team{
     contact: {
         email: string,
         linkedin: string | null
-    }
+    },
+    department?: string // Add optional department field
 }
 
 export const teamDetails : Team[] = [
@@ -28,7 +29,8 @@ export const teamDetails : Team[] = [
       contact: {
         email: "john.doe@psg.edu",
         linkedin: "https://linkedin.com/in/johndoe"
-      }
+      },
+      department: "Computer Science"
     },
     {
       name: "Jane Smith",
@@ -45,7 +47,8 @@ export const teamDetails : Team[] = [
       contact: {
         email: "jane.smith@psg.edu",
         linkedin: ""
-      }
+      },
+      department: "Information Technology"
     },
     {
       name: "Robert Johnson",
@@ -61,7 +64,8 @@ export const teamDetails : Team[] = [
       contact: {
         email: "robert.johnson@psg.edu",
         linkedin: "https://linkedin.com/in/robertjohnson"
-      }
+      },
+      department: "Outreach"
     },
     {
       name: "Priya Sharma",
@@ -78,7 +82,8 @@ export const teamDetails : Team[] = [
       contact: {
         email: "priya.sharma@psg.edu",
         linkedin: "https://linkedin.com/in/priyasharma"
-      }
+      },
+      department: "Student Affairs"
     },
     {
       name: "Alex Chen",
@@ -95,7 +100,8 @@ export const teamDetails : Team[] = [
       contact: {
         email: "alex.chen@psg.edu",
         linkedin: "https://linkedin.com/in/alexchen"
-      }
+      },
+      department: "Development"
     },
     {
       name: "Dr. Sarah Williams",
@@ -112,7 +118,8 @@ export const teamDetails : Team[] = [
       contact: {
         email: "sarah.williams@psg.edu",
         linkedin: "https://linkedin.com/in/sarahwilliams"
-      }
+      },
+      department: "Research"
     },
     {
       name: "Michael Rodriguez",
@@ -129,7 +136,8 @@ export const teamDetails : Team[] = [
       contact: {
         email: "michael.rodriguez@psg.edu",
         linkedin: "https://linkedin.com/in/michaelrodriguez"
-      }
+      },
+      department: "Advisory"
     },
     {
       name: "Aisha Patel",
@@ -146,6 +154,7 @@ export const teamDetails : Team[] = [
       contact: {
         email: "aisha.patel@psg.edu",
         linkedin: "https://linkedin.com/in/aishapatel"
-      }
+      },
+      department: "Community Relations"
     }
 ];

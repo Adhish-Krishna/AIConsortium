@@ -56,6 +56,8 @@ const AIConsortium = () => {
                 email: member.contact.email,
                 linkedin: member.contact.linkedin || undefined
               } : undefined}
+              department={member.department}
+              showViewDetails={false} // Don't show view details button in team page
             />
           ))}
         </div>

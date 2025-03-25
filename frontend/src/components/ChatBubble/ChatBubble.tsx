@@ -47,10 +47,18 @@ const ChatBubble = () => {
       // Show typing indicator
       setMessages(prev => [...prev, { text: "...", sender: "bot", isLoading: true }]);
 
-      // Make API call to Ollama server [Replace this api call with the actual chat bot api call]
+      // Format chat history as a single string
+      const chatHistory = messages.map(msg =>
+        `${msg.sender === 'user' ? 'User' : 'AI'}: ${msg.text}`
+      ).join('\n');
+
+      // Combine chat history with current message
+      const fullPrompt = `${chatHistory}\nUser: ${userMessage}`;
+
+      // Make API call to Ollama server with full chat history
       const response = await axios.post('http://localhost:11434/api/generate', {
         model: "qwen2.5:3b", // You can change this to the model you're running
-        prompt: userMessage,
+        prompt: fullPrompt,
         stream: false
       });
 

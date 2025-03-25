@@ -13,6 +13,8 @@ interface TeamMemberProps {
     email?: string;
     linkedin?: string;
   };
+  department?: string; // New optional department prop
+  showViewDetails?: boolean; // New prop to control view details button visibility
 }
 
 const TeamMember: React.FC<TeamMemberProps> = ({
@@ -22,7 +24,9 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   shortDetails,
   fullDetails,
   achievements = [],
-  contact = {}
+  contact = {},
+  department,
+  showViewDetails = true // Default to true for backward compatibility
 }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -89,9 +93,10 @@ const TeamMember: React.FC<TeamMemberProps> = ({
         <div className="team-member-info">
           <h3 className="team-member-name">{name}</h3>
           <h4 className="team-member-designation">{designation}</h4>
+          {department && <p className="team-member-department">{department}</p>}
           <p className="team-member-short-details">{shortDetails}</p>
 
-          {isHovered && (
+          {isHovered && showViewDetails && (
             <button
               className="view-details-btn"
               onClick={handleOpenPopup}

@@ -6,7 +6,7 @@ import ContentTabs from '../../components/ContentTabs/ContentTabs';
 import CallToAction from '../../components/CallToAction/CallToAction';
 import Footer from '../../components/Footer/Footer';
 // import {GlobeDemo} from '../../components/ui/globedemo';
-import LatestAINews from '../../components/LatestAINews/LatestAINews';
+// import LatestAINews from '../../components/LatestAINews/LatestAINews';
 
 function Home() {
   const [isMobileView, setIsMobileView] = useState(false);
@@ -37,7 +37,7 @@ function Home() {
       <Hero />
       <VisionMission />
       <ContentTabs />
-      <LatestAINews/>
+      {/* <LatestAINews/> */}
       <CallToAction />
       <Footer />
       {/* Only render GlobeDemo when not in mobile view */}

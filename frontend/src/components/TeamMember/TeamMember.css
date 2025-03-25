@@ -68,6 +68,10 @@
   font-weight: 500;
 }
 
+.team-member-department{
+  color: var(--color-gray-800);
+}
+
 .team-member-short-details {
   font-size: 0.9rem;
   color: var(--color-primary);
