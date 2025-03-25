@@ -14,15 +14,14 @@
     "@radix-ui/react-hover-card": "^1.1.6",
     "@react-three/drei": "^9.0.0",
     "@react-three/fiber": "^8.18.0",
-    "@schedule-x/event-modal": "^2.23.0",
-
     "@schedule-x/calendar": "^2.23.0",
-
+    "@schedule-x/event-modal": "^2.23.0",
     "@schedule-x/events-service": "^2.23.0",
     "@schedule-x/react": "^2.23.1",
     "@schedule-x/theme-default": "^2.23.0",
     "@tailwindcss/vite": "^4.0.14",
     "@types/react-router-dom": "^5.3.3",
+    "axios": "^1.8.4",
     "clsx": "^2.1.1",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.344.0",

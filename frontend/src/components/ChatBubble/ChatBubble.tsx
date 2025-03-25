@@ -1,10 +1,26 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle } from 'lucide-react';
 import './ChatBubble.css';
+import axios from 'axios';
+
+interface Message {
+  text: string;
+  sender: string;
+  isLoading?: boolean;
+}
+
+// Loading animation component
+const LoadingDots = () => (
+  <div className="loading-dots">
+    <div className="loading-dot"></div>
+    <div className="loading-dot"></div>
+    <div className="loading-dot"></div>
+  </div>
+);
 
 const ChatBubble = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([
+  const [messages, setMessages] = useState<Message[]>([
     { text: "Hi there! How can I help you today?", sender: "bot" }
   ]);
   const [inputValue, setInputValue] = useState('');
@@ -18,22 +34,43 @@ const ChatBubble = () => {
     setInputValue(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (inputValue.trim() === '') return;
 
-    // Add user message
-    setMessages([...messages, { text: inputValue, sender: "user" }]);
+    // Add user message to chat
+    const userMessage = inputValue;
+    setMessages(prev => [...prev, { text: userMessage, sender: "user" }]);
     setInputValue('');
 
-    // Here you would integrate with your API
-    // For now, let's just add a placeholder response
-    setTimeout(() => {
-      setMessages(prev => [
-        ...prev,
-        { text: "This is a placeholder response. API integration will be implemented later.", sender: "bot" }
-      ]);
-    }, 1000);
+    try {
+      // Show typing indicator
+      setMessages(prev => [...prev, { text: "...", sender: "bot", isLoading: true }]);
+
+      // Make API call to Ollama server [Replace this api call with the actual chat bot api call]
+      const response = await axios.post('http://localhost:11434/api/generate', {
+        model: "qwen2.5:3b", // You can change this to the model you're running
+        prompt: userMessage,
+        stream: false
+      });
+
+      // Remove typing indicator and add bot response
+      setMessages(prev => {
+        const filteredMessages = prev.filter(msg => !msg.isLoading);
+        return [...filteredMessages, { text: response.data.response, sender: "bot" }];
+      });
+    } catch (error) {
+      console.error('Error communicating with Ollama:', error);
+
+      // Remove typing indicator and add error message
+      setMessages(prev => {
+        const filteredMessages = prev.filter(msg => !msg.isLoading);
+        return [...filteredMessages, {
+          text: "Sorry, I couldn't connect to the AI service. Please try again later.",
+          sender: "bot"
+        }];
+      });
+    }
   };
 
   // Auto scroll to bottom of messages
@@ -54,7 +91,7 @@ const ChatBubble = () => {
           <div className="chat-bubble-messages">
             {messages.map((message, index) => (
               <div key={index} className={`chat-bubble-message ${message.sender}`}>
-                {message.text}
+                {message.isLoading ? <LoadingDots /> : message.text}
               </div>
             ))}
             <div ref={messagesEndRef} />
