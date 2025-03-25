@@ -83,11 +83,11 @@ const PublicationDetails: React.FC<Publication> = ({
                   <ExternalLink size={14} /> View on DOI
                 </a>
               )}
-              {pdfLink && (
+              {/* {pdfLink && (
                 <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="detail-publication-link detail-pdf-link">
                   <ExternalLink size={14} /> Download PDF
                 </a>
-              )}
+              )} */}
             </div>
           )}
         </motion.div>
