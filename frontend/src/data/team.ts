@@ -26,7 +26,7 @@ import Dhanalakshmi from '../assets/Images/Dhanalakshmi.png';
 import SaiSundaraKrishnan from '../assets/Images/Sai SUndar.png';
 import Prabhavathi from '../assets/Images/Prabavathi.png';
 import Kalpana from '../assets/Images/Kalpana.png';
-import Prakash from '../assets/Images/Prakash.jpg' //need to ask
+import MPrakash from '../assets/Images/MPrakash.jpg' //need to ask
 import Vinothkumar from '../assets/Images/Vinoth Kumar.png';
 import JPrakash from '../assets/Images/Prakash.jpg';
 import Anisha from '../assets/Images/ANisha.png';
@@ -34,7 +34,7 @@ import Abirami from '../assets/Images/Abirami.png';
 import Ramesh from '../assets/Images/Ramesh.png';
 import ArulJothi from '../assets/Images/Aruljothi.png';
 import Sivaranjini from '../assets/Images/Sivaranjani.png';
-import Dharani from '../assets/Images/Dhanalakshmi.png' //need to ask (no image)
+import Dharani from '../assets/Images/Dharani.jpg' //need to ask (no image)
 import Thirumahal from '../assets/Images/Thirumahal.png';
 import Sangeetha from '../assets/Images/Sangeetha.png';
 import GopikaRani from '../assets/Images/Gopikarani.png';
@@ -60,7 +60,7 @@ export interface Team{
 export const teamDetails : Team[] = [
   {
     name: "Dr.K.Prakasan",
-    designation: "Patron",
+    designation: "",
     role: "Patron",
     image: Prakasan,
     shortDetails: "",
@@ -74,7 +74,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr.G.R Karpagam",
-    designation: "Director",
+    designation: "Professor",
     role: "Director",
     image: Karpagam,
     shortDetails: "",
@@ -88,7 +88,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. D.Indumathi",
-    designation: "Program Manager",
+    designation: "Associate Professor",
     role: "Program Managers",
     image: Indumathi,
     shortDetails: "",
@@ -102,7 +102,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. K.Sathyapriya",
-    designation: "Program Manager",
+    designation: "Associate Professor",
     role: "Program Managers",
     image: SathiyaPriya,
     shortDetails: "",
@@ -116,7 +116,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. Nirmala Varghese",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Associate Professor",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: NirmalaVarghese,
     shortDetails: "",
@@ -130,7 +130,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Mr. Subramanian S S",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Assistant Professor",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Subramanian,
     shortDetails: "",
@@ -144,7 +144,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. J. Niresh",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Assistant Professor (Sr.G)",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Niresh,
     shortDetails: "",
@@ -158,7 +158,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. D Brindha",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Assistant Professor (Sl.G)",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Brindha,
     shortDetails: "",
@@ -172,7 +172,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Mr. G. Karthik Vijayakumar",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Assistant Professor (Sr.G)",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Karthick,
     shortDetails: "",
@@ -186,7 +186,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr S Praveenkumar",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Associate Professor",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: PraveenKumar,
     shortDetails: "",
@@ -200,7 +200,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. S. Bhama",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Assistant Professor (Sl.G)",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Bhama,
     shortDetails: "",
@@ -214,7 +214,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr.D.Sivaraj",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Assistant Professor (Sl.G)",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Sivaraj,
     shortDetails: "",
@@ -228,7 +228,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. A. Natarajan",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Professor(CAS)",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Natarajan,
     shortDetails: "",
@@ -242,7 +242,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. R. Surjit",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Assistant Professor (Sl.G)",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Surjit,
     shortDetails: "",
@@ -256,7 +256,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. D. Jayaprasanth",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Associate Professor",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Jayaprasanth,
     shortDetails: "",
@@ -270,7 +270,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. R. Senthil Prabha",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Assistant Professor (Sl.G)",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: SenthilPrabha,
     shortDetails: "",
@@ -284,7 +284,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. C. Shanmugam",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Assistant Professor (Sl.G)",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Shanmugam,
     shortDetails: "",
@@ -298,7 +298,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. K Thillairajan",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Associate Professor (CAS)",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Thiilairajan,
     shortDetails: "",
@@ -312,7 +312,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Mr. R. Rajesh",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Assistant Professor (Sl.G)",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Rajesh,
     shortDetails: "",
@@ -326,7 +326,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. M.Suresh",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Associate Professor",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Suresh,
     shortDetails: "",
@@ -340,7 +340,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. R. Murugan",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Professor (CAS)",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Murugan,
     shortDetails: "",
@@ -354,7 +354,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr B Sridevi",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Professor",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Sridevi,
     shortDetails: "",
@@ -368,7 +368,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. P. Kathirvel",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Assistant Professor",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Kathirvel,
     shortDetails: "",
@@ -382,7 +382,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr D Maruthamani",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Assistant Professor (Sl.G)",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Maruthamani,
     shortDetails: "",
@@ -396,7 +396,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr D.Dhanalakshmi",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Assistant Professor (Sl.G)",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Dhanalakshmi,
     shortDetails: "",
@@ -410,7 +410,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr G Sai Sundara Krishnan",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Professor",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: SaiSundaraKrishnan,
     shortDetails: "",
@@ -424,7 +424,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr J Prabhavathi",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Assistant Professor",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Prabhavathi,
     shortDetails: "",
@@ -438,7 +438,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr.M.Kalpana",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    designation: "Associate Professor",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
     image: Kalpana,
     shortDetails: "",
@@ -451,10 +451,10 @@ export const teamDetails : Team[] = [
     department: "Humanities",
   },
   {
-    name: "Mr.Prakash",
-    designation: "Domain Specific Academic Advisors and Innovation Mentors",
+    name: "Mr.M.Prakash",
+    designation: "Librarian",
     role: "Domain Specific Academic Advisors and Innovation Mentors",
-    image: Prakash,
+    image: MPrakash,
     shortDetails: "",
     fullDetails: "",
     achievements: [],
@@ -466,7 +466,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr.B.Vinothkumar",
-    designation: "IT Infrastructure and Networking Technical Lead",
+    designation: "Professor",
     role: "IT Infrastructure and Networking Technical Lead",
     image: Vinothkumar,
     shortDetails: "",
@@ -480,7 +480,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Mr.J.Prakash",
-    designation: "Community Outreach and Operations Managers",
+    designation: "Assistant Professor (Sr.G)",
     role: "Community Outreach and Operations Managers",
     image: JPrakash,
     shortDetails: "",
@@ -494,7 +494,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Ms.C D Anisha",
-    designation: "Community Outreach and Operations Managers",
+    designation: "Assistant Professor",
     role: "Community Outreach and Operations Managers",
     image: Anisha,
     shortDetails: "",
@@ -508,7 +508,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Ms.S.K Abirami",
-    designation: "Community Outreach and Operations Managers",
+    designation: "Assistant Professor",
     role: "Community Outreach and Operations Managers",
     image: Abirami,
     shortDetails: "",
@@ -522,7 +522,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Mr.A C Ramesh",
-    designation: "AI Product Development (Technical Leads)",
+    designation: "Assistant Professor (Sl.G)",
     role: "AI Product Development (Technical Leads)",
     image: Ramesh,
     shortDetails: "",
@@ -536,7 +536,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr.S.Arul Jothi",
-    designation: "AI Product Development (Technical Leads)",
+    designation: "Assistant Professor (Sr.G)",
     role: "AI Product Development (Technical Leads)",
     image: ArulJothi,
     shortDetails: "",
@@ -550,7 +550,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr.S.Sivaranjini",
-    designation: "AI Product Development (Technical Leads)",
+    designation: "Assistant Professor (Sr.G)",
     role: "AI Product Development (Technical Leads)",
     image: Sivaranjini,
     shortDetails: "",
@@ -564,7 +564,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Ms.Dharani",
-    designation: "AI Product Development (Technical Leads)",
+    designation: "Assistant Professor",
     role: "AI Product Development (Technical Leads)",
     image: Dharani,
     shortDetails: "",
@@ -578,7 +578,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Ms.R.Thirumahal",
-    designation: "Curriculum Design",
+    designation: "Assistant Professor (Sl.G)",
     role: "Curriculum Design",
     image: Thirumahal,
     shortDetails: "",
@@ -592,7 +592,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr B.Sangeetha",
-    designation: "Curriculum Design",
+    designation: "Assistant Professor (Sl.G)",
     role: "Curriculum Design",
     image: Sangeetha,
     shortDetails: "",
@@ -606,7 +606,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr.N G Gopikarani",
-    designation: "Student Ambassadors Management",
+    designation: "Assistant Professor (Sl.G)",
     role: "Student Ambassadors Management",
     image: GopikaRani,
     shortDetails: "",
@@ -620,7 +620,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr.R.Rekha",
-    designation: "Student Ambassadors Management",
+    designation: "Associate Professor",
     role: "Student Ambassadors Management",
     image: Rekha,
     shortDetails: "",
@@ -634,7 +634,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr. D.Indumathi",
-    designation: "AI Alumni Council",
+    designation: "Associate Professor",
     role: "AI Alumni Council",
     image: Indumathi,
     shortDetails: "",
@@ -648,7 +648,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Dr.S.Vijayalakshmi",
-    designation: "AI Alumni Council",
+    designation: "Assistant Professor (Sl.G)",
     role: "AI Alumni Council",
     image: Vijayalakshmi,
     shortDetails: "",
@@ -662,7 +662,7 @@ export const teamDetails : Team[] = [
   },
   {
     name: "Mr.Veerakumar",
-    designation: "AI Alumni Council",
+    designation: "Assistant Professor",
     role: "AI Alumni Council",
     image: Veerakumar,
     shortDetails: "",
