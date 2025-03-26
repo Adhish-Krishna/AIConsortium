@@ -1,17 +1,27 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EventModal.css';
+import { EventData } from '../../types/events';
 
-const CustomEventModal = ({ calendarEvent }) => {
+const CustomEventModal = ({ calendarEvent }: { calendarEvent: EventData }) => {
   const navigate = useNavigate();
 
   // Format dates for better display - more compact
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    // More compact date format
     return date.toLocaleString('en-US', {
       month: 'short',
       day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    });
+  };
+
+  // Format time only (for same-day events)
+  const formatTimeOnly = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleString('en-US', {
       hour: 'numeric',
       minute: '2-digit',
       hour12: true
@@ -30,10 +40,10 @@ const CustomEventModal = ({ calendarEvent }) => {
     return startDate.toDateString() === endDate.toDateString();
   };
 
-  // Handle view more click
+  // Handle view more click with debugging
   const handleViewMore = () => {
-    // This will redirect to a common details page for all events
-    navigate('/events/details');
+    console.log("Navigating to event details with ID:", calendarEvent.id);
+    navigate(`/events/${calendarEvent.id}`);
   };
 
   return (
@@ -55,8 +65,10 @@ const CustomEventModal = ({ calendarEvent }) => {
           <div className="event-modal-info">
             {isSameDay() ? (
               <>
-                <strong>{new Date(calendarEvent.start).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</strong><br/>
-                {formatDate(calendarEvent.start)} - {formatDate(calendarEvent.end).split(' ')[1]}
+                <strong>{new Date(calendarEvent.start).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</strong><br/>
+                <span>
+                  {formatTimeOnly(calendarEvent.start)} - {formatTimeOnly(calendarEvent.end)}
+                </span>
               </>
             ) : (
               <>
@@ -86,7 +98,11 @@ const CustomEventModal = ({ calendarEvent }) => {
       </div>
       
       <div className="event-modal-footer">
-        <button className="view-more-btn" onClick={handleViewMore}>
+        <button 
+          className="view-more-btn" 
+          onClick={handleViewMore}
+          data-event-id={calendarEvent.id} // Add data attribute for debugging
+        >
           View More Details
         </button>
       </div>

@@ -1,0 +1,901 @@
+.event-detail-container {
+  max-width: 800px;
+  margin: 120px auto 40px;
+  padding: 40px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: var(--color-black);
+  position: relative; /* Add this */
+  z-index: 1; /* Lower than navbar */
+}
+
+.event-detail-header {
+  margin-bottom: 2rem;
+}
+
+.event-detail-title {
+  font-size: 2.5rem;
+  margin: 1rem 0 0.5rem;
+  color: var(--color-primary);
+}
+
+.event-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.event-detail-type {
+  background-color: var(--color-gray-500);
+  color: var(--color-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.event-detail-organizer {
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+.event-detail-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.event-detail-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.event-detail-image-gallery {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.main-image-container {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.thumbnail:hover, .thumbnail.active {
+  opacity: 1;
+}
+
+.event-detail-description {
+  line-height: 1.6;
+}
+
+.event-detail-description h2 {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.event-detail-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-self: start; /* Keep the card at the top when removing other elements */
+}
+
+.event-detail-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.event-card-item {
+  display: flex;
+  gap: 1rem;
+}
+
+.event-card-icon {
+  color: var(--color-gray-500);
+  margin-top: 0.25rem;
+}
+
+.event-card-content h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  color: var(--color-primary);
+}
+
+.event-card-content .date,
+.event-card-content .time,
+.event-card-content p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.location-mode {
+  font-weight: 500;
+}
+
+.register-button {
+  background-color: var(--color-gray-500);
+  color: var(--color-primary);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: none;
+}
+
+.register-button:hover {
+  background-color: var(--color-gray-400);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: var(--color-gray-100);
+}
+
+/* Loading and Error States */
+.event-detail-loading,
+.event-detail-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.loader {
+  border: 5px solid var(--color-gray-200);
+  border-top: 5px solid var(--color-gray-500);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 1024px) {
+  .event-detail-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .event-detail-container {
+    margin-top: 100px;
+    padding: 16px;
+  }
+  
+  .event-detail-title {
+    font-size: 2rem;
+  }
+  
+  .main-image-container {
+    height: 250px;
+  }
+  
+  .event-detail-container h1 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-detail-container {
+    margin-top: 5rem;
+  }
+}
+
+.event-detail-container h1 {
+  color: var(--color-primary);
+  margin-bottom: 24px;
+  font-size: 2rem;
+}
+
+.event-detail-container h2 {
+  color: var(--color-primary);
+  margin: 24px 0 16px;
+  font-size: 1.5rem;
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-size: 1rem;
+}
+
+.event-description {
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.event-image {
+  width: 100%;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.event-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.event-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.event-actions button {
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.event-actions button:first-child {
+  background-color: transparent;
+  border: 1px solid var(--color-gray-300);
+}
+
+.event-actions button:last-child {
+  background-color: var(--color-gray-500);
+  border: none;
+  color: var(--color-primary);
+}
+
+.event-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.loading, .error-container {
+  max-width: 800px;
+  margin: 120px auto 40px;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative; /* Add this */
+  z-index: 1; /* Lower than navbar */
+}
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-background);
+    z-index: 9999 !important; /* Ensure highest z-index */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+.event-detail-page {
+    padding-top: 70px; /* Match navbar height */
+    min-height: 100vh;
+    background-color: var(--color-background, #f5f5f5);
+  }
+.error-container h2 {
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.error-container a {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 16px;
+  background-color: var(--color-gray-500);
+  color: var(--color-primary);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Update the loading class to match what's used in your component */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  margin-top: 8rem;
+}
+
+/* Add a spinner to the loading class */
+.loading:before {
+  content: "";
+  border: 5px solid var(--color-gray-200);
+  border-top: 5px solid var(--color-gray-500);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Update these specific classes for the EventDetail page */
+
+/* Fix the body overflow and z-index issues for this page */
+body {
+  overflow-x: hidden;
+}
+
+/* Add this class to ensure Navbar always appears on top */
+:global(.navigation) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000 !important; /* Very high z-index */
+}
+
+/* Main Layout */
+.event-detail-page {
+  min-height: 100vh;
+  background-color: var(--color-background, #f5f5f5);
+  color: var(--color-gray-500);
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.event-detail-hero {
+  position: relative;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.event-detail-hero-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+  color: white;
+}
+
+.event-detail-hero h1 {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.event-badges {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.event-badge {
+  background-color: var(--color-gray-500);
+  color: var(--color-primary);
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.event-badge-mode {
+  background-color: var(--color-primary-light);
+  color: white;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Main Content */
+.event-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+}
+
+.event-detail-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+}
+
+/* Carousel */
+.event-carousel {
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 400px;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-arrow-left {
+  left: 16px;
+}
+
+.carousel-arrow-right {
+  right: 16px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carousel-indicator.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+/* Event Description */
+.event-description {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  min-height: 300px; /* Ensure minimum height for better layout */
+}
+
+.event-description h2 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.event-description h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--color-gray-500);
+  border-radius: 3px;
+}
+
+.event-description p {
+  line-height: 1.8;
+  color: var(--color-gray-800);
+}
+
+/* Sidebar */
+.event-detail-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-self: start; /* Keep the card at the top when removing other elements */
+}
+
+.event-info-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  height: fit-content;
+  position: sticky;
+  top: 100px; /* Add sticky positioning to keep info visible while scrolling */
+}
+
+.event-info-item {
+  display: flex;
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.event-info-item:last-child {
+  border-bottom: none;
+}
+
+.event-info-icon {
+  color: var(--color-gray-500);
+  margin-right: 1rem;
+  margin-top: 0.25rem;
+}
+
+.event-info-content h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  color: var(--color-primary);
+}
+
+.event-info-content p {
+  margin: 0;
+  color: var(--color-gray-800);
+}
+
+.event-date {
+  font-weight: 500;
+}
+
+.event-time {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.location-tag {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.location-tag.online {
+  background-color: rgba(29, 36, 64, 0.1);
+  color: var(--color-primary);
+}
+
+.location-tag.in-person {
+  background-color: rgba(220, 158, 87, 0.1);
+  color: var(--color-gray-800);
+}
+
+.register-button {
+  background-color: var(--color-gray-500);
+  color: var(--color-primary);
+  border: none;
+  border-radius: 8px;
+  padding: 1.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  display: none;
+}
+
+.register-button:hover {
+  background-color: var(--color-gray-400);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.event-share {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: none;
+}
+
+.event-share h3 {
+  color: var(--color-primary);
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  display: none;
+}
+
+.share-button {
+  flex: 1;
+  min-width: 80px;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: none;
+}
+
+.share-button.facebook {
+  background-color: #3b5998;
+  color: white;
+}
+
+.share-button.twitter {
+  background-color: #1da1f2;
+  color: white;
+}
+
+.share-button.linkedin {
+  background-color: #0077b5;
+  color: white;
+}
+
+.share-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading and Error States */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 2rem;
+}
+
+.loading-spinner {
+  border: 3px solid rgba(220, 158, 87, 0.2);
+  border-top: 3px solid var(--color-gray-500);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 2rem;
+}
+
+.error-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  max-width: 500px;
+}
+
+.error-content h2 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  background-color: var(--color-gray-500);
+  color: var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  background-color: var(--color-gray-400);
+  transform: translateY(-2px);
+}
+
+/* Navbar Override */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-background);
+  z-index: 9999 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .event-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .event-detail-hero {
+    height: 300px;
+  }
+  
+  .event-detail-hero h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .event-detail-container {
+    padding: 0 1.5rem 2rem;
+  }
+  
+  .event-detail-hero {
+    height: 250px;
+  }
+  
+  .event-detail-hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  .carousel-slide {
+    height: 300px;
+  }
+  
+  .event-description {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-detail-hero {
+    height: 200px;
+  }
+  
+  .event-detail-hero-content {
+    padding: 0 1rem 2rem;
+  }
+  
+  .event-detail-hero h1 {
+    font-size: 1.5rem;
+  }
+  
+  .carousel-slide {
+    height: 200px;
+  }
+  
+  .event-badges {
+    flex-wrap: wrap;
+  }
+  
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Adjust grid for larger viewports */
+@media (min-width: 1200px) {
+  .event-detail-grid {
+    grid-template-columns: 2.5fr 1fr; /* Give more space to main content */
+    gap: 3rem;
+  }
+}

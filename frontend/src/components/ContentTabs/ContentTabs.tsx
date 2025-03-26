@@ -1,35 +1,30 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {TrendingUp, Calendar, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
 import './ContentTabs.css';
-import { projects as sourceProjects, Project } from '../../data/projects';
-// Import or define events data
+import { projects as sourceProjects, Project as DataProject } from '../../data/projects';
 import { events } from '../../data/events';
-// Import publications data
 import { publications } from '../../data/publications';
 
-// Import our components
 import ProjectsList from './components/ProjectsList';
 import EventsList from './components/EventsList';
 import PublicationsList from './components/PublicationsList';
-
-// import {useNavigate} from 'react-router-dom';
+import { Project as UIProject } from './types';
 
 const ContentTabs: React.FC = () => {
-  // const navigate = useNavigate();
-
-  const [activeTab, setActiveTab] = useState('projects');
+  const [activeTab, setActiveTab] = useState('events');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true); // Default to true for better UX
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
-  // Convert the projects from data format to UI format for display
-  const convertProjects = (dataProjects: Project[]) => {
+  const convertProjects = (dataProjects: DataProject[]): UIProject[] => {
     return dataProjects.map(project => {
       return {
         id: project.id,
         image: project.image,
         title: project.title,
-        contributors: project.contributors_count,
+        contributors: Array.isArray(project.contributors)
+          ? project.contributors.length
+          : project.contributors,
         description: project.description
       };
     });
@@ -40,7 +35,6 @@ const ContentTabs: React.FC = () => {
   const checkScrollability = () => {
     const container = scrollContainerRef.current;
     if (container) {
-      // Get the actual scroll element (first child with overflow)
       const scrollElement = container.querySelector('.projects-list, .events-list, .publications-list');
 
       if (scrollElement) {
@@ -53,7 +47,6 @@ const ContentTabs: React.FC = () => {
   };
 
   useEffect(() => {
-    // Reset scroll position when changing tabs
     if (scrollContainerRef.current) {
       const scrollElement = scrollContainerRef.current.querySelector('.projects-list, .events-list, .publications-list');
       if (scrollElement) {
@@ -61,10 +54,8 @@ const ContentTabs: React.FC = () => {
       }
     }
 
-    // Check scrollability after tab change with a slight delay to allow rendering
     setTimeout(checkScrollability, 300);
 
-    // Add listener for window resize
     window.addEventListener('resize', checkScrollability);
     return () => window.removeEventListener('resize', checkScrollability);
   }, [activeTab]);
@@ -81,23 +72,10 @@ const ContentTabs: React.FC = () => {
           behavior: 'smooth'
         });
 
-        // Update scroll buttons after scrolling
         setTimeout(checkScrollability, 300);
       }
     }
   };
-
-  // const handleViewAllClick = ()=>{
-  //   if(activeTab == 'projects'){
-  //     navigate('/projects');
-  //   }
-  //   else if(activeTab == 'events'){
-  //     navigate('/events');
-  //   }
-  //   else if(activeTab == 'publications'){
-  //     navigate('/publications');
-  //   }
-  // }
 
   return (
     <section id="content" className="content-section">
@@ -126,7 +104,6 @@ const ContentTabs: React.FC = () => {
         </div>
 
         <div className="content-grid full-width">
-          {/* Main Content */}
           <div className="content-card">
             <h2 className="content-tabs-section-title">
               {activeTab === 'projects' ? (
@@ -189,12 +166,6 @@ const ContentTabs: React.FC = () => {
                 <ChevronRight />
               </button>
             </div>
-
-            {/* <div className="view-all-container">
-              <button className="view-all-button" onClick={handleViewAllClick}>
-                View All
-              </button>
-            </div> */}
           </div>
         </div>
       </div>
