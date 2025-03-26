@@ -12,7 +12,7 @@ import Register from './pages/Register/Register.tsx';
 import ProjectDetailsContainer from './components/ProjectDetails/index';
 import PublicationDetailsPage from './components/PublicationDetails/index.tsx';
 import ChatBubble from './components/ChatBubble/ChatBubble.tsx';
-
+import EventDetail from './pages/Events/EventDetail.tsx';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Router>
@@ -22,6 +22,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />
         <Route path="/teams" element={<Team />} />
+        <Route path="/events/:id" element={<EventDetail />} /> 
         <Route path='/register' element={<Register/>}/>
         <Route path="/collaborators" element={<Collaborators/>} />
         <Route path="/about" element={<About/>}/>

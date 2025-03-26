@@ -18,6 +18,16 @@ const CustomEventModal = ({ calendarEvent }: { calendarEvent: EventData }) => {
     });
   };
 
+  // Format time only (for same-day events)
+  const formatTimeOnly = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleString('en-US', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    });
+  };
+
   // Generate background color dynamically based on event type
   const headerStyle = {
     backgroundColor: calendarEvent.color || 'var(--color-primary)'
@@ -29,20 +39,10 @@ const CustomEventModal = ({ calendarEvent }: { calendarEvent: EventData }) => {
     const endDate = new Date(calendarEvent.end);
     return startDate.toDateString() === endDate.toDateString();
   };
-  
-  // Format time only (for same-day events)
-  const formatTimeOnly = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleString('en-US', {
-      hour: 'numeric',
-      minute: '2-digit',
-      hour12: true
-    });
-  };
 
-  // Handle view more click - navigate to specific event
+  // Handle view more click with debugging
   const handleViewMore = () => {
-    // Navigate to the specific event using its ID
+    console.log("Navigating to event details with ID:", calendarEvent.id);
     navigate(`/events/${calendarEvent.id}`);
   };
 
@@ -98,7 +98,11 @@ const CustomEventModal = ({ calendarEvent }: { calendarEvent: EventData }) => {
       </div>
       
       <div className="event-modal-footer">
-        <button className="view-more-btn" onClick={handleViewMore}>
+        <button 
+          className="view-more-btn" 
+          onClick={handleViewMore}
+          data-event-id={calendarEvent.id} // Add data attribute for debugging
+        >
           View More Details
         </button>
       </div>
