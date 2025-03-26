@@ -36,6 +36,7 @@ const ProjectDetailsContainer: React.FC = () => {
             bannerImage: project.bannerImage,
             fullDescription: project.fullDescription,
             contributors: formatContributors(project.contributors),
+            contributors_count: project.contributors_count,
             mentors: project.mentors,
             technologies: project.technologies,
             startDate: project.startDate,

@@ -44,6 +44,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s;
+  object-position: center 30%; /* This shifts the focal point up by 20% */
 }
 
 .team-member-card:hover .team-member-image {
@@ -69,7 +70,7 @@
 }
 
 .team-member-department{
-  color: var(--color-gray-800);
+  color: var(--color-primary);
 }
 
 .team-member-short-details {
