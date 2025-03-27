@@ -1,11 +1,11 @@
 import React from 'react';
 import { Zap, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Project } from '../types';
+import { UIProject} from '../../../data/projects';
 import { useNavigate } from 'react-router-dom';
 
 export interface ProjectsListProps {
-  projects: Project[];
+  projects: UIProject[];
 }
 
 const ProjectsList: React.FC<ProjectsListProps> = ({ projects}) => {

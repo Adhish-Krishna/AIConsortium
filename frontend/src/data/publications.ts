@@ -1,12 +1,13 @@
 interface Author {
   name: string;
   department: string,
-  rollno: string,
+  rollno?: string,
   affiliation?: string;
 }
 
 interface Mentor{
   name: string,
+  designation: string,
   department: string,
 }
 
@@ -14,8 +15,8 @@ interface Mentor{
 export interface Publication {
   id: string;
   title: string;
-  authors: string | Author[];
-  mentors: string | Mentor[];
+  authors: Author[];
+  mentors: Mentor[];
   abstract: string;
   journal: string;
   year: string;
@@ -25,7 +26,6 @@ export interface Publication {
   citations?: number;
   pdfLink?: string;
   collaborators?: string[];
-  // Add new quality indicator fields
   indexing?: string;
   quartile?: string;
   impactFactor?: number;
@@ -34,114 +34,184 @@ export interface Publication {
 // Sample publications data
 export const publications: Publication[] = [
   {
-    id: "pub-001",
-    title: "Deep Learning Approaches for Natural Language Processing in Educational Contexts",
+    id: "pub-2023-01",
+    title: "Machine Learning Approaches to Natural Language Processing in Educational Contexts",
     authors: [
-      { name: "Priya Sharma", department: "Computer Science", rollno: "CS2021-45", affiliation: "AI Research Lab" },
-      { name: "Rahul Verma", department: "Computer Science", rollno: "CS2021-62" }
+      {
+        name: "Rajiv Kumar",
+        department: "Computer Science Engineering",
+        rollno: "CSE/19/042",
+      },
+      {
+        name: "Priya Sharma",
+        department: "Computer Science Engineering",
+        rollno: "CSE/19/028",
+      },
+      {
+        name: "Dr. Anand Mishra",
+        department: "Computer Science Engineering",
+        affiliation: "National Institute of Technology",
+      }
     ],
     mentors: [
-      { name: "Dr. Anil Kumar", department: "Computer Science" },
-      { name: "Dr. Meera Patel", department: "Linguistics" }
+      {
+        name: "Dr. Sanjay Gupta",
+        designation: "Associate Professor",
+        department: "Computer Science Engineering",
+      }
     ],
-    abstract: "This paper explores novel deep learning architectures for improving natural language understanding in educational technology applications, with a focus on automated essay grading and personalized learning feedback systems.",
-    journal: "Journal of Educational Technology & AI",
+    abstract: "This paper explores novel machine learning techniques for enhancing natural language processing in educational technology applications. We demonstrate improvements in sentiment analysis of student feedback and automated assessment systems.",
+    journal: "IEEE Transactions on Learning Technologies",
     year: "2023",
     imageUrl: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    doi: "10.1234/jeta.2023.001",
-    keywords: ["Deep Learning", "NLP", "Education Technology", "Automated Grading"],
-    citations: 34,
-    pdfLink: "/pdfs/deep-learning-nlp-education.pdf",
-    collaborators: ["National Institute of Education", "EdTech Solutions Inc."],
-    // Add quality indicators
-    indexing: "SCOPUS, Web of Science",
+    doi: "10.1109/TLT.2023.3156789",
+    keywords: ["Machine Learning", "NLP", "Educational Technology", "Sentiment Analysis"],
+    citations: 14,
+    pdfLink: "/pdfs/nlp-education-2023.pdf",
+    indexing: "Scopus, Web of Science",
     quartile: "Q1",
-    impactFactor: 4.8
+    impactFactor: 5.8
   },
   {
-    id: "pub-002",
-    title: "Machine Learning for Sustainable Agricultural Practices: A Case Study in Rural India",
+    id: "pub-2022-05",
+    title: "Deep Learning for Medical Image Analysis: A Comprehensive Review",
     authors: [
-      { name: "Ankit Patel", department: "Agricultural Engineering", rollno: "AG2022-12" },
-      { name: "Sneha Gupta", department: "Computer Science", rollno: "CS2022-08", affiliation: "Rural Tech Initiative" }
+      {
+        name: "Sneha Patel",
+        department: "Electronics and Communication Engineering",
+        rollno: "ECE/20/011",
+      },
+      {
+        name: "Arjun Singh",
+        department: "Biomedical Engineering",
+        rollno: "BME/20/007",
+      }
     ],
     mentors: [
-      { name: "Dr. Rajesh Singh", department: "Agricultural Sciences" }
+      {
+        name: "Dr. Meera Rajput",
+        designation: "Professor",
+        department: "Electronics and Communication Engineering",
+      },
+      {
+        name: "Dr. Vikram Reddy",
+        designation: "Assistant Professor",
+        department: "Biomedical Engineering",
+      }
     ],
-    abstract: "This research demonstrates the application of machine learning algorithms to optimize irrigation schedules and predict crop yields in resource-constrained farming environments across three districts in rural India.",
-    journal: "Sustainable Computing and Agricultural Research",
+    abstract: "This paper presents a comprehensive review of deep learning techniques applied to medical image analysis. We categorize approaches based on imaging modality and clinical application, highlighting recent advancements and challenges.",
+    journal: "Medical Image Analysis",
     year: "2022",
     imageUrl: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    doi: "10.5678/scar.2022.045",
-    keywords: ["Machine Learning", "Agriculture", "Sustainability", "IoT", "Rural Development"],
-    citations: 17,
-    pdfLink: "/pdfs/ml-sustainable-agriculture.pdf",
-    indexing: "SCOPUS",
-    quartile: "Q2",
-    impactFactor: 3.2
+    doi: "10.1016/j.media.2022.102341",
+    keywords: ["Deep Learning", "Medical Imaging", "CNN", "Healthcare AI"],
+    citations: 87,
+    pdfLink: "/pdfs/deep-learning-medical-2022.pdf",
+    collaborators: ["Regional Medical Center", "AI Healthcare Institute"],
+    indexing: "PubMed, Scopus",
+    quartile: "Q1",
+    impactFactor: 8.2
   },
   {
-    id: "pub-003",
-    title: "Quantum Computing Applications in Cryptography: Current State and Future Directions",
+    id: "pub-2023-08",
+    title: "Sustainable Energy Management Using IoT and Blockchain: Smart Campus Case Study",
     authors: [
-      { name: "Vikram Mehta", department: "Physics", rollno: "PH2020-03" },
-      { name: "Neha Reddy", department: "Mathematics", rollno: "MA2021-15" }
+      {
+        name: "Amit Verma",
+        department: "Electrical Engineering",
+        rollno: "EE/18/022",
+      },
+      {
+        name: "Neha Kapoor",
+        department: "Information Technology",
+        rollno: "IT/18/045",
+      }
     ],
     mentors: [
-      { name: "Prof. Samuel Wilson", department: "Quantum Computing" },
-      { name: "Dr. Lisa Chen", department: "Cybersecurity" }
+      {
+        name: "Dr. Rahul Mathur",
+        designation: "Professor",
+        department: "Electrical Engineering",
+      }
     ],
-    abstract: "This comprehensive review examines the implications of quantum computing advances on current cryptographic standards and proposes quantum-resistant algorithms suitable for implementation in near-term security protocols.",
-    journal: "International Journal of Quantum Information & Cryptography",
+    abstract: "This research introduces a novel framework integrating IoT sensors and blockchain technology for sustainable energy management on university campuses. We present deployment results showing 24% reduction in energy consumption over a six-month period.",
+    journal: "Renewable and Sustainable Energy Reviews",
     year: "2023",
-    imageUrl: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    doi: "10.9876/ijqic.2023.012",
-    keywords: ["Quantum Computing", "Cryptography", "Post-Quantum Security", "Shor's Algorithm"],
-    citations: 56,
-    pdfLink: "/pdfs/quantum-crypto-review.pdf",
-    collaborators: ["National Quantum Research Center", "Cybersecurity Institute"],
-    indexing: "Web of Science, IEEE Xplore",
+    imageUrl:'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    doi: "10.1016/j.rser.2023.112786",
+    keywords: ["IoT", "Blockchain", "Smart Campus", "Energy Management", "Sustainability"],
+    citations: 9,
+    pdfLink: "/pdfs/sustainable-energy-2023.pdf",
+    collaborators: ["Green Energy Foundation", "Smart City Initiative"],
+    indexing: "Scopus, Web of Science",
     quartile: "Q1",
-    impactFactor: 5.6
+    impactFactor: 14.5
   },
   {
-    id: "pub-004",
-    title: "Ethical Frameworks for Autonomous AI Systems in Healthcare Decision-Making",
-    authors: "Dr. Ayesha Khan, Maya Desai, Prof. James Thompson",
-    mentors: "Prof. Eliza Rodriguez, Dr. Michael Chen",
-    abstract: "This paper proposes a comprehensive ethical framework for the development and deployment of autonomous AI systems in critical healthcare decision-making contexts, with emphasis on transparency, explainability, and accountability.",
-    journal: "Ethics in AI and Healthcare",
+    id: "pub-2022-11",
+    title: "Cybersecurity in Critical Infrastructure: Threat Modeling and Defense Mechanisms",
+    authors: [
+      {
+        name: "Karan Malhotra",
+        department: "Information Security",
+        rollno: "IS/19/016",
+      },
+      {
+        name: "Dr. Leela Rao",
+        department: "Computer Science Engineering",
+        affiliation: "Institute of Cybersecurity Research",
+      }
+    ],
+    mentors: [
+      {
+        name: "Dr. Aditya Kumar",
+        designation: "Professor",
+        department: "Information Security",
+      }
+    ],
+    abstract: "This paper addresses the growing cybersecurity challenges facing critical infrastructure. We propose a comprehensive threat modeling framework and evaluate defense mechanisms through simulation and case studies of recent attacks.",
+    journal: "Computers & Security",
     year: "2022",
-    imageUrl: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    keywords: ["AI Ethics", "Healthcare", "Autonomous Systems", "Medical Decision-Making"],
-    citations: 42,
-    pdfLink: "/pdfs/ethical-ai-healthcare.pdf",
-    collaborators: ["University Medical Center", "Center for AI Ethics"],
-    indexing: "PubMed, SCOPUS",
-    quartile: "Q1",
-    impactFactor: 7.2
+    doi: "10.1016/j.cose.2022.102633",
+    keywords: ["Cybersecurity", "Critical Infrastructure", "Threat Modeling", "Network Security"],
+    citations: 32,
+    pdfLink: "/pdfs/cybersecurity-infrastructure-2022.pdf",
+    indexing: "Scopus",
+    quartile: "Q2",
+    impactFactor: 4.3
   },
   {
-    id: "pub-005",
-    title: "Renewable Energy Optimization Using Multi-Agent Reinforcement Learning",
+    id: "pub-2023-03",
+    title: "Quantum Computing Applications in Cryptography: Opportunities and Challenges",
     authors: [
-      { name: "Deepak Kumar", department: "Electrical Engineering", rollno: "EE2021-33" },
-      { name: "Li Wei", department: "Computer Science", rollno: "CS2022-54" }
+      {
+        name: "Vivek Mehta",
+        department: "Computer Science Engineering",
+        rollno: "CSE/20/003",
+      }
     ],
     mentors: [
-      { name: "Dr. Sarah Johnson", department: "Sustainable Energy" }
+      {
+        name: "Dr. Nandini Shah",
+        designation: "Associate Professor",
+        department: "Computer Science Engineering",
+      },
+      {
+        name: "Dr. Prakash Joshi",
+        designation: "Professor",
+        department: "Mathematics",
+      }
     ],
-    abstract: "This research introduces a novel multi-agent reinforcement learning approach for optimizing energy distribution in mixed renewable energy grids, demonstrating a 28% improvement in efficiency over traditional methods.",
-    journal: "Renewable Energy Systems & Machine Learning",
+    abstract: "This research explores the implications of quantum computing advancements for contemporary cryptographic systems. We analyze vulnerabilities in current encryption standards and propose quantum-resistant alternatives.",
+    journal: "Journal of Cryptographic Engineering",
     year: "2023",
-    doi: "10.3421/reml.2023.076",
-    keywords: ["Reinforcement Learning", "Renewable Energy", "Smart Grid", "Multi-Agent Systems"],
-    citations: 23,
     imageUrl: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    pdfLink: "/pdfs/renewable-energy-marl.pdf",
-    collaborators: ["National Renewable Energy Laboratory", "CleanTech Solutions"],
-    indexing: "IEEE Xplore, SCOPUS",
+    doi: "10.1007/s13389-023-00289-4",
+    keywords: ["Quantum Computing", "Cryptography", "Post-Quantum Cryptography", "Information Security"],
+    citations: 11,
+    pdfLink: "/pdfs/quantum-cryptography-2023.pdf",
+    indexing: "Scopus, Web of Science",
     quartile: "Q2",
-    impactFactor: 3.9
+    impactFactor: 3.7
   }
 ];

@@ -165,6 +165,57 @@
 }
 
 .detail-authors-section,
+.detail-mentors-section,
+.detail-collaborators-section,
+.detail-journal-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.detail-authors-list,
+.detail-mentors-list,
+.detail-collaborators-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detail-author-item,
+.detail-mentor-item,
+.detail-collaborator-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-author-name,
+.detail-mentor-name,
+.detail-collaborator-name {
+  font-weight: 600;
+  color: var(--color-gray-800);
+}
+
+.detail-author-affiliation,
+.detail-mentor-designation,
+.detail-mentor-department {
+  font-size: 0.85rem;
+  color: var(--color-gray-500);
+}
+
+.detail-mentor-designation {
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.detail-author-department,
+.detail-author-rollno {
+  font-size: 0.85rem;
+  color: var(--color-primary);
+}
+
+.detail-authors-section,
 .detail-collaborators-section,
 .detail-journal-section {
   background-color: white;
