@@ -11,7 +11,7 @@ import About from './pages/About/About.tsx';
 import Register from './pages/Register/Register.tsx';
 import ProjectDetailsContainer from './components/ProjectDetails/index';
 import PublicationDetailsPage from './components/PublicationDetails/index.tsx';
-import ChatBubble from './components/ChatBubble/ChatBubble.tsx';
+// import ChatBubble from './components/ChatBubble/ChatBubble.tsx';
 import EventDetail from './pages/Events/EventDetail.tsx';
 import DirectorsDesk from './pages/DirectorsDesk/DirectorsDesk.tsx';
 import Gallery from './pages/Gallery/Gallery.tsx';
@@ -20,7 +20,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Router>
       <Navigation />
-      <ChatBubble/>
+      {/* <ChatBubble/> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />
