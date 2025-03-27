@@ -1,13 +1,11 @@
 .event-detail-container {
-  max-width: 800px;
-  margin: 120px auto 40px;
-  padding: 40px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  color: var(--color-black);
-  position: relative; /* Add this */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+  background-color: transparent;
+  position: relative;
   z-index: 1; /* Lower than navbar */
+  padding-top: 120px; /* Increased from 100px to provide more space */
 }
 
 .event-detail-header {
@@ -234,12 +232,27 @@
   .event-detail-container h1 {
     font-size: 1.75rem;
   }
+  
+  .event-detail-page {
+    padding-top: 80px; /* Adjusted for mobile */
+  }
+  
+  .event-detail-hero {
+    margin-top: -20px;
+  }
+  
+  /* Other existing mobile styles */
 }
 
 @media (max-width: 480px) {
   .event-detail-container {
     margin-top: 5rem;
   }
+  
+  .event-detail-page {
+    padding-top: 70px; /* Further adjusted for small screens */
+  }
+  
 }
 
 .event-detail-container h1 {
@@ -321,20 +334,15 @@
   position: relative; /* Add this */
   z-index: 1; /* Lower than navbar */
 }
-.navigation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--color-background);
-    z-index: 9999 !important; /* Ensure highest z-index */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
+
 .event-detail-page {
-    padding-top: 70px; /* Match navbar height */
-    min-height: 100vh;
-    background-color: var(--color-background, #f5f5f5);
-  }
+  padding-top: 100px;
+  min-height: 100vh;
+  background-color: var(--color-background, #f5f5f5);
+  color: var(--color-gray-500);
+  overflow-x: hidden;
+}
+
 .error-container h2 {
   color: var(--color-primary);
   margin-bottom: 16px;
@@ -345,7 +353,7 @@
   margin-top: 16px;
   padding: 8px 16px;
   background-color: var(--color-gray-500);
-  color: var(--color-primary);
+  color: var (--color-primary);
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
@@ -361,7 +369,9 @@
   text-align: center;
   margin-top: 8rem;
 }
-
+.space{
+  margin-top: 2.4rem;
+}
 /* Add a spinner to the loading class */
 .loading:before {
   content: "";
@@ -387,17 +397,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Add this class to ensure Navbar always appears on top */
-:global(.navigation) {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000 !important; /* Very high z-index */
-}
-
 /* Main Layout */
 .event-detail-page {
+  padding-top: 100px;
   min-height: 100vh;
   background-color: var(--color-background, #f5f5f5);
   color: var(--color-gray-500);
@@ -413,6 +415,7 @@ body {
   margin-bottom: 2rem;
   display: flex;
   align-items: flex-end;
+  margin-top: -30px; /* Pull hero section up to reduce gap */
 }
 
 .event-detail-hero-content {
@@ -817,17 +820,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Navbar Override */
-.navigation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--color-background);
-  z-index: 9999 !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .event-detail-grid {
@@ -898,4 +890,11 @@ body {
     grid-template-columns: 2.5fr 1fr; /* Give more space to main content */
     gap: 3rem;
   }
+}
+
+/* Make navbar opaque only on event detail page */
+.event-detail-page .navbar {
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: none;
 }

@@ -143,6 +143,24 @@
 .event-image-container {
   height: 10rem;
   overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.event-image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.event-image-container:hover::after {
+  opacity: 0.1;
 }
 
 .event-image {
@@ -173,7 +191,7 @@
   color: var(--color-gray-800);
 }
 
-.event-description {
+.event-ddescription {
   color: var(--color-black);
   margin-bottom: 0.75rem;
   font-size: 0.875rem;
@@ -235,7 +253,7 @@
   color: var(--color-secondary);
 }
 
-.discussion-excerpt, .project-description {
+.discussion-excerpt, .project-ddescription {
   color: var(--color-black);
   margin-bottom: 0.75rem;
   font-size: 0.875rem;
@@ -329,7 +347,7 @@
   color: var(--color-gray-800);
 }
 
-.timeline-description {
+.timeline-ddescription {
   color: var(--color-gray-500);
   font-size: 0.875rem;
 }
@@ -372,7 +390,7 @@
   font-size: 0.875rem;
 }
 
-.resource-description {
+.resource-ddescription {
   font-size: 0.75rem;
   color: var(--color-gray-500);
 }
@@ -815,9 +833,9 @@
     margin-bottom: 0.25rem;
   }
 
-  .event-description {
+  .event-ddescription {
     font-size: 0.75rem;
-    margin-bottom: 0.5rem;
+    
   }
 
   .learn-more {
@@ -833,7 +851,7 @@
     font-size: 1rem;
   }
 
-  .discussion-excerpt, .project-description {
+  .discussion-excerpt, .project-ddescription {
     font-size: 0.75rem;
     margin-bottom: 0.5rem;
   }
@@ -1172,4 +1190,51 @@
     min-width: 260px; /* Slightly increased from 240px */
     width: 260px; /* Slightly increased from 240px */
   }
+}
+
+/* Make event ddescription smaller in ContentTabs with a fixed height */
+.content-tabs-section-title + .scrollable-wrapper .event-ddescription {
+  max-height: 3rem; /* About 2 lines of text */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: var(--color-gray-500);
+  font-size: 0.875rem;
+}
+
+/* Make event description smaller in ContentTabs with consistent styling */
+.content-tabs-section-title + .scrollable-wrapper .event-ddescription {
+  max-height: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  color: var(--color-gray-500);
+  font-size: 0.875rem;
+}
+
+/* Make event cards have consistent height in ContentTabs */
+.content-tabs-section-title + .scrollable-wrapper .event-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content-tabs-section-title + .scrollable-wrapper .event-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Position the Learn More button at the bottom */
+.content-tabs-section-title + .scrollable-wrapper .learn-more {
+  margin-top: auto;
+  color: var(--color-primary);
 }

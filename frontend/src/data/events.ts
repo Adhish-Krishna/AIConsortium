@@ -122,5 +122,12 @@ export const events: EventData[] = [
 
 // Helper function to get event by ID
 export const getEventById = (id: string): EventData | undefined => {
-  return events.find(event => event.id === id);
+  // Add logging to debug
+  console.log("Looking for event with ID:", id);
+  console.log("Available events:", events.map(e => e.id));
+  
+  const foundEvent = events.find(event => event.id === id);
+  console.log("Found event:", foundEvent);
+  
+  return foundEvent;
 };
