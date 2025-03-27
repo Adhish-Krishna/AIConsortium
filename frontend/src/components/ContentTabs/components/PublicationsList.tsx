@@ -29,13 +29,6 @@ const PublicationsList: React.FC<PublicationsListProps> = ({
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
         >
-          <div className="publication-image-container">
-            <img
-              src={publication.imageUrl || '/placeholder-publication.jpg'}
-              alt={publication.title}
-              className="publication-image"
-            />
-          </div>
           <div className="publication-details">
             <div className="publication-meta">
               {publication.journal} • {publication.year}
@@ -59,7 +52,7 @@ const PublicationsList: React.FC<PublicationsListProps> = ({
               </div>
               <div className="quality-indicator">
                 <span className="indicator-label">Impact Factor:</span>
-                <span className="indicator-value">{publication.impactFactor?.toFixed(1) || 'N/A'}</span>
+                <span className="indicator-value">{publication.impactFactor || 'N/A'}</span>
               </div>
             </div>
 

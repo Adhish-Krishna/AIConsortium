@@ -28,190 +28,226 @@ export interface Publication {
   collaborators?: string[];
   indexing?: string;
   quartile?: string;
-  impactFactor?: number;
+  impactFactor?: string;
+  publisher: string,
+  issn_no: string,
+  isbn_no: string
 }
 
 // Sample publications data
 export const publications: Publication[] = [
   {
-    id: "pub-2023-01",
-    title: "Machine Learning Approaches to Natural Language Processing in Educational Contexts",
+    id: "1",
+    title: "Compressive Sensing Node Localization Method Using Autonomous Underwater Vehicle Network",
     authors: [
-      {
-        name: "Rajiv Kumar",
-        department: "Computer Science Engineering",
-        rollno: "CSE/19/042",
-      },
-      {
-        name: "Priya Sharma",
-        department: "Computer Science Engineering",
-        rollno: "CSE/19/028",
-      },
-      {
-        name: "Dr. Anand Mishra",
-        department: "Computer Science Engineering",
-        affiliation: "National Institute of Technology",
-      }
+      { name: "Madhumitha K", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Arul Anand N", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Sathiyamoorthi Velayutham", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Ashutosh Srivastava", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Sachin Kumar Gupta", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "P Suresh", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Nitin Goyal", department: "CSE", affiliation: "PSG College of Technology" }
     ],
-    mentors: [
-      {
-        name: "Dr. Sanjay Gupta",
-        designation: "Associate Professor",
-        department: "Computer Science Engineering",
-      }
-    ],
-    abstract: "This paper explores novel machine learning techniques for enhancing natural language processing in educational technology applications. We demonstrate improvements in sentiment analysis of student feedback and automated assessment systems.",
-    journal: "IEEE Transactions on Learning Technologies",
-    year: "2023",
-    imageUrl: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    doi: "10.1109/TLT.2023.3156789",
-    keywords: ["Machine Learning", "NLP", "Educational Technology", "Sentiment Analysis"],
-    citations: 14,
-    pdfLink: "/pdfs/nlp-education-2023.pdf",
-    indexing: "Scopus, Web of Science",
-    quartile: "Q1",
-    impactFactor: 5.8
-  },
-  {
-    id: "pub-2022-05",
-    title: "Deep Learning for Medical Image Analysis: A Comprehensive Review",
-    authors: [
-      {
-        name: "Sneha Patel",
-        department: "Electronics and Communication Engineering",
-        rollno: "ECE/20/011",
-      },
-      {
-        name: "Arjun Singh",
-        department: "Biomedical Engineering",
-        rollno: "BME/20/007",
-      }
-    ],
-    mentors: [
-      {
-        name: "Dr. Meera Rajput",
-        designation: "Professor",
-        department: "Electronics and Communication Engineering",
-      },
-      {
-        name: "Dr. Vikram Reddy",
-        designation: "Assistant Professor",
-        department: "Biomedical Engineering",
-      }
-    ],
-    abstract: "This paper presents a comprehensive review of deep learning techniques applied to medical image analysis. We categorize approaches based on imaging modality and clinical application, highlighting recent advancements and challenges.",
-    journal: "Medical Image Analysis",
+    mentors: [],
+    abstract: "Research paper on Machine Learning applications in underwater vehicle networks",
+    journal: "Wireless Personal Communications",
     year: "2022",
-    imageUrl: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    doi: "10.1016/j.media.2022.102341",
-    keywords: ["Deep Learning", "Medical Imaging", "CNN", "Healthcare AI"],
-    citations: 87,
-    pdfLink: "/pdfs/deep-learning-medical-2022.pdf",
-    collaborators: ["Regional Medical Center", "AI Healthcare Institute"],
-    indexing: "PubMed, Scopus",
-    quartile: "Q1",
-    impactFactor: 8.2
+    doi: "10.1007/s11277-022-09841-5",
+    keywords: ["Machine Learning"],
+    indexing: "SCI & SCI-E",
+    quartile: "Q2",
+    impactFactor: '0.59',
+    publisher: "Springer",
+    issn_no: "09296212",
+    isbn_no: "1572834X",
   },
   {
-    id: "pub-2023-08",
-    title: "Sustainable Energy Management Using IoT and Blockchain: Smart Campus Case Study",
+    id: "2",
+    title: "Privacy-aware network embedding-based ensemble for social recommendation",
     authors: [
-      {
-        name: "Amit Verma",
-        department: "Electrical Engineering",
-        rollno: "EE/18/022",
-      },
-      {
-        name: "Neha Kapoor",
-        department: "Information Technology",
-        rollno: "IT/18/045",
-      }
+      { name: "Sudha Sadasivam G", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Vani K", department: "CSE", affiliation: "PSG College of Technology" }
     ],
-    mentors: [
-      {
-        name: "Dr. Rahul Mathur",
-        designation: "Professor",
-        department: "Electrical Engineering",
-      }
-    ],
-    abstract: "This research introduces a novel framework integrating IoT sensors and blockchain technology for sustainable energy management on university campuses. We present deployment results showing 24% reduction in energy consumption over a six-month period.",
-    journal: "Renewable and Sustainable Energy Reviews",
-    year: "2023",
-    imageUrl:'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    doi: "10.1016/j.rser.2023.112786",
-    keywords: ["IoT", "Blockchain", "Smart Campus", "Energy Management", "Sustainability"],
-    citations: 9,
-    pdfLink: "/pdfs/sustainable-energy-2023.pdf",
-    collaborators: ["Green Energy Foundation", "Smart City Initiative"],
-    indexing: "Scopus, Web of Science",
-    quartile: "Q1",
-    impactFactor: 14.5
-  },
-  {
-    id: "pub-2022-11",
-    title: "Cybersecurity in Critical Infrastructure: Threat Modeling and Defense Mechanisms",
-    authors: [
-      {
-        name: "Karan Malhotra",
-        department: "Information Security",
-        rollno: "IS/19/016",
-      },
-      {
-        name: "Dr. Leela Rao",
-        department: "Computer Science Engineering",
-        affiliation: "Institute of Cybersecurity Research",
-      }
-    ],
-    mentors: [
-      {
-        name: "Dr. Aditya Kumar",
-        designation: "Professor",
-        department: "Information Security",
-      }
-    ],
-    abstract: "This paper addresses the growing cybersecurity challenges facing critical infrastructure. We propose a comprehensive threat modeling framework and evaluate defense mechanisms through simulation and case studies of recent attacks.",
-    journal: "Computers & Security",
+    mentors: [],
+    abstract: "Research on Deep Neural Networks (DNN) for social recommendation systems",
+    journal: "Journal of Supercomputing",
     year: "2022",
-    doi: "10.1016/j.cose.2022.102633",
-    keywords: ["Cybersecurity", "Critical Infrastructure", "Threat Modeling", "Network Security"],
-    citations: 32,
-    pdfLink: "/pdfs/cybersecurity-infrastructure-2022.pdf",
-    indexing: "Scopus",
+    doi: "10.1007/s11227-022-04958-7",
+    keywords: ["Deep Neural Networks (DNN)"],
+    indexing: "SCI & SCI-E",
     quartile: "Q2",
-    impactFactor: 4.3
+    impactFactor: '0.76',
+    publisher: "Springer",
+    issn_no: "09208542",
+    isbn_no: "15730484"
   },
   {
-    id: "pub-2023-03",
-    title: "Quantum Computing Applications in Cryptography: Opportunities and Challenges",
+    id: "3",
+    title: "Multimodal prediction of breast cancer using radiogenomics and clinical trials with decision fusion",
     authors: [
-      {
-        name: "Vivek Mehta",
-        department: "Computer Science Engineering",
-        rollno: "CSE/20/003",
-      }
+      { name: "N. Ramkumar", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Sudha Sadasivam G", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Karthika Renuka D", department: "CSE", affiliation: "PSG College of Technology" }
     ],
-    mentors: [
-      {
-        name: "Dr. Nandini Shah",
-        designation: "Associate Professor",
-        department: "Computer Science Engineering",
-      },
-      {
-        name: "Dr. Prakash Joshi",
-        designation: "Professor",
-        department: "Mathematics",
-      }
-    ],
-    abstract: "This research explores the implications of quantum computing advancements for contemporary cryptographic systems. We analyze vulnerabilities in current encryption standards and propose quantum-resistant alternatives.",
-    journal: "Journal of Cryptographic Engineering",
+    mentors: [],
+    abstract: "Machine Learning and Medical AI applications in breast cancer prediction",
+    journal: "Journal of Intelligent & Fuzzy Systems",
     year: "2023",
-    imageUrl: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    doi: "10.1007/s13389-023-00289-4",
-    keywords: ["Quantum Computing", "Cryptography", "Post-Quantum Cryptography", "Information Security"],
-    citations: 11,
-    pdfLink: "/pdfs/quantum-cryptography-2023.pdf",
-    indexing: "Scopus, Web of Science",
+    doi: "10.3233/JIFS-220633",
+    keywords: ["Machine Learning", "Medical AI", "Breast Cancer", "Radiogenomics"],
+    indexing: "SCI & SCI-E",
     quartile: "Q2",
-    impactFactor: 3.7
+    impactFactor: '0.38',
+    publisher: "IOS Press",
+    issn_no: "10641246",
+    isbn_no: "18758967",
+  },
+  {
+    id: "4",
+    title: "Defense against adversarial malware using robust classifier: DAM-ROC",
+    authors: [
+      { name: "Shymala Gowri S", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Sudha Sadasivam G", department: "CSE", affiliation: "PSG College of Technology" }
+    ],
+    mentors: [],
+    abstract: "Research on Adversarial Machine Learning for malware defense",
+    journal: "Sadhana-Academy Proceedings In Engineering Sciences",
+    year: "2022",
+    doi: "10.1007/s12046-022-01980-6S",
+    keywords: ["Adversarial Machine Learning", "Malware Defense", "Robust Classifier"],
+    indexing: "SCI & SCI-E",
+    quartile: "Q2",
+    impactFactor: '0.34',
+    publisher: "Springer",
+    issn_no: "02562499",
+    isbn_no: "09737677",
+  },
+  {
+    id: "5",
+    title: "Toward Better Food Security Using Concepts from Industry 5.0",
+    authors: [
+      { name: "Selvakumar", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Milicia Pojic", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Jayashree L S", department: "CSE", affiliation: "PSG College of Technology" }
+    ],
+    mentors: [],
+    abstract: "Research on Blockchain, IoE, and Digital Twin for food security",
+    journal: "Sensors",
+    year: "2022",
+    doi: "10.3390/s22218377",
+    keywords: ["Blockchain", "IoE", "Digital Twin", "Food Security", "Industry 5.0"],
+    indexing: "SCI & SCI-E",
+    quartile: "Q1",
+    impactFactor: '0.79',
+    publisher: "MDPI",
+    issn_no: "",
+    isbn_no: "14248220"
+  },
+  {
+    id: "6",
+    title: "Multilingual low resource Indian language speech recognition and spell correction using Indic BERT",
+    authors: [
+      { name: "M C Shunmuga Priya", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Karthika Renuka D", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Ashok Kumar L", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Lovelyn Rose S", department: "CSE", affiliation: "PSG College of Technology" }
+    ],
+    mentors: [],
+    abstract: "Natural Language Processing (NLP) for Indian language speech recognition",
+    journal: "Sadhana-Academy Proceedings In Engineering Sciences",
+    year: "2022",
+    doi: "10.1007/s12046-022-01973-5",
+    keywords: ["Natural Language Processing", "Speech Recognition", "Indic BERT"],
+    indexing: "SCI & SCI-E",
+    quartile: "Q2",
+    impactFactor: '0.34',
+    publisher: "Springer",
+    issn_no: "02562499",
+    isbn_no: "09737677",
+  },
+  {
+    id: "7",
+    title: "An Extensive Survey on Superpixel Segmentation: A Research Perspective",
+    authors: [
+      { name: "Vinoth Kumar B", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Prakash J", department: "CSE", affiliation: "PSG College of Technology" }
+    ],
+    mentors: [],
+    abstract: "Evolutionary Computing and Machine Learning applied to superpixel segmentation",
+    journal: "Archives Of Computational Methods In Engineering",
+    year: "2023",
+    doi: "10.1007/s11831-023-09919-8",
+    keywords: ["Evolutionary Computing", "Machine Learning", "Superpixel Segmentation"],
+    indexing: "SCI & SCI-E",
+    quartile: "Q1",
+    impactFactor: '1.8',
+    publisher: "Springer",
+    issn_no: "11343060",
+    isbn_no: "18861784",
+  },
+  {
+    id: "8",
+    title: "A Deep Learning Approach for Efficient Anomaly Detection in WSNs",
+    authors: [
+      { name: "Arul Jothi S", department: "CSE", affiliation: "PSG College of Technology" }
+    ],
+    mentors: [],
+    abstract: "Deep Learning & Anomaly Detection in wireless sensor networks",
+    journal: "International Journal Of Computers Communications & Control",
+    year: "2023",
+    doi: "10.15837/ijccc.2023.1.4756",
+    keywords: ["Deep Learning", "Anomaly Detection", "WSN"],
+    indexing: "SCI & SCI-E",
+    quartile: "Q2",
+    impactFactor: '0.49',
+    publisher: "IJCCC",
+    issn_no: "18419836",
+    isbn_no: "18419844",
+  },
+  {
+    id: "9",
+    title: "MFRCNN: Marshalled FRCNN with optimized reading order in XY tree for document layout analysis in scientific research articles",
+    authors: [
+      { name: "Lovelyn Rose S", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Ravitha Rajalakshmi", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "M. Sabari Nathan", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "A. Suraj Subramanian", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "R. Harishkumar", department: "CSE", affiliation: "PSG College of Technology" }
+    ],
+    mentors: [],
+    abstract: "Machine Learning application in document layout analysis",
+    journal: "Journal Of Intelligent & Fuzzy Systems",
+    year: "2023",
+    doi: "10.3233/JIFS-220705",
+    keywords: ["Machine Learning", "FRCNN", "Document Layout Analysis"],
+    indexing: "SCI & SCI-E",
+    quartile: "Q2",
+    impactFactor: '0.38',
+    publisher: "IOS",
+    issn_no: "10641246",
+    isbn_no: "18758967",
+
+  },
+  {
+    id: "10",
+    title: "Safemedchain—drug counterfeit prevention and recommendation using blockchain and machine learning",
+    authors: [
+      { name: "Gopika Rani N", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Praja", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Gayathri", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "Sneha Sridharan", department: "CSE", affiliation: "PSG College of Technology" }
+    ],
+    mentors: [],
+    abstract: "Blockchain and Machine Learning for drug counterfeit prevention",
+    journal: "Journal Of Intelligent & Fuzzy Systems",
+    year: "2023",
+    doi: "10.3233/JIFS-220636",
+    keywords: ["Blockchain", "Machine Learning", "Drug Counterfeit"],
+    indexing: "SCI & SCI-E",
+    quartile: "Q2",
+    impactFactor: '0.38',
+    publisher: "IOS Press",
+    issn_no: "10641246",
+    isbn_no: "18758967",
   }
-];
+]
