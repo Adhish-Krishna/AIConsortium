@@ -9,5 +9,7 @@ export default defineConfig({
   },
   preview:{
     allowedHosts: ['.ngrok-free.app']
-  }
+  },
+  assetsInclude: "/*.jpg",
+
 });
