@@ -133,6 +133,7 @@ const EventDetail = () => {
 
   return (
     <div className="event-detail-page">
+      <div className='space'>
       <div className="event-detail-hero" style={{ 
         backgroundImage: `linear-gradient(rgba(29, 36, 64, 0.9), rgba(29, 36, 64, 0.7)), url(${event.image})` 
       }}>
@@ -268,6 +269,7 @@ const EventDetail = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
