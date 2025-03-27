@@ -7,6 +7,10 @@ import CallToAction from '../../components/CallToAction/CallToAction';
 import Footer from '../../components/Footer/Footer';
 // import {GlobeDemo} from '../../components/ui/globedemo';
 // import LatestAINews from '../../components/LatestAINews/LatestAINews';
+import PhotoGallery from '../../components/Gallery/PhotoGallery';
+
+//importing styles
+import './Home.css';
 
 function Home() {
   const [isMobileView, setIsMobileView] = useState(false);
@@ -37,6 +41,10 @@ function Home() {
       <Hero />
       <VisionMission />
       <ContentTabs />
+      <div className="home-photo-gallery">
+        <h1 className="home-photo-gallery-font">Photo Gallery</h1>
+        <PhotoGallery/>
+      </div>
       {/* <LatestAINews/> */}
       <CallToAction />
       <Footer />
