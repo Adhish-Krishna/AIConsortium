@@ -1,30 +1,19 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EventModal.css';
-import { EventData } from '../../types/events';
+import { EventData } from '../../data/events'; // Fixed path
 
 const CustomEventModal = ({ calendarEvent }: { calendarEvent: EventData }) => {
   const navigate = useNavigate();
 
-  // Format dates for better display - more compact
+  // Format dates for better display without time
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleString('en-US', {
-      month: 'short',
+      weekday: 'long',
+      month: 'long',
       day: 'numeric',
-      hour: 'numeric',
-      minute: '2-digit',
-      hour12: true
-    });
-  };
-
-  // Format time only (for same-day events)
-  const formatTimeOnly = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleString('en-US', {
-      hour: 'numeric',
-      minute: '2-digit',
-      hour12: true
+      year: 'numeric'
     });
   };
 
@@ -46,6 +35,13 @@ const CustomEventModal = ({ calendarEvent }: { calendarEvent: EventData }) => {
     navigate(`/events/${calendarEvent.id}`);
   };
 
+  // Truncate description to approximate 2 lines
+  const truncateDescription = (text) => {
+    if (!text) return '';
+    const maxLength = 150; // Roughly 2 lines worth of characters
+    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+  };
+
   return (
     <div className="event-modal">
       <div className="event-modal-header" style={headerStyle}>
@@ -57,26 +53,20 @@ const CustomEventModal = ({ calendarEvent }: { calendarEvent: EventData }) => {
       
       <div className="event-modal-body">
         {calendarEvent.description && (
-          <p className="event-modal-description">{calendarEvent.description}</p>
+          <p className="event-modal-description">{truncateDescription(calendarEvent.description)}</p>
         )}
         
         <div className="event-modal-section">
           <div className="event-modal-icon">📅</div>
           <div className="event-modal-info">
             {isSameDay() ? (
-              <>
-                <strong>{new Date(calendarEvent.start).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</strong><br/>
-                <span>
-                  {formatTimeOnly(calendarEvent.start)} - {formatTimeOnly(calendarEvent.end)}
-                </span>
-              </>
+              <strong>{formatDate(calendarEvent.start)}</strong>
             ) : (
               <>
-                <strong>Start:</strong> {formatDate(calendarEvent.start)}<br />
-                <strong>End:</strong> {formatDate(calendarEvent.end)}
+                <strong>From:</strong> {formatDate(calendarEvent.start)}<br />
+                <strong>To:</strong> {formatDate(calendarEvent.end)}
               </>
             )}
-            {calendarEvent.allDay && <span> (All day)</span>}
           </div>
         </div>
         
