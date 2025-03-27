@@ -76,7 +76,7 @@ const EventDetail = () => {
     }
   };
 
-  // Format date for display
+  // Format date for display without time
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
     return date.toLocaleDateString('en-US', {
@@ -84,16 +84,6 @@ const EventDetail = () => {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
-    });
-  };
-
-  // Format time for display
-  const formatTime = (dateStr: string) => {
-    const date = new Date(dateStr);
-    return date.toLocaleTimeString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true
     });
   };
 
@@ -209,18 +199,13 @@ const EventDetail = () => {
                   <Calendar size={20} />
                 </div>
                 <div className="event-info-content">
-                  <h3>Date & Time</h3>
+                  <h3>Date</h3>
                   {isSameDay(event.start, event.end) ? (
-                    <>
-                      <p className="event-date">{formatDate(event.start)}</p>
-                      <p className="event-time">{formatTime(event.start)} - {formatTime(event.end)}</p>
-                    </>
+                    <p className="event-date">{formatDate(event.start)}</p>
                   ) : (
                     <>
-                      <p className="event-date">From {formatDate(event.start)}</p>
-                      <p className="event-time">at {formatTime(event.start)}</p>
-                      <p className="event-date">To {formatDate(event.end)}</p>
-                      <p className="event-time">at {formatTime(event.end)}</p>
+                      <p className="event-date">From: {formatDate(event.start)}</p>
+                      <p className="event-date">To: {formatDate(event.end)}</p>
                     </>
                   )}
                 </div>
