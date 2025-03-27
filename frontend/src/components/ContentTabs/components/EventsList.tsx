@@ -43,7 +43,11 @@ const EventsList = ({ events: propEvents }) => {
           transition={{ duration: 0.5, delay: index * 0.1 }}
         >
           {event.image && (
-            <div className="event-image-container">
+            <div 
+              className="event-image-container"
+              onClick={() => onEventClick(event.id)}
+              style={{ cursor: 'pointer' }}
+            >
               <img src={event.image} alt={event.title} className="event-image" />
             </div>
           )}
@@ -53,7 +57,7 @@ const EventsList = ({ events: propEvents }) => {
               {event.location && <span className="event-location"> • {event.location}</span>}
             </div>
             <h3 className="event-title">{event.title}</h3>
-            {event.description && <p className="event-description">{event.description}</p>}
+            {event.description && <p className="event-ddescription">{event.description}</p>}
             <button 
               className="learn-more" 
               onClick={() => onEventClick(event.id)}
