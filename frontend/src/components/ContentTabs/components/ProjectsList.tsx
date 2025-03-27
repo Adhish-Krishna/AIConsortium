@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, ChevronRight } from 'lucide-react';
+import {ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { UIProject} from '../../../data/projects';
 import { useNavigate } from 'react-router-dom';
@@ -33,11 +33,7 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ projects}) => {
           transition={{ duration: 0.5, delay: index * 0.1 }}
         >
           <div className="project-details">
-            <div className="project-meta">
-              <span className="contributor-count">{project.contributors} contributors</span>
-            </div>
             <h3 className="project-title">
-              <Zap className="project-icon" />
               {project.title}
             </h3>
             <p className="project-description">{project.description}</p>

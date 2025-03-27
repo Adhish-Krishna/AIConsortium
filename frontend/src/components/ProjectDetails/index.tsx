@@ -31,18 +31,25 @@ const ProjectDetailsContainer: React.FC = () => {
           const projectDetails: ProjectDetailsProps = {
             id: project.id,
             title: project.title,
-            image: project.image,
             description: project.description,
-            bannerImage: project.bannerImage,
             fullDescription: project.fullDescription,
             contributors: formatContributors(project.contributors),
             contributors_count: project.contributors_count,
             mentors: project.mentors,
             technologies: project.technologies,
-            startDate: project.startDate,
-            status: project.status,
+            sactionedDate: project.sactionedDate,
+            completedDate: project.completedDate,
+            duration: project.duration,
+            currentStatus: project.currentStatus,
+            investigatorName: project.investigatorName,
+            collaboratingAgenices: project.collaboratingAgenices,
+            sponsorOrganization: project.sponsorOrganization,
+            amount: project.amount,
+            PI_CO_PI: project.PI_CO_PI,
+            proogofAproval: project.proogofAproval,
             repository: project.repository,
-            demoLink: project.demoLink
+            demoLink: project.demoLink,
+            projectDepartments: project.projectDepartments,
           };
 
           // Simulate a short loading time for better UX
