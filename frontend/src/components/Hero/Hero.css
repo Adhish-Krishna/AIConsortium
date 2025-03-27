@@ -151,7 +151,7 @@
 .hero-subtitle {
   font-size: 2rem;
   color: var(--color-primary-dark);
-  font-weight: 200; /* Slightly darker for better contrast */
+  font-weight: 400; /* Slightly darker for better contrast */
 }
 
 .hero-cta {
