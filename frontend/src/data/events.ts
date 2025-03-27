@@ -1,9 +1,9 @@
-import screenshot211846 from '../assets/EventPhotos/E1/Screenshot_20250327_211846_LinkedIn.jpg';
-import screenshot211908 from '../assets/EventPhotos/E1/Screenshot_20250327_211908_LinkedIn.jpg';
-import screenshot212041 from '../assets/EventPhotos/E1/Screenshot_20250327_212041_LinkedIn.jpg';
-import screenshot212110 from '../assets/EventPhotos/E1/Screenshot_20250327_212110_LinkedIn.jpg';
-import screenshot212145 from '../assets/EventPhotos/E1/Screenshot_20250327_212145_LinkedIn.jpg';
-import screenshot212128 from "../assets/EventPhotos/E1/Screenshot_20250327_212128_LinkedIn.jpg";
+import screenshot211846 from '/images/eventImages/Screenshot_20250327_211846_LinkedIn.jpg';
+import screenshot211908 from '/images/eventImages/Screenshot_20250327_211908_LinkedIn.jpg';
+import screenshot212041 from '/images/eventImages/Screenshot_20250327_212041_LinkedIn.jpg';
+import screenshot212110 from '/images/eventImages/Screenshot_20250327_212110_LinkedIn.jpg';
+import screenshot212145 from '/images/eventImages/Screenshot_20250327_212145_LinkedIn.jpg';
+import screenshot212128 from "/images/eventImages/Screenshot_20250327_212128_LinkedIn.jpg";
 export interface EventData {
   id: string;
   title: string;
