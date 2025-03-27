@@ -1,9 +1,9 @@
-import AIweekAP01 from '../assets/eventImages/AIWeekActivityPlan01.jpg'
-import AIweekAP02 from '../assets/eventImages/AIWeekActivityPlan02.jpg'
-import AIweekAP03 from '../assets/eventImages/AIWeekActivityPlan03.jpg'
-import AIweekAP04 from '../assets/eventImages/AIWeekActivityPlan04.jpg'
-import AIweekAP05 from '../assets/eventImages/AIWeekActivityPlan05.jpg'
-import AIweekAP06 from '../assets/eventImages/AIWeekActivityPlan06.jpg'
+import AIweekAP01 from  '/images/eventImages/AIWeekActivityPlan01.JPG';
+import AIweekAP02 from '/images/eventImages/AIWeekActivityPlan02.JPG'
+import AIweekAP03 from '/images/eventImages/AIWeekActivityPlan03.JPG'
+import AIweekAP04 from '/images/eventImages/AIWeekActivityPlan04.JPG'
+import AIweekAP05 from '/images/eventImages/AIWeekActivityPlan05.JPG'
+import AIweekAP06 from '/images/eventImages/AIWeekActivityPlan06.JPG'
 
 export interface Gallery{
     id: number,
