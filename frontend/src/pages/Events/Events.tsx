@@ -13,22 +13,36 @@ function CalendarApp() {
   const eventsService = useState(() => createEventsServicePlugin())[0];
   const eventModal = useState(() => createEventModalPlugin())[0];
 
-
-  const calendar = useCalendarApp({
-    views: [createViewMonthGrid()],
-    events: events.map(event => ({
+  // Format events to ensure all dates have no time component
+  const formattedEvents = events.map(event => {
+    // Remove time part if present
+    const startDate = event.start.split('T')[0];
+    const endDate = event.end.split('T')[0];
+    
+    return {
       id: event.id,
       title: event.title,
       description: event.description || '',
-      start: event.start,
-      end: event.end,
+      start: startDate,
+      end: endDate,
       location: event.location || '',
       organizer: event.organizer || '',
       type: event.type || '',
-      color: event.color || 'var(--color-gray-500)'
-    })),
+      color: event.color || 'var(--color-gray-500)',
+      allDay: true // Force all events to be all-day events
+    };
+  });
+
+  const calendar = useCalendarApp({
+    views: [createViewMonthGrid()],
+    events: formattedEvents,
     plugins: [eventsService, eventModal],
     theme: 'event',
+    config: {
+      defaultView: 'month-grid',
+      showAllDayEventsInMainView: true,
+      hideTimesInEvents: true
+    }
   });
 
   useEffect(() => {

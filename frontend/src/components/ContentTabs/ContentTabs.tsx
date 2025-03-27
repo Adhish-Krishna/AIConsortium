@@ -114,7 +114,7 @@ const ContentTabs: React.FC = () => {
               ) : activeTab === 'events' ? (
                 <>
                   <Calendar className="section-icon" />
-                  Upcoming Events
+                  Events
                 </>
               ) : (
                 <>

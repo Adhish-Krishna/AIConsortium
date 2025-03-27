@@ -1,4 +1,9 @@
-// Common event data structure for the entire application
+import screenshot211846 from '../assets/EventPhotos/E1/Screenshot_20250327_211846_LinkedIn.jpg';
+import screenshot211908 from '../assets/EventPhotos/E1/Screenshot_20250327_211908_LinkedIn.jpg';
+import screenshot212041 from '../assets/EventPhotos/E1/Screenshot_20250327_212041_LinkedIn.jpg';
+import screenshot212110 from '../assets/EventPhotos/E1/Screenshot_20250327_212110_LinkedIn.jpg';
+import screenshot212145 from '../assets/EventPhotos/E1/Screenshot_20250327_212145_LinkedIn.jpg';
+import screenshot212128 from "../assets/EventPhotos/E1/Screenshot_20250327_212128_LinkedIn.jpg";
 export interface EventData {
   id: string;
   title: string;
@@ -6,7 +11,7 @@ export interface EventData {
   start: string;
   end: string;
   location?: string;
-  mode?: "online" | "in-person";
+  mode?: "online" | "in-person" | "hybrid" | "offline";
   organizer?: string;
   type?: string;
   color?: string;
@@ -20,103 +25,59 @@ export const events: EventData[] = [
   // Past events (dark grey)
   {
     id: '1',
-    title: 'AI Ethics Workshop',
-    description: 'Previous workshop on ethical AI frameworks.',
-    start: '2025-03-05',
-    end: '2025-03-06',
-    location: 'Virtual Meeting Room A',
-    mode: 'online',
-    organizer: 'Ethics Committee',
+    title: 'AI Community Meet 2025',
+    description: 'Workshop on AI-powered product innovation and AI product management.',
+    start: '2025-03-01',
+    end: '2025-03-01',
+    location: 'PSG College of Technology, Department of CSE',
+    mode: 'offline',
+    organizer: 'AI Consortium, PSG College of Technology',
     type: 'Workshop',
-    color: 'var(--color-gray-800)',
-    image: 'https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+    color: 'var(--color-gray-500)',
+    allDay: true,
+    image: screenshot212145,
     gallery: [
-      'https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1588&q=80'
+      screenshot212128,
+      screenshot212145,
+      screenshot212110,
+      screenshot211908,
+      screenshot211846,
+      screenshot212041
+      
     ]
   },
   {
     id: '2',
-    title: 'Neural Network Basics',
-    description: 'Introduction to neural network architecture.',
-    start: '2025-03-10',
-    end: '2025-03-10',
-    location: 'Conference Hall B',
-    mode: 'in-person',
-    organizer: 'Research Division',
-    type: 'Training',
-    color: 'var(--color-gray-800)',
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80'
-  },
-  {
-    id: '3',
-    title: 'AI Governance Meeting',
-    description: 'Quarterly review of AI governance policies.',
-    start: '2025-03-15',
-    end: '2025-03-15',
-    location: 'Board Room',
-    mode: 'in-person',
-    organizer: 'Executive Committee',
-    type: 'Meeting',
-    color: 'var(--color-gray-800)',
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80'
-  },
-  // Future events (gold)
-  {
-    id: '4',
-    title: 'Advanced AI Ethics Workshop',
-    description: 'Discussion on ethical considerations in AI development.',
-    start: '2025-04-16',
-    end: '2025-04-17',
-    location: 'Virtual Meeting Room A',
-    mode: 'online',
-    organizer: 'Ethics Committee',
-    type: 'Workshop',
+    title: 'Application of AI in Production Engineering',
+    description: 'Guest lecture on AI applications in production engineering, exploring practical implementations in manufacturing, process optimization, predictive maintenance, and future industry trends.',
+    start: '2025-03-25',
+    end: '2025-03-25',
+    location: 'New Admin Block',
+    mode: 'hybrid',
+    organizer: 'AI Consortium, PSG College of Technology',
+    type: 'Guest Lecture',
     color: 'var(--color-gray-500)',
-    image: 'https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80'
-  },
-  {
-    id: '5',
-    title: 'Neural-Symposium',
-    description: 'Presentations on recent advances in neural networks.',
-    start: '2025-04-20',
-    end: '2025-04-21',
-    location: 'Conference Hall B',
-    mode: 'in-person',
-    organizer: 'Research Division',
-    type: 'Conference',
-    color: 'var(--color-gray-500)',
-    image: 'https://images.unsplash.com/photo-1561883088-039e53fd2a9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+    allDay: true,
+    image: 'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=1170&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1561883088-039e53fd2a9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      'https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80'
+      'https://images.unsplash.com/photo-1581092335878-2d9ff86ca2bf?q=80&w=1170&auto=format&fit=crop',
+     
     ]
   },
   {
-    id: '6',
-    title: 'AI Startup Networking',
-    description: 'Connect with AI startups and investors.',
-    start: '2025-04-25',
-    end: '2025-04-25',
-    location: 'Innovation Hub',
-    mode: 'in-person',
-    organizer: 'Business Development',
-    type: 'Networking',
-    color: 'var(--color-gray-500)',
-    image: 'https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80'
-  },
-  {
-    id: '7',
-    title: 'Machine Learning Hackathon',
-    description: 'Collaborative coding event for ML enthusiasts.',
-    start: '2025-05-10',
-    end: '2025-05-12',
-    location: 'Tech Campus',
-    mode: 'in-person',
-    organizer: 'Developer Relations',
-    type: 'Hackathon',
-    color: 'var(--color-gray-500)',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80'
+    id: '3',
+    title: 'AI Week 2025: Debate - "AI: A Revolutionary Blessing or a Digital Crisis?"',
+    description: 'As part of AI Week 2025, this debate explores whether AI is a transformative force driving progress or a disruptive technology posing ethical and societal risks. Experts and thought leaders will discuss AI’s role in innovation, job automation, privacy, and security, offering insights into its benefits and potential pitfalls.\n\nThe event will provide participants with a deep understanding of AI’s impact, ethical challenges, and policy considerations while fostering connections among students, faculty, and industry professionals. It aligns with the AI Consortium’s mission of promoting responsible AI development and collaboration across academia and industry.',
+    start: '2025-04-03',
+    end: '2025-04-03',
+    location: 'Virtual',
+    mode: 'online',
+    organizer: 'AI Consortium, PSG College of Technology',
+    type: 'Debate',
+    image: 'https://images.unsplash.com/photo-1551818255-e6e10975bc17?q=80&w=1170&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1551818255-e6e10975bc17?q=80&w=1170&auto=format&fit=crop'
+    ]
   }
 ];
 

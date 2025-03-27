@@ -11,4 +11,6 @@ export default defineConfig({
     allowedHosts: ['.ngrok-free.app']
   },
   assetsInclude: "**/*.JPG",
+  assetsInclude: "/*.jpg",
+
 });
