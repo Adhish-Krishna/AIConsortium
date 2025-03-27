@@ -7,7 +7,6 @@ import {Project as ProjectDetailsProps} from '../../data/projects';
 const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   title,
   description,
-  bannerImage,
   fullDescription,
   contributors,
   mentors,
@@ -30,12 +29,11 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   return (
     <div className="detail-project-details-container">
       <motion.div
-        className="detail-project-banner"
+        className={`detail-project-banner detail-project-status-${status}`}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <img src={bannerImage} alt={title} className="detail-banner-image" />
         <div className="detail-project-header-content">
           <h1 className="detail-project-title">{title}</h1>
           <p className="detail-project-subtitle">{description}</p>

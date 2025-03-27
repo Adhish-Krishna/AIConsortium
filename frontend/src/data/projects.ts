@@ -16,8 +16,6 @@ export interface Mentor {
 
 export interface Project {
   id: string;
-  image: string;
-  bannerImage: string;
   title: string;
   contributors: Contributor[];
   contributors_count: number;
@@ -33,7 +31,6 @@ export interface Project {
 
 export interface UIProject{
   id: string;
-  image: string;
   title: string;
   contributors: number;
   description: string;
@@ -43,8 +40,6 @@ export interface UIProject{
 const projects: Project[] = [
   {
     id: '1',
-    image: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    bannerImage: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: "Open Neural Network Library",
     contributors: [
       {
@@ -82,8 +77,6 @@ const projects: Project[] = [
   },
   {
     id: '2',
-    image: 'https://plus.unsplash.com/premium_photo-1676637656166-cb7b3a43b81a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    bannerImage: 'https://plus.unsplash.com/premium_photo-1676637656166-cb7b3a43b81a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: "AI Ethics Certification Program",
     contributors: [
       {
@@ -128,8 +121,6 @@ const projects: Project[] = [
   },
   {
     id: '3',
-    image: 'https://plus.unsplash.com/premium_photo-1682756540097-6a887bbcf9b0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    bannerImage: 'https://plus.unsplash.com/premium_photo-1682756540097-6a887bbcf9b0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: "Distributed Machine Learning Framework",
     contributors: [
       {
@@ -174,8 +165,6 @@ const projects: Project[] = [
   },
   {
     id: '4',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400&q=80',
-    bannerImage: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400&q=80',
     title: "AI-Powered Healthcare Assistant",
     contributors: [
       {
@@ -227,8 +216,6 @@ const projects: Project[] = [
   },
   {
     id: '5',
-    image: 'https://plus.unsplash.com/premium_photo-1676637656166-cb7b3a43b81a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    bannerImage: 'https://plus.unsplash.com/premium_photo-1676637656166-cb7b3a43b81a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: "AI Ethics Certification Program",
     contributors: [],
     contributors_count: 0,
@@ -250,8 +237,6 @@ const projects: Project[] = [
   },
   {
     id: '6',
-    image: 'https://plus.unsplash.com/premium_photo-1682756540097-6a887bbcf9b0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    bannerImage: 'https://plus.unsplash.com/premium_photo-1682756540097-6a887bbcf9b0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: "Distributed Machine Learning Framework",
     contributors: [],
     contributors_count: 0,

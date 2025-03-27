@@ -32,15 +32,6 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ projects}) => {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
         >
-          {project.image && (
-            <div className="project-image-container">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="project-image"
-              />
-            </div>
-          )}
           <div className="project-details">
             <div className="project-meta">
               <span className="contributor-count">{project.contributors} contributors</span>
