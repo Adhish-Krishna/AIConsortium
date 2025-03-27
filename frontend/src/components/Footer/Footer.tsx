@@ -35,14 +35,11 @@ const Footer: React.FC = () => {
             <ul className="footer-list">
               <li><a href="/about" className="footer-link">About Us</a></li>
               <li><a href="/events" className="footer-link">Events</a></li>
-              <li><a href="/collaborators" className="footer-link">Collaborators</a></li>
-            </ul>
-          </div>
-
-          <div className="footer-links">
-            <h3 className="footer-heading">Resources</h3>
-            <ul className="footer-list">
               <li><a href="/teams" className="footer-link">Teams</a></li>
+              <li><a href="/collaborators" className="footer-link">Collaborators</a></li>
+              <li><a href="/directordesk" className="footer-link">Director's Desk</a></li>
+              <li><a href="/gallery" className="footer-link">Gallery</a></li>
+
             </ul>
           </div>
 
