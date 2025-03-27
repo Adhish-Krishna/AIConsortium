@@ -8,6 +8,3 @@ export { default as ProjectsList } from './components/ProjectsList';
 // Icons
 export { default as BookOpen } from './components/icons/BookOpen';
 export { default as Users } from './components/icons/Users';
-
-// Types
-export * from './types';

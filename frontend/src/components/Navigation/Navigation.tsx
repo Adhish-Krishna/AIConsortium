@@ -51,11 +51,15 @@ const Navigation: React.FC = () => {
 
       <div className={`sidebar-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <div className="sidebar-menu-links">
+          <a href="/" className='nav-link'>Home</a>
           <a href="/about" className="nav-link">About Us</a>
+          <a href="/directordesk" className="nav-link">Director's Desk</a>
           <a href="/events" className="nav-link">Events</a>
           <a href="/teams" className="nav-link">Teams</a>
-          <a href="/collaborators" className="nav-link">Collaborators</a>
-          <a href="/contact" className='nav-link'>Contact</a>
+          <a href="/gallery" className='nav-link'>Gallery</a>
+          {/* <a href="/collaborators" className="nav-link">Collaborators</a>
+              Reomve the comment when the collaborators are available
+          */}
           <button className="join-button mobile-join" onClick={handleRegister}>
             Register
           </button>

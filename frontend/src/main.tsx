@@ -13,6 +13,9 @@ import ProjectDetailsContainer from './components/ProjectDetails/index';
 import PublicationDetailsPage from './components/PublicationDetails/index.tsx';
 import ChatBubble from './components/ChatBubble/ChatBubble.tsx';
 import EventDetail from './pages/Events/EventDetail.tsx';
+import DirectorsDesk from './pages/DirectorsDesk/DirectorsDesk.tsx';
+import Gallery from './pages/Gallery/Gallery.tsx';
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Router>
@@ -28,6 +31,8 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/about" element={<About/>}/>
         <Route path="/projects/:projectId" element={<ProjectDetailsContainer />} />
         <Route path = "/publications/:id" element={<PublicationDetailsPage/>}/>
+        <Route path='/directordesk' element={<DirectorsDesk/>}/>
+        <Route path='/gallery' element={<Gallery/>}/>
       </Routes>
     </Router>
   </StrictMode>

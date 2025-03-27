@@ -24,12 +24,10 @@ const Hero: React.FC = () => {
           <img src={Logo} alt="AI Consortium Logo" className='title-logo' />
           <h1 className="hero-title text-gradient">PSG - AI CONSORTIUM</h1>
         </div>
-        <TextGenerateEffect
-        duration={1}
-        filter={false}
-        words={subTitle}
-        className='hero-subtitle'
-        />
+        <h2 className="hero-title">EPIQ</h2>
+        <h2 className='hero-subtitle'>
+          <strong>E</strong>mpowering <strong>P</strong>rogress <strong>I</strong>nnovation and <strong>Q</strong>uality in AI
+        </h2>
         <div className="hero-stats">
           <div className="stat-item">
             <div className="stat-value">10+</div>
@@ -37,11 +35,11 @@ const Hero: React.FC = () => {
           </div>
           <div className="stat-item">
             <div className="stat-value">50+</div>
-            <div className="stat-label">Faculties</div>
+            <div className="stat-label">Members</div>
           </div>
           <div className="stat-item">
             <div className="stat-value">100+</div>
-            <div className="stat-label">Students</div>
+            <div className="stat-label">Student Ambassadors</div>
           </div>
         </div>
       </div>

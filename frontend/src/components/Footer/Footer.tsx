@@ -1,5 +1,5 @@
 import React from 'react';
-import {Twitter, Linkedin, Github, Mail } from 'lucide-react';
+import {Twitter, Linkedin, Github} from 'lucide-react';
 import './Footer.css';
 import Logo from '../../assets/logo.png';
 import { LinkPreview } from "../ui/LinkPreview"; // Adjust the import path as needed
@@ -36,7 +36,6 @@ const Footer: React.FC = () => {
               <li><a href="/about" className="footer-link">About Us</a></li>
               <li><a href="/events" className="footer-link">Events</a></li>
               <li><a href="/collaborators" className="footer-link">Collaborators</a></li>
-              <li><a href="/contact" className="footer-link">Contact</a></li>
             </ul>
           </div>
 
@@ -44,6 +43,15 @@ const Footer: React.FC = () => {
             <h3 className="footer-heading">Resources</h3>
             <ul className="footer-list">
               <li><a href="/teams" className="footer-link">Teams</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-links">
+            <h3 className="footer-heading">Contact</h3>
+            <ul className="footer-list">
+              <li>
+                <p className="footer-link">aiconsortium@psgtech.ac.in</p>
+              </li>
             </ul>
           </div>
 
