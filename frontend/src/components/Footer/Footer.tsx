@@ -1,8 +1,8 @@
 import React from 'react';
-import {Twitter, Linkedin, Github} from 'lucide-react';
+// import {Twitter, Linkedin, Github} from 'lucide-react';
 import './Footer.css';
 import Logo from '../../assets/logo.png';
-import { LinkPreview } from "../ui/LinkPreview"; // Adjust the import path as needed
+// import { LinkPreview } from "../ui/LinkPreview"; // Adjust the import path as needed
 
 const Footer: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
             <p className="footer-description">
             Empowering Progress Innovation and Quality in AI.
             </p>
-            <div className="social-links">
+            {/* <div className="social-links">
               <LinkPreview url="https://github.com/suryanarayanaa/" className="social-link">
                 <Twitter />
               </LinkPreview>
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
               <LinkPreview url="https://github.com" className="social-link">
                 <Github />
               </LinkPreview>
-            </div>
+            </div> */}
           </div>
 
           <div className="footer-links">
@@ -35,14 +35,11 @@ const Footer: React.FC = () => {
             <ul className="footer-list">
               <li><a href="/about" className="footer-link">About Us</a></li>
               <li><a href="/events" className="footer-link">Events</a></li>
-              <li><a href="/collaborators" className="footer-link">Collaborators</a></li>
-            </ul>
-          </div>
-
-          <div className="footer-links">
-            <h3 className="footer-heading">Resources</h3>
-            <ul className="footer-list">
               <li><a href="/teams" className="footer-link">Teams</a></li>
+              <li><a href="/collaborators" className="footer-link">Collaborators</a></li>
+              <li><a href="/directordesk" className="footer-link">Director's Desk</a></li>
+              <li><a href="/gallery" className="footer-link">Gallery</a></li>
+
             </ul>
           </div>
 
