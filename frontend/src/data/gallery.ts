@@ -3,7 +3,7 @@ import AIweekAP02 from '/images/eventImages/AIWeekActivityPlan02.JPG'
 import AIweekAP03 from '/images/eventImages/AIWeekActivityPlan03.JPG'
 import AIweekAP04 from '/images/eventImages/AIWeekActivityPlan04.JPG'
 import AIweekAP05 from '/images/eventImages/AIWeekActivityPlan05.JPG'
-import AIweekAP06 from '/images/eventImages/AIWeekActivityPlan06.JPG'
+import AIweekAP06 from  '/images/eventImages/AIWeekActivityPlan06.JPG'
 
 export interface Gallery{
     id: number,

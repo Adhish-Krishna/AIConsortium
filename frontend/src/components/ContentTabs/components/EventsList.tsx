@@ -15,11 +15,11 @@ const EventsList = ({ events: propEvents }) => {
     return <p className="events-intro">No upcoming events at the moment.</p>;
   }
 
-  // Format date nicely
+  // Format date nicely without time
   const formatEventDate = (dateStr) => {
     const date = new Date(dateStr);
     return date.toLocaleDateString('en-US', { 
-      month: 'short', 
+      month: 'long', 
       day: 'numeric', 
       year: 'numeric' 
     });

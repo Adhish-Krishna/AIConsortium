@@ -79,6 +79,23 @@ export const events: EventData[] = [
       'https://images.unsplash.com/photo-1551818255-e6e10975bc17?q=80&w=1170&auto=format&fit=crop'
     ]
   }
+  ,{
+    id: '4',
+    title: 'Advancements in AI: How Transformers Are Revolutionizing Industries',
+    description: 'A webinar exploring practical applications of Transformer models in various industries, featuring real-world case studies and interactive discussions.',
+    start: '2025-04-15T15:00:00',
+    end: '2025-04-15T17:00:00',
+    location: 'New Admin Block / Online',
+    mode: 'hybrid',
+    organizer: 'AI Consortium, PSG College of Technology',
+    type: 'Webinar',
+    color: 'var(--color-blue-600)',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+     
+    ]
+  }
 ];
 
 // Helper function to get event by ID
