@@ -7,7 +7,6 @@ import { Publication } from '../../data/publications';
 const PublicationDetails: React.FC<Publication> = ({
   title,
   abstract,
-  imageUrl,
   authors,
   mentors,
   journal,
@@ -17,16 +16,18 @@ const PublicationDetails: React.FC<Publication> = ({
   citations,
   pdfLink,
   collaborators,
+  publisher,
+  issn_no,
+  isbn_no
 }) => {
   return (
     <div className="detail-publication-container">
       <motion.div
-        className="detail-publication-banner"
+        className="detail-publication-banner no-image"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <img src={imageUrl || '/placeholder-publication.jpg'} alt={title} className="detail-banner-image" />
         <div className="detail-publication-header-content">
           <h1 className="detail-publication-title">
             {title}
@@ -157,8 +158,11 @@ const PublicationDetails: React.FC<Publication> = ({
             </h3>
             <div className="detail-journal-info">
               <p><strong>Journal:</strong> {journal}</p>
+              <p><strong>Publisher:</strong> <span className="detail-publisher">{publisher}</span></p>
               <p><strong>Year:</strong> {year}</p>
               {doi && <p><strong>DOI:</strong> {doi}</p>}
+              {issn_no && <p><strong>ISSN No:</strong> {issn_no}</p>}
+              <p><strong>ISBN No:</strong> {isbn_no}</p>
             </div>
           </div>
         </motion.div>

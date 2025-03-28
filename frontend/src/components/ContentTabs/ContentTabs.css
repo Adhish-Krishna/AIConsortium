@@ -537,6 +537,7 @@
   min-width: 320px; /* Increased from 280px */
   width: 320px; /* Increased from 280px */
   flex-shrink: 0;
+  border: 1px solid var(--color-gray-100);
 }
 
 .publication-card:hover {
@@ -544,24 +545,11 @@
   box-shadow: 0 8px 16px rgba(37, 99, 235, 0.1);
 }
 
-.publication-image-container {
-  height: 10rem;
-  overflow: hidden;
-}
-
-.publication-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.publication-card:hover .publication-image {
-  transform: scale(1.05);
-}
-
 .publication-details {
-  padding: 0.75rem;
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .publication-meta {
@@ -835,7 +823,7 @@
 
   .event-ddescription {
     font-size: 0.75rem;
-    
+
   }
 
   .learn-more {

@@ -3,12 +3,10 @@ import {ArrowRight } from 'lucide-react';
 import './Hero.css';
 import NeuralNetworkAnimation from './NeuralNetworkAnimation';
 // import FlipWordsDemo from '../ui/flip-words-demo';
-import { TextGenerateEffect } from '../ui/text-generate-effect';
+// import { TextGenerateEffect } from '../ui/text-generate-effect';
 import Logo from '../../assets/logo.png';
 
 const Hero: React.FC = () => {
-  const subTitle = 'Empowering Progress Innovation and Quality in AI';
-
   return (
     <section className="hero">
       <div className="hero-background">

@@ -8,7 +8,7 @@ import { publications } from '../../data/publications';
 import ProjectsList from './components/ProjectsList';
 import EventsList from './components/EventsList';
 import PublicationsList from './components/PublicationsList';
-import { Project as UIProject } from './types';
+import { UIProject } from '../../data/projects';
 
 const ContentTabs: React.FC = () => {
   const [activeTab, setActiveTab] = useState('events');
