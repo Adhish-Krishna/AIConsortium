@@ -26,10 +26,10 @@ const Register: React.FC = () => {
               </p>
             </div>
             <a
-              href="https://forms.google.com/alumni-registration"
+              href="https://forms.gle/8XF8dtN2imwhx41N8"
               target="_blank"
               rel="noopener noreferrer"
-              className="register-button"
+              className="register-page-register-button"
             >
               Register as Alumni
             </a>
@@ -55,7 +55,7 @@ const Register: React.FC = () => {
               href="https://forms.google.com/collaborator-registration"
               target="_blank"
               rel="noopener noreferrer"
-              className="register-button"
+              className="register-page-register-button"
             >
               Register as Collaborator
             </a>
