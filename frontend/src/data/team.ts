@@ -1,4 +1,4 @@
-import Karpagam from '../assets/Images/Karpagam.png';
+import Karpagam from '/images/directorImage/Karpagam.jpg?url';
 import Prakasan from '../assets/Images/Prakasan.png';
 import Indumathi from '../assets/Images/Indumathi.png';
 import SathiyaPriya from '../assets/Images/Sathiyapriya.png';
