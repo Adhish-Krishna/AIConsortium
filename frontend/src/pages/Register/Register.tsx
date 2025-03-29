@@ -52,7 +52,7 @@ const Register: React.FC = () => {
               </p>
             </div>
             <a
-              href="https://forms.google.com/collaborator-registration"
+              href="https://forms.gle/8XF8dtN2imwhx41N8"
               target="_blank"
               rel="noopener noreferrer"
               className="register-page-register-button"
