@@ -52,31 +52,28 @@ const ChatBubble = () => {
         `${msg.sender === 'user' ? 'User' : 'AI'}: ${msg.text}`
       ).join('\n');
 
-      // Combine chat history with current message
-      const fullPrompt = `${chatHistory}\nUser: ${userMessage}`;
-
-      // Make API call to Ollama server with full chat history
-      const response = await axios.post('http://localhost:11434/api/generate', {
-        model: "qwen2.5:3b", // You can change this to the model you're running
-        prompt: fullPrompt,
-        stream: false
+      // Make API call to the new endpoint with updated structure
+      const response = await axios.post('http://localhost:8000/chat/chat', {
+        chat_history: chatHistory,
+        query: userMessage
       });
 
       // Remove typing indicator and add bot response
       setMessages(prev => {
         const filteredMessages = prev.filter(msg => !msg.isLoading);
-        return [...filteredMessages, { text: response.data.response, sender: "bot" }];
+        return [...filteredMessages, { text: response.data.message, sender: "bot" }];
       });
-    } catch (error) {
-      console.error('Error communicating with Ollama:', error);
+    } catch (error: any) {
+      console.error('Error communicating with chat service:', error);
+
+      // Extract error message from the response if available
+      const errorMessage = error.response?.data?.error ||
+        "Sorry, I couldn't connect to the AI service. Please try again later.";
 
       // Remove typing indicator and add error message
       setMessages(prev => {
         const filteredMessages = prev.filter(msg => !msg.isLoading);
-        return [...filteredMessages, {
-          text: "Sorry, I couldn't connect to the AI service. Please try again later.",
-          sender: "bot"
-        }];
+        return [...filteredMessages, { text: errorMessage, sender: "bot" }];
       });
     }
   };
