@@ -63,10 +63,6 @@
     color: var(--color-primary);
 }
 
-.director-image{
-    border-radius: 10px;
-}
-
 @media (max-width:500px){
     .director-container{
         padding-top: 80px;
