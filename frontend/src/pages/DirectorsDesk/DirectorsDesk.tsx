@@ -1,5 +1,5 @@
 import './DirectorsDesk.css';
-import Karpagam from '/public/images/directorImage/Karpagam.jpg?url';
+import Karpagam from '/images/directorImage/Karpagam.jpg?url';
 
 const DirectorsDesk = ()=>{
     return(
