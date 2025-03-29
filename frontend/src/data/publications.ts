@@ -249,5 +249,26 @@ export const publications: Publication[] = [
     publisher: "IOS Press",
     issn_no: "10641246",
     isbn_no: "18758967",
-  }
+  },
+  {
+    id: "11",
+    title: "Reinforcement learning infused intelligent framework for semantic web service composition",
+    authors: [
+      { name: "G.R.Karpagam", department: "CSE", affiliation: "PSG College of Technology" },
+      { name: "N.G.Swetha", department: "CSE", affiliation: "PSG College of Technology" },
+    ],
+    mentors: [],
+    abstract: "Web Services being the predominant aspect of the web, plays an inevitable role in everyday digital life.With an upsurge in web services, the process of combining them to solve a user query has become complicated. Investigators have proposed the usage of various techniques like Artificial Intelligence, Machine Learning and others to solve the problem of service composition which till date has serious unaddressed flaws. This leads to the need of a new intelligent framework capable of reducing the problem dimension which leads to a well structured composition process. This article proposes a novel framework that incorporates the usage of Formal Concept Analysis and Reinforcement Learning to compose the semantic web services thereby providing an efficient solution to the user query. The novelty of the work lies in the usage of Formal Concept Analysis which reduces the complexity of the composition search space thereby making the composition process effective. This article also utilizes the Reinforcement Learning technique with a relatively new reward model which encompasses the semantic input and output to determine the underlying pattern. The proposed framework is tested for the best Reinforcement Learning strategy through rigorous experimentation and the best Reinforcement Learning Algorithm is incorporated into the Intelligent Framework. The novel framework is evaluated using various queries belonging to varied domains to test its reliability and robustness. It is evident from the results that the proposed framework is efficient when compared with the state of art works and is more suitable for real-time service composition.",
+    journal: "Applied Intelligence",
+    year: "2021",
+    doi: "10.1007/s10489-021-02351-0",
+    keywords: ["Reinforcement Learning", "Semantic web service", "Formal concept analysis", "Learning automata", "Markov decision process"],
+    indexing: "SCI & SCI-E",
+    quartile: "Q2",
+    impactFactor: '5.019',
+    publisher: "Springer",
+    issn_no: "0924-669X",
+    isbn_no: "",
+  },
+
 ]
