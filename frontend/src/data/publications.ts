@@ -265,7 +265,7 @@ export const publications: Publication[] = [
     keywords: ["Reinforcement Learning", "Semantic web service", "Formal concept analysis", "Learning automata", "Markov decision process"],
     indexing: "SCI & SCI-E",
     quartile: "Q2",
-    impactFactor: '5.019',
+    impactFactor: '3.9',
     publisher: "Springer",
     issn_no: "0924-669X",
     isbn_no: "",
