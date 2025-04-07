@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
               <span className="footer-logo-text">PSG - AI CONSORTIUM</span>
             </div>
             <p className="footer-description">
-            Empowering Progress Innovation and Quality in AI.
+            Empowering Ethics Progress Innovation and Quality in AI.
             </p>
             {/* <div className="social-links">
               <LinkPreview url="https://github.com/suryanarayanaa/" className="social-link">
