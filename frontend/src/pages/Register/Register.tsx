@@ -26,7 +26,7 @@ const Register: React.FC = () => {
               </p>
             </div>
             <a
-              href="https://forms.gle/8XF8dtN2imwhx41N8"
+              href="https://forms.gle/ugKvjR4y4Xhg1PA79"
               target="_blank"
               rel="noopener noreferrer"
               className="register-page-register-button"
@@ -37,27 +37,81 @@ const Register: React.FC = () => {
 
           <section className="register-section">
             <div className="register-section-content">
-              <h2 className="register-section-title">Register as a Collaborator</h2>
+              <h2 className="register-section-title">Register as an Industry</h2>
               <p className="register-section-text">
-                As a collaborator, you can participate in:
+                As an industry partner, you'll benefit from:
               </p>
               <ul className="register-list">
-                <li>Joint research projects with our consortium members</li>
-                <li>Knowledge sharing and cross-institutional initiatives</li>
-                <li>Access to shared resources and computing infrastructure</li>
-                <li>Collaborative grant applications and funding opportunities</li>
+                <li>Access to cutting-edge AI research and talent pipeline</li>
+                <li>Opportunities to influence research directions and applications</li>
+                <li>Collaborative projects to solve industry-specific challenges</li>
+                <li>Visibility and networking with academic and research communities</li>
               </ul>
               <p className="register-section-text">
-                Collaborate with leading researchers and institutions to advance the frontier of AI technology.
+                Partner with us to implement AI solutions and drive innovation in your organization.
               </p>
             </div>
             <a
-              href="https://forms.gle/8XF8dtN2imwhx41N8"
+              href="https://forms.gle/QKwKF7ZijLfKnjDc6"
               target="_blank"
               rel="noopener noreferrer"
               className="register-page-register-button"
             >
-              Register as Collaborator
+              Register as Industry
+            </a>
+          </section>
+
+          <section className="register-section">
+            <div className="register-section-content">
+              <h2 className="register-section-title">Register as Academics
+              </h2>
+              <p className="register-section-text">
+                As an academic member, you can engage in:
+              </p>
+              <ul className="register-list">
+                <li>Interdisciplinary research collaborations across institutions</li>
+                <li>Student exchange and joint supervision opportunities</li>
+                <li>Shared curriculum development and educational resources</li>
+                <li>Enhanced visibility and impact of academic publications</li>
+              </ul>
+              <p className="register-section-text">
+                Join our academic network to enhance your research and educational initiatives in AI.
+              </p>
+            </div>
+            <a
+              href=" https://forms.gle/irdtHsJWuk8zHWLC6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="register-page-register-button"
+            >
+              Register as  Academics
+
+            </a>
+          </section>
+
+          <section className="register-section">
+            <div className="register-section-content">
+              <h2 className="register-section-title">Register as Research Labs</h2>
+              <p className="register-section-text">
+                As a research lab partner, you'll receive:
+              </p>
+              <ul className="register-list">
+                <li>Opportunities for joint grant applications and funding</li>
+                <li>Access to expanded datasets and computational resources</li>
+                <li>Cross-lab collaboration on breakthrough AI technologies</li>
+                <li>Participation in specialized workshops and research symposiums</li>
+              </ul>
+              <p className="register-section-text">
+                Accelerate your research impact through our collaborative lab network and shared resources.
+              </p>
+            </div>
+            <a
+              href="https://forms.gle/wg9RyYQEuqyEfjsj9 "
+              target="_blank"
+              rel="noopener noreferrer"
+              className="register-page-register-button"
+            >
+              Register as Research Labs
             </a>
           </section>
         </div>

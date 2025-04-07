@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
         </div>
         <h2 className="hero-title">EPIQ</h2>
         <h2 className='hero-subtitle'>
-          <strong>E</strong>mpowering <strong>P</strong>rogress <strong>I</strong>nnovation and <strong>Q</strong>uality in AI
+          Empowering <strong>E</strong>thics <strong>P</strong>rogress <strong>I</strong>nnovation and <strong>Q</strong>uality in AI
         </h2>
         <div className="hero-stats">
           <div className="stat-item">

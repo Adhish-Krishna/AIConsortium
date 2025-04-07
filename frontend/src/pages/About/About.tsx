@@ -10,7 +10,7 @@ function About() {
           <div className="abt-hero-grid">
             <div className="abt-hero-text">
               <h1 className="abt-epiq-title">EPIQ</h1>
-              <p className="abt-epiq-subtitle">Empowering Progress Innovation and Quality in AI</p>
+              <p className="abt-epiq-subtitle">Empowering Ethics Progress Innovation and Quality in AI</p>
             </div>
           </div>
         </div>
