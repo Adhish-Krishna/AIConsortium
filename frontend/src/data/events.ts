@@ -89,7 +89,7 @@ export const events: EventData[] = [
     mode: 'hybrid',
     organizer: 'AI Consortium, PSG College of Technology',
     type: 'Webinar',
-    color: 'var(--color-blue-600)',
+    color: 'var(--color-gray-500)',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
     gallery: [
       'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
