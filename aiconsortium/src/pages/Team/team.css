@@ -11,12 +11,21 @@
   }
 
 /* Team Tabs Navigation */
+.team-tabs-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
 .team-tabs-container {
   overflow-x: auto;
-  margin-bottom: 30px;
   padding-bottom: 5px; /* Space for scrollbar */
   -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
   scrollbar-width: none; /* Hide scrollbar in Firefox */
+  flex: 1;
+  max-width: 80%;
 }
 
 .team-tabs-container::-webkit-scrollbar {
@@ -48,6 +57,32 @@
   color: white;
 }
 
+/* Navigation Arrows */
+.team-tabs-arrow {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.team-tabs-arrow:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.team-tabs-arrow:active {
+  transform: scale(0.95);
+}
 
 /* Team Members Section */
 .team-members-section {
@@ -78,6 +113,17 @@
       font-size: 1.8rem;
       margin-bottom: 30px;
     }
+
+    .team-tabs-container {
+      max-width: 70%;
+    }
+
+    .team-tabs-arrow {
+      width: 35px;
+      height: 35px;
+      font-size: 1.2rem;
+      margin: 0 5px;
+    }
   }
 
   @media (max-width: 480px) {
@@ -92,6 +138,16 @@
 
     .team-members-grid {
       grid-template-columns: 1fr;
+    }
+
+    .team-tabs-container {
+      max-width: 60%;
+    }
+
+    .team-tabs-arrow {
+      width: 30px;
+      height: 30px;
+      font-size: 1rem;
     }
   }
 

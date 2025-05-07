@@ -2,7 +2,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
-  padding-top: 144px; /* Space for navigation bar */
+  padding-top: 200px; /* Space for navigation bar */
 }
 
 .detail-back-button {
@@ -355,7 +355,7 @@
 
 @media (max-width: 480px) {
   .detail-project-details-container {
-    padding-top: 100px;
+    padding-top: 130px;
   }
 
   .detail-project-header-content {

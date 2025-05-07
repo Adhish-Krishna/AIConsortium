@@ -2,7 +2,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
-  padding-top: 144px;
+  padding-top: 200px;
 }
 
 .detail-publication-banner {
@@ -317,6 +317,10 @@
 }
 
 @media (max-width: 480px) {
+  .detail-publication-container {
+    padding-top: 130px;
+  }
+  
   .detail-publication-banner.no-image {
     min-height: 160px;
   }

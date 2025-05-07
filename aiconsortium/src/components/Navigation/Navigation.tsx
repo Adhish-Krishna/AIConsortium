@@ -45,15 +45,13 @@ const Navigation: React.FC = () => {
           </div>
 
           <div className="logos-right">
-            <div className="desktop-only-link">
-              <AISpectrumLink />
-            </div>
             <div className="aicte-logo">
               <img src={AICTELogo} style={{"height":"80px"}} />
             </div>
           </div>
         </div>
       </div>
+      <AISpectrumLink/>
 
       <div className={`sidebar-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <div className="sidebar-menu-links">
@@ -66,9 +64,6 @@ const Navigation: React.FC = () => {
           {/* <a href="/collaborators" className="nav-link">Collaborators</a>
               Reomve the comment when the collaborators are available
           */}
-          <div className="mobile-only-link">
-            <AISpectrumLink />
-          </div>
           <button className="join-button mobile-join" onClick={handleRegister}>
             Register
           </button>

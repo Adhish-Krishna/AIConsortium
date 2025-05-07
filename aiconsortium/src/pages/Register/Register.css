@@ -1,5 +1,5 @@
 .register-container {
-  padding-top: 144px; /* Space for fixed navigation */
+  padding-top: 200px; /* Space for fixed navigation */
   min-height: 100vh;
   width: 100%;
   background-color: var(--color-background);
@@ -129,7 +129,7 @@
 /* Mobile responsive styles */
 @media (max-width: 480px) {
   .register-container {
-    padding-top: 80px; /* Adjusted for mobile */
+    padding-top: 130px; /* Adjusted for mobile */
   }
 
   .register-title {

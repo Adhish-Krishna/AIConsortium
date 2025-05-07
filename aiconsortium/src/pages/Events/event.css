@@ -47,19 +47,19 @@ html body .calendar-wrapper .sx-date-today .sx-date-number,
 .calendar-page {
   height: 100%;
   overflow: hidden;
-  padding-top: 8rem; 
+  padding-top: 180px; /* Changed from 8rem to 200px for desktop */
 }
 
 /* Adjustments for different screen sizes */
 @media (max-width: 768px) {
   .calendar-page {
-    padding-top: 6rem; /* Less padding on smaller screens */
+    padding-top: 90px; /* Less padding on smaller screens */
   }
 }
 
 @media (max-width: 480px) {
   .calendar-page {
-    padding-top: 4rem; /* Even less on mobile */
+    padding-top: 90px; /* Even less on mobile */
   }
 }
 
@@ -88,7 +88,7 @@ html body .sx-month-header,
 #root .sx-month-header,
 html body .sx-week-header,
 #root .sx-week-header,
-html body .sx-label, 
+html body .sx-label,
 #root .sx-label {
   color: var(--color-gray-500) !important;
 }
@@ -113,7 +113,7 @@ html body .sx-week-header,
 html body .sx-week-header *,
 #root .sx-week-header,
 #root .sx-week-header *,
-html body .sx-label, 
+html body .sx-label,
 html body .sx-label *,
 #root .sx-label,
 #root .sx-label *,

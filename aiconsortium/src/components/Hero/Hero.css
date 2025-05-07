@@ -5,8 +5,9 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: var(--color-gray-100);
-  padding: 1rem; /* Add default padding */
+  background-color: white;
+  padding: 1rem;
+  padding-top: 150px; /* Add default padding */
 }
 
 .hero-background {
@@ -304,7 +305,8 @@
 
 @media (max-width: 576px) { /* For mobile phones */
   .hero {
-    padding: 0.5rem; /* Smaller padding for mobile */
+    padding: 0.5rem;
+    padding-top: 50px; /* Smaller padding for mobile */
   }
 
   .line{
@@ -393,6 +395,7 @@
   .hero {
     padding: 0.5rem 0.25rem;
     min-height: 90vh; /* Adjust min-height for small devices */
+    padding-top: 50px;
   }
 
   .hero-content {
