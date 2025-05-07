@@ -148,6 +148,13 @@
   align-items: center;
 }
 
+/* New styles for the logos-right container */
+.logos-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .mobile-menu {
   display: none; /* Hide the old dropdown menu */
 }
@@ -176,6 +183,16 @@
   height: 50px;
   margin-left: 3px;
   width: 2px;
+}
+
+/* AISpectrumLink visibility control */
+.desktop-only-link {
+  display: block;
+}
+
+.mobile-only-link {
+  display: none;
+  margin: 0.5rem 0;
 }
 
 /* Tablet Styles */
@@ -270,6 +287,17 @@
   }
 }
 
+/* Mobile Styles - Hide in header, show in sidebar */
+@media (max-width: 767px) {
+  .desktop-only-link {
+    display: none;
+  }
+
+  .mobile-only-link {
+    display: block;
+  }
+}
+
 @media (min-width: 1024px) {
   .navigation {
     padding: 2.25rem 0; /* Increased from 1.75rem */
@@ -356,6 +384,10 @@
     width: 250px;
     left: -250px;
   }
+
+  .logos-right {
+    gap: 8px;
+  }
 }
 
 /* Very Small Mobile Styles (360px and below) */
@@ -368,18 +400,52 @@
     padding: 0.75rem 0; /* Increased from 0.4rem */
   }
 
-  .logo-icon {
-    height: 1.5rem;
-    width: 1.5rem;
+  .logo-container {
+    width: 72vw;
+    margin-left: 2px;
+  }
+
+  .logo img:first-child {
+    height: 30px !important; /* Increased from 25px */
+    margin-top: 3px !important;
+    margin-right: 2px !important;
+  }
+
+  .logo img:nth-child(3) {
+    height: 40px !important; /* Increased from 35px */
+  }
+
+  .aicte-logo img {
+    height: 35px !important; /* Increased from 30px */
   }
 
   .logo-text {
-    font-size: 1rem;
+    font-size: 0.7rem; /* Increased from 0.65rem */
+    letter-spacing: 0;
   }
 
-  .mobile-menu-links .nav-link {
-    padding: 0.7rem 0;
-    font-size: 0.95rem;
+  .sep-line {
+    height: 20px;
+    width: 1px;
+  }
+
+  /* Mobile sidebar optimizations */
+  .sidebar-menu {
+    width: 210px;
+    left: -210px;
+  }
+
+  .sidebar-menu-links {
+    gap: 0.7rem;
+  }
+
+  .sidebar-menu-links .nav-link {
+    font-size: 1.1rem;
+    padding: 0.35rem 0;
+  }
+
+  .logos-right {
+    gap: 5px;
   }
 }
 
@@ -433,6 +499,10 @@
 
   .mobile-join {
     margin-top: 0.75rem; /* Reduced from 1rem */
+  }
+
+  .logos-right {
+    gap: 10px;
   }
 }
 
@@ -502,6 +572,10 @@
     font-size: 1.2rem;
     padding: 0.4rem 0;
   }
+
+  .logos-right {
+    gap: 8px;
+  }
 }
 
 /* Very Small Mobile Styles (360px and below) */
@@ -556,6 +630,10 @@
   .sidebar-menu-links .nav-link {
     font-size: 1.1rem;
     padding: 0.35rem 0;
+  }
+
+  .logos-right {
+    gap: 5px;
   }
 }
 

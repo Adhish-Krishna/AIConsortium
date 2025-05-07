@@ -6,6 +6,7 @@ import PSGLogo from '../../assets/PSGlogo.png';
 import AICTELogo from '../../assets/aictelogo.png';
 import Menu from '../../assets/svg/list.svg'
 import X from '../../assets/svg/x.svg';
+import AISpectrumLink from '../AISpectrumLink/AISpectrumLink';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,8 +44,13 @@ const Navigation: React.FC = () => {
             <span className="logo-text">PSG - AI CONSORTIUM</span>
           </div>
 
-          <div className="aicte-logo">
-            <img src={AICTELogo} style={{"height":"80px"}} />
+          <div className="logos-right">
+            <div className="desktop-only-link">
+              <AISpectrumLink />
+            </div>
+            <div className="aicte-logo">
+              <img src={AICTELogo} style={{"height":"80px"}} />
+            </div>
           </div>
         </div>
       </div>
@@ -60,6 +66,9 @@ const Navigation: React.FC = () => {
           {/* <a href="/collaborators" className="nav-link">Collaborators</a>
               Reomve the comment when the collaborators are available
           */}
+          <div className="mobile-only-link">
+            <AISpectrumLink />
+          </div>
           <button className="join-button mobile-join" onClick={handleRegister}>
             Register
           </button>
