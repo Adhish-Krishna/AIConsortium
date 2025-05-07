@@ -1,0 +1,172 @@
+body .sx-react-calendar-wrapper,
+html body .sx-react-calendar-wrapper,
+#root .sx-react-calendar-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 800px !important;
+  max-height: 80vh !important;
+  margin: 0 auto !important;
+  font-weight: 500 !important;
+  color: var(--color-gray-500) !important; /* Changed to gold color */
+  font-family: 'Arial', sans-serif !important;
+}
+
+/* Force override root variables */
+:root,
+html:root,
+body:root {
+  --sx-color-primary: var(--color-primary) !important;
+  --sx-color-on-primary: var(--color-gray-500) !important; /* Gold text on primary */
+  --sx-color-primary-container: var(--color-primary) !important;
+  /* other variables... */
+}
+
+html body .calendar-wrapper .sx-day-cell,
+#root .calendar-wrapper .sx-day-cell {
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+html body .calendar-wrapper .sx-day-cell:hover,
+#root .calendar-wrapper .sx-day-cell:hover {
+  background-color: rgba(212, 175, 55, 0.05) !important;
+}
+
+html body .calendar-wrapper .sx-date-number,
+#root .calendar-wrapper .sx-date-number {
+  font-weight: bold !important;
+  color: var(--color-gray-500) !important; /* Changed to gold */
+}
+
+html body .calendar-wrapper .sx-date-today .sx-date-number,
+#root .calendar-wrapper .sx-date-today .sx-date-number {
+  background-color: #d4af37 !important;
+  color: white !important;
+}
+
+.calendar-page {
+  height: 100%;
+  overflow: hidden;
+  padding-top: 8rem; 
+}
+
+/* Adjustments for different screen sizes */
+@media (max-width: 768px) {
+  .calendar-page {
+    padding-top: 6rem; /* Less padding on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-page {
+    padding-top: 4rem; /* Even less on mobile */
+  }
+}
+
+/* Override events styling with maximum specificity */
+html body .calendar-wrapper .sx-day-events .sx-event:nth-child(1),
+#root .calendar-wrapper .sx-day-events .sx-event:nth-child(1) {
+  background-color: #b8860b !important;
+  color: white !important;
+}
+
+html body .calendar-wrapper .sx-day-events .sx-event:nth-child(2),
+#root .calendar-wrapper .sx-day-events .sx-event:nth-child(2) {
+  background-color: #d4af37 !important;
+  color: white !important;
+}
+
+html body .calendar-wrapper .sx-day-events .sx-event:nth-child(3),
+#root .calendar-wrapper .sx-day-events .sx-event:nth-child(3) {
+  background-color: #ffd700 !important;
+  color: black !important;
+}
+
+html body .sx-calendar-header,
+#root .sx-calendar-header,
+html body .sx-month-header,
+#root .sx-month-header,
+html body .sx-week-header,
+#root .sx-week-header,
+html body .sx-label, 
+#root .sx-label {
+  color: var(--color-gray-500) !important;
+}
+
+/* Make event labels gold when needed */
+html body .sx-event-title,
+#root .sx-event-title {
+  color: var(--color-gray-500) !important;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5) !important; /* Shadow for better readability */
+}
+
+/* Target all calendar text and labels with maximum specificity */
+html body .sx-calendar-header,
+html body .sx-calendar-header *,
+#root .sx-calendar-header,
+#root .sx-calendar-header *,
+html body .sx-month-header,
+html body .sx-month-header *,
+#root .sx-month-header,
+#root .sx-month-header *,
+html body .sx-week-header,
+html body .sx-week-header *,
+#root .sx-week-header,
+#root .sx-week-header *,
+html body .sx-label, 
+html body .sx-label *,
+#root .sx-label,
+#root .sx-label *,
+html body .sx-date,
+#root .sx-date,
+html body .sx-header-cell,
+#root .sx-header-cell,
+html body .sx-time-indicator,
+#root .sx-time-indicator {
+  color: #DC9E57 !important; /* Direct gold color hex instead of var */
+  font-weight: 500 !important;
+}
+
+/* Target month name and weekday names specifically */
+html body .sx-month-name,
+#root .sx-month-name,
+html body .sx-calendar .sx-weekday,
+#root .sx-calendar .sx-weekday {
+  color: #DC9E57 !important;
+  font-weight: bold !important;
+}
+
+/* Ensure navigation arrows are also gold */
+html body .sx-navigation-button svg,
+#root .sx-navigation-button svg,
+html body .sx-navigation-button path,
+#root .sx-navigation-button path {
+  fill: #DC9E57 !important;
+  stroke: #DC9E57 !important;
+}
+
+/* Override month grid event text color with maximum specificity */
+html body .sx__month-grid-event,
+html body .sx__month-grid-event *,
+#root .sx__month-grid-event,
+#root .sx__month-grid-event * {
+  color: #DC9E57 !important; /* Direct gold color hex */
+  font-weight: 500 !important;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5) !important; /* Shadow for better readability */
+}
+
+/* If the text needs to be white on colored backgrounds */
+html body .sx__month-grid-event--dark,
+#root .sx__month-grid-event--dark,
+html body .sx__month-grid-event--colored,
+#root .sx__month-grid-event--colored {
+  color: white !important;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7) !important; /* Stronger shadow for contrast */
+}
+
+/* Target the event title specifically if needed */
+html body .sx__month-grid-event-title,
+#root .sx__month-grid-event-title {
+  color: #DC9E57 !important; /* Direct gold color hex */
+  font-weight: bold !important;
+}

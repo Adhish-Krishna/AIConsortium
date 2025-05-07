@@ -1,0 +1,208 @@
+.chat-bubble-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chat-bubble-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.chat-bubble-button:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.chat-bubble-icon {
+  font-size: 24px;
+}
+
+.chat-bubble-overlay {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 350px;
+  height: 450px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-bubble-header {
+  padding: 15px;
+  background-color: var(--color-primary);
+  color: var(--color-gray-400);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-bubble-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.chat-bubble-close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.chat-bubble-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-bubble-message {
+  padding: 10px 15px;
+  border-radius: 18px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.chat-bubble-message.user {
+  align-self: flex-end;
+  background-color: #f1f1f1;
+  color: #333;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-bubble-message.bot {
+  align-self: flex-start;
+  background-color: #f1f1f1;
+  color: #333;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-bubble-input-container {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
+
+.chat-bubble-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+
+.chat-bubble-send-btn {
+  margin-left: 10px;
+  padding: 5px 15px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.chat-bubble-send-btn:hover {
+  transform: translateX(3px);
+}
+
+/* Loading animation styles */
+.loading-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.loading-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #888;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .chat-bubble-overlay {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+  }
+
+  .chat-bubble-button {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  /* Hide the chat bubble button when the overlay is open on mobile */
+  .chat-bubble-container.open .chat-bubble-button {
+    display: none;
+  }
+}
+
+/* Additional styles for smaller mobile devices */
+@media (max-width: 400px) {
+  .chat-bubble-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+  }
+
+  /* Ensure button is completely hidden on small screens when open */
+  .chat-bubble-container.open .chat-bubble-button {
+    display: none !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  /* Adjust header for smaller screens */
+  .chat-bubble-header {
+    padding: 12px;
+  }
+
+  /* Make input area more compact */
+  .chat-bubble-input-container {
+    padding: 8px;
+  }
+}
