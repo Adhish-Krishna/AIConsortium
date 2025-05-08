@@ -5,7 +5,7 @@ const AISpectrumLink: React.FC = () => {
   return (
     <div className="aispectrum-link">
       <a href="/aispectrum" title="AI Spectrum Conference">
-        International Conference on The AI Spectrum <span className="arrow-icon">→</span>
+        International Conference on The AI Spectrum: Bridging Research, Industry & Innovation <span className="arrow-icon">→</span>
       </a>
     </div>
   );
