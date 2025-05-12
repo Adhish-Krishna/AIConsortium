@@ -43,6 +43,12 @@ const Navbar = () => {
           </li>
           <li 
             className={activeSection === "theme" ? "active" : ""} 
+            onClick={() => scrollToSection("committee")}
+          >
+            Speakers
+          </li>
+          <li 
+            className={activeSection === "theme" ? "active" : ""} 
             onClick={() => scrollToSection("theme")}
           >
             Theme
@@ -52,12 +58,6 @@ const Navbar = () => {
             onClick={() => scrollToSection("cfp")}
           >
             Call for Papers
-          </li>
-          <li
-            className={activeSection === "topics" ? "active" : ""} 
-            onClick={() => scrollToSection("topics")}
-          >
-            Topics
           </li>
           <li 
             className={activeSection === "Dates" ? "active" : ""} 
