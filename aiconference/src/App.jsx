@@ -17,6 +17,7 @@ import WelcomeCardSection from './cbeplaces.jsx';
 import MainContent from './components/MainContent.jsx';
 import TempComponent from './temp.jsx';
 import Dates from './imp.jsx';
+import SpeakerSection from './speaker.jsx';
 
 
 function App() {
@@ -91,6 +92,7 @@ function App() {
 <div style={{ color: '#FFFFFF', position: 'relative', zIndex: 1 }}>
   <div id="about"><About /></div>
   <br />
+  <div id="committee"><SpeakerSection/></div>
   <div id="theme"><ThemeSection /></div><br />
   <div id="cfp"><CallForPapers /></div>
   <div id="topics"><TopicsSection /></div>
