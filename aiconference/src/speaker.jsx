@@ -23,7 +23,7 @@ const SpeakerSection = () => {
                 </>
               ), iconUrl: yadatiImage, link: 'https://gtl.csa.iisc.ac.in/hari' },
         { name: 'Dr Srinivas Padmanabhuni', designation: (<>AI Advisor, Marax AI, Inc.<br />Faculty Member, IIIT Lucknow<br />Co-Founder ,testAIng.com<br />Co-Founder , CityMandi.com  </>), organization: '', iconUrl: srinivasImage, link: 'https://iiitl.ac.in/index.php/personnel/dr-srinivas-padmanabhuni/' },
-        { name: 'Dr Milli Pant', designation: (<>Professor and Head <br />Department of Applied Mathematics and Scientific  Computing</>), organization: 'IIT , Roorkee', iconUrl: milliImage, link: 'https://www.iitr.ac.in/~ASE/millifpt' },
+        { name: 'Dr Millie Pant', designation: (<>Professor and Head <br />Department of Applied Mathematics and Scientific  Computing</>), organization: 'IIT , Roorkee', iconUrl: milliImage, link: 'https://www.iitr.ac.in/~ASE/millifpt' },
         { name: 'Dr L Venkata Subramaniam', designation:(<>IBM Quantum India Leader<br />Mentor at IIT Delhi<br />Board of Studies member at DAIICT</>), organization: 'Delhi, India', iconUrl: venkataImage, link: 'https://www.linkedin.com/in/lvsubramaniam/?originalSubdomain=in' },
         { name: 'Professor Ferrante Neri', designation: (<>Professor of Machine Learning and Artificial Intelligence<br />Associate Dean (international) FEPS</>), organization: 'University of Surrey , Uk', iconUrl: ferranteImage, link: 'https://www.surrey.ac.uk/people/ferrante-neri' },
         { name: 'Dr Pablo Moscato', designation: (<>Professor of Data Science<br />School of Information and Physical Sciences</>), organization: 'University of Newcastle , Australia', iconUrl: pabloImage, link: 'https://www.newcastle.edu.au/profile/pablo-moscato' },
