@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import psgImage from './PSGTECH.jpeg';
-import psgAiImage from './AICons_logo.jpg';
-import psgCareImage from './PSGCARE.jpg';
+import psgImage from '../assets/PSGTECH.jpeg';
+import psgAiImage from '../assets/AICons_logo.jpg';
+import psgCareImage from '../assets/PSGCARE.jpg';
 
 const SeeMore = ({ children }) => {
   const [showMore, setShowMore] = useState(false);
