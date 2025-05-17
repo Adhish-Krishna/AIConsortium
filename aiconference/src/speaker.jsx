@@ -31,7 +31,6 @@ const SpeakerSection = () => {
         { name: 'Dr Karthik Vaidhyanathan', designation: (<>Assistant Professor<br /> Software Engineering Research Center</>), organization: 'IIIT Hydrabad , India', iconUrl: karthikVaidhyanathanImage, link: 'https://karthikvaidhyanathan.com/' },
         { name: 'Mr Srikanth Subramanian', designation: 'Vice President, Engineering', organization: 'Salesforce , Bengaluru', iconUrl: srikanthImage, link: 'https://www.linkedin.com/in/srikanth-subramanian/?originalSubdomain=in' },
         { name: 'Dr Anjani Priyadarsini', designation: 'Quantum Technologies Lead', organization: 'AWS India', iconUrl: anjaniImage, link: 'https://www.linkedin.com/in/dr-anjani-priyadarsini/?originalSubdomain=in' },
-        { name: 'Dr Balaji Palanisamy', designation: 'Associate Professor', organization: 'University of Pittsburgh', iconUrl: balajiImage, link: 'https://www.dins.pitt.edu/people/balaji-palanisamy' },
         { name: 'Dr Arun Rajkumar', designation: 'Assistant Professor', organization: 'IIT Madras , India', iconUrl: arunImage, link: 'https://www.cse.iitm.ac.in/profile.php?arg=MjA0MA==' },
         { name: 'Mr Mukund Bhoovaraghavan', designation: 'Principal Group Engineering Manager ', organization: 'Microsoft Hyderabad , India', iconUrl: mukundImage, link: 'https://www.linkedin.com/in/mukundbhoovaraghavan/?originalSubdomain=in', style: { whiteSpace: 'nowrap' } },
     ];
@@ -52,7 +51,7 @@ const SpeakerSection = () => {
                 textAlign: 'center',
                 marginBottom: '30px',
                 marginTop: '0',
-            }}>KEYNOTE SPEAKER AND PANELIST</h2>
+            }}>KEYNOTE SPEAKERS AND PANELISTS</h2>
             <NormalCardGrid 
                 cards={speakers} 
                 style={{
