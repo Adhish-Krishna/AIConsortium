@@ -1,6 +1,11 @@
-## Docker commands to build and run the services:
- - `docker-compose build`
+### PSG AI CONSORTIUM
 
- - `docker-compose up -d`
+### Commands for building and running the project
 
-### The website can be accessed at http://localhost:80
+- `cd aiconsortium`
+
+- `npm install --legacy-peer-deps`
+
+- `npm run build`
+
+- `npm run preview`
