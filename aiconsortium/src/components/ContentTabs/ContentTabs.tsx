@@ -20,7 +20,6 @@ const ContentTabs: React.FC = () => {
     return dataProjects.map(project => {
       return {
         id: project.id,
-        image: project.image,
         title: project.title,
         contributors: Array.isArray(project.contributors)
           ? project.contributors.length
