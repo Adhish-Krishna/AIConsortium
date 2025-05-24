@@ -38,8 +38,8 @@ const Footer: React.FC = () => {
               <li><a href="/teams" className="footer-link">Teams</a></li>
               {/* <li><a href="/collaborators" className="footer-link">Collaborators</a></li> */}
               <li><a href="/directordesk" className="footer-link">Director's Desk</a></li>
+              <li><a href="/aiwing" className="footer-link">AI Wing</a></li>
               <li><a href="/gallery" className="footer-link">Gallery</a></li>
-
             </ul>
           </div>
 

@@ -59,7 +59,7 @@ html body .calendar-wrapper .sx-date-today .sx-date-number,
 
 @media (max-width: 480px) {
   .calendar-page {
-    padding-top: 90px; /* Even less on mobile */
+    padding-top: 120px; /* Even less on mobile */
   }
 }
 

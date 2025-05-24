@@ -58,6 +58,7 @@ const Navigation: React.FC = () => {
           <a href="/" className='nav-link'>Home</a>
           <a href="/about" className="nav-link">About Us</a>
           <a href="/directordesk" className="nav-link">Director's Desk</a>
+          <a href="/aiwing" className="nav-link">AI Wing</a>
           <a href="/events" className="nav-link">Events</a>
           <a href="/teams" className="nav-link">Teams</a>
           <a href="/gallery" className='nav-link'>Gallery</a>

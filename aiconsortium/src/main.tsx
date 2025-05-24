@@ -15,6 +15,7 @@ import PublicationDetailsPage from './components/PublicationDetails/index.tsx';
 import EventDetail from './pages/Events/EventDetail.tsx';
 import DirectorsDesk from './pages/DirectorsDesk/DirectorsDesk.tsx';
 import Gallery from './pages/Gallery/Gallery.tsx';
+import AIWing from './pages/AIWing/AIWing.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -33,6 +34,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path = "/publications/:id" element={<PublicationDetailsPage/>}/>
         <Route path='/directordesk' element={<DirectorsDesk/>}/>
         <Route path='/gallery' element={<Gallery/>}/>
+        <Route path='/aiwing' element={<AIWing/>}/>
       </Routes>
     </Router>
   </StrictMode>
