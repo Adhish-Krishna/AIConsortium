@@ -137,7 +137,7 @@ export const events: EventData[] = [
     end: '2025-04-01',
     location: 'D-Block, First Floor Conference Hall',
     mode: 'hybrid',
-    organizer: 'Dr.M. Suresh, Dr.d. Jayaprasanth, Dr.C. Shanmugam',
+    organizer: 'Dr.M. Suresh, Dr.D. Jayaprasanth, Dr.C. Shanmugam',
     type: 'Webinar',
     image: AIWeekRA01,
     gallery: [AIWeekRA01,AIWeekRA02]
