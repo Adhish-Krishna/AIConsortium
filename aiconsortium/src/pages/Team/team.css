@@ -182,7 +182,7 @@
 
   @media (max-width: 400px) {
     .team-container {
-      padding: 120px 8px 15px; /* Increased top padding from 30px to 80px */
+      padding: 150px 8px 15px; /* Increased top padding from 30px to 80px */
     }
 
     .team-title {

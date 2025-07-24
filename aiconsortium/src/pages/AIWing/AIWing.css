@@ -168,7 +168,7 @@
 /* Extra small mobile devices */
 @media (max-width: 480px) {
     .aiwing-main-container {
-        padding-top: 120px;
+        padding-top: 150px;
         gap: 1rem;
         padding-bottom: 40px;
         padding-left: 0.25rem;
