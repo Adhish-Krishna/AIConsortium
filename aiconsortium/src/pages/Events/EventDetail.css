@@ -244,17 +244,6 @@
   /* Other existing mobile styles */
 }
 
-@media (max-width: 480px) {
-  .event-detail-container {
-    padding-top: 130px;
-  }
-
-  .event-detail-page {
-    padding-top: 70px; /* Further adjusted for small screens */
-  }
-
-}
-
 .event-detail-container h1 {
   color: var(--color-primary);
   margin-bottom: 24px;
@@ -863,7 +852,7 @@ body {
   }
 
   .event-detail-page{
-    padding-top: 130px;
+    padding-top: 170px;
   }
 
   .event-detail-hero-content {

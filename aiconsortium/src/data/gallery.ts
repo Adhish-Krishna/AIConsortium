@@ -38,6 +38,10 @@ import AIWeekPD06 from '/images/AI WEEK_Panel Discussion_ 03 April 2025/IMG_8542
 import AIWeekPD07 from '/images/AI WEEK_Panel Discussion_ 03 April 2025/IMG_8546.JPG?url';
 import AIWeekPD08 from '/images/AI WEEK_Panel Discussion_ 03 April 2025/IMG_8554.JPG?url';
 
+//Driving Sustainability through AI: From Concept to Impact
+import DrivingSust01 from '/images/DrivingSustainabilitythroughAI/image01.png';
+import DrivingSust02 from '/images/DrivingSustainabilitythroughAI/image.png';
+
 export interface Gallery{
     id: number,
     image: string,
@@ -159,6 +163,14 @@ const gallery: Gallery[] = [
         id: 29,
         image: AIWeekPD08
     },
+    {
+        id: 30,
+        image: DrivingSust01
+    },
+    {
+        id: 31,
+        image: DrivingSust02
+    }
 ]
 
 export {gallery};
