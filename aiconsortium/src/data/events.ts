@@ -30,6 +30,9 @@ import AIWeekPD06 from '/images/AI WEEK_Panel Discussion_ 03 April 2025/IMG_8542
 import AIWeekPD07 from '/images/AI WEEK_Panel Discussion_ 03 April 2025/IMG_8546.JPG?url';
 import AIWeekPD08 from '/images/AI WEEK_Panel Discussion_ 03 April 2025/IMG_8554.JPG?url';
 
+//Driving Sustainability through AI: From Concept to Impact
+import DrivingSust01 from '/images/DrivingSustainabilitythroughAI/image01.png';
+import DrivingSust02 from '/images/DrivingSustainabilitythroughAI/image.png';
 export interface EventData {
   id: string;
   title: string;
@@ -141,6 +144,27 @@ export const events: EventData[] = [
     type: 'Webinar',
     image: AIWeekRA01,
     gallery: [AIWeekRA01,AIWeekRA02]
+  },
+  {
+    id: '7',
+    title: 'Driving Sustainability through AI: From Concept to Impact',
+    description:`Technology, in association with the PSG-AI Consortium, successfully organized a one-day pre-conference workshop titled "Driving Sustainability through AI: From Concept to Impact" on 24th April 2025. The workshop aimed to provide participants with insights into cutting-edge developments in Artificial Intelligence (AI) and its transformative impact on sustainable engineering practices.
+
+The event featured two focused technical sessions, conducted by distinguished professionals from the AI and automotive sectors.
+
+The first session was delivered by Dr. Lovelyn Rose S, CEO and Head of AI Research at Lysa Solutions, Coimbatore. Her talk on "Creating AI Agents with LangGraph" offered a deep dive into the design and deployment of AI-powered agents using the LangGraph framework. Participants gained practical understanding of the architecture and workflow involved in building autonomous, decision-making agents with real-world applications. The session was interactive and showcased demonstrations that highlighted the potential of AI in solving complex engineering challenges.
+
+The second session, titled "Role of AI/ML in Automotive Applications", was handled by Mr. Balajee K Asokan, Senior Engineering Specialist at ZF Commercial Vehicle Control Systems, Chennai. This session emphasized the integration of AI and Machine Learning in modern automotive systems, including advanced driver assistance, predictive maintenance, and vehicle autonomy. Mr. Balajee illustrated the transition of automotive control systems from rule-based logic to intelligent, learning-based models and the resulting improvements in efficiency, safety, and sustainability.
+
+The workshop witnessed enthusiastic participation from faculty, research scholars, and students. It served as a platform to explore the convergence of AI technologies with engineering domains, fostering innovation and awareness on sustainability-focused solutions.`,
+    start: '2025-04-24',
+    end: '2025-04-24',
+    location: 'E-Block 3rd Floor, AI Wing',
+    mode: 'offline',
+    organizer: 'Dr. Lovelyn Rose S (CEO and Head of AI Research at Lysa Solutions, Coimbatore), Mr. Balajee K Asokan (Senior Engineering Specialist at ZF Commercial Vehicle Control Systems, Chennai)',
+    type: 'Workshop',
+    image: DrivingSust02,
+    gallery: [DrivingSust01, DrivingSust02] 
   }
 ];
 

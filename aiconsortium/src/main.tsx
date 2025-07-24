@@ -16,12 +16,14 @@ import EventDetail from './pages/Events/EventDetail.tsx';
 import DirectorsDesk from './pages/DirectorsDesk/DirectorsDesk.tsx';
 import Gallery from './pages/Gallery/Gallery.tsx';
 import AIWing from './pages/AIWing/AIWing.tsx';
+import ShareButton from './components/ShareButton/ShareButton.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Router>
       <Navigation />
       {/* <ChatBubble/> */}
+      <ShareButton/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />
